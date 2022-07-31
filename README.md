@@ -1,7 +1,7 @@
 # homepage
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a27f2f64-c442-432d-a43a-f4406507660c/deploy-status)](https://nize.ph)
 
-My personal site built with [Solid.js](https://www.solidjs.com/ecosystem) (Vite + TypeScript)
+My personal site built with [Solid.js](https://www.solidjs.com) (Vite + TypeScript)
 
 Development
 --------
