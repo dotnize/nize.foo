@@ -1,0 +1,13 @@
+nav {
+  text-align: left;
+}
+
+nav .navlink {
+  display: inline-block;
+  color: #b48ead;
+  text-decoration: none;
+}
+
+nav .navlink:hover {
+  color: rgb(171, 185, 207);
+}

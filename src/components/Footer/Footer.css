@@ -1,0 +1,14 @@
+footer {
+  font-family: monospace;
+  font-size: 16px;
+  margin-top: 40px;
+  line-height: 30px;
+  color: rgb(171, 185, 207);
+  text-align: center;
+}
+footer img {
+  margin: 0 6px;
+}
+footer a:hover {
+  filter: brightness(1.4);
+}
