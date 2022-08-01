@@ -93,7 +93,9 @@ const Chat: Component = () => {
       </p>
       <p>
         {connected()
-          ? 'Type "disconnect" or "exit" to end the chat session.'
+          ? //  still gotta build the socket backend/server
+            // 'Type "disconnect" or "exit" to end the chat session.'
+            'Chat functionality is currently disabled.'
           : 'Type "connect" to start chatting.'}
       </p>
       <For each={messages}>
