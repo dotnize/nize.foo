@@ -16,5 +16,5 @@ npm run dev
 npm run build
 
 # preview production build in local server
-npm run preview
+npm run serve
 ```
