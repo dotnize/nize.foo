@@ -7,6 +7,6 @@ export default defineConfig({
     port: 1227
   },
   build: {
-    target: 'esnext'
+    target: 'es6'
   }
 });
