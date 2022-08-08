@@ -26,6 +26,7 @@ const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = (props) => {
         onBlur={handleBlur}
         {...props}
         autofocus={true}
+        autocomplete="off"
       />
     </span>
   );
