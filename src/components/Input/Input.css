@@ -1,3 +1,7 @@
+.cmd {
+  display: block;
+}
+
 .cmd:before {
   content: '> ';
   color: #a3be8c;
