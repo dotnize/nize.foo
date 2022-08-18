@@ -1,13 +1,30 @@
+import { useNavigate } from '@solidjs/router';
 import { Component, JSX, onMount } from 'solid-js';
+import handleCommand from './command';
 import './Input.css';
 
 const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = (props) => {
+  const navigate = useNavigate();
   function handleBlur(e: FocusEvent) {
     // @ts-expect-error e.target is an EventTarget instead of HTMLInputElement
     e.target.focus({ preventScroll: true });
   }
 
   let input: HTMLInputElement | undefined;
+
+  function handleInput(e: KeyboardEvent) {
+    if (e.key === 'Enter') {
+      // @ts-expect-error e.target is an EventTarget instead of HTMLInputElement
+      const input = e.target.value;
+
+      if (input.length === 0) return;
+
+      if (handleCommand(input, navigate)) {
+        // @ts-expect-error e.target is an EventTarget instead of HTMLInputElement
+        e.target.value = '';
+      }
+    }
+  }
 
   onMount(() => {
     if (input !== undefined) {
@@ -24,6 +41,7 @@ const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = (props) => {
         spellcheck={false}
         type="text"
         onBlur={handleBlur}
+        onKeyUp={handleInput}
         {...props}
         autofocus={true}
         autocomplete="off"

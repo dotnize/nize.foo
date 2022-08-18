@@ -4,6 +4,7 @@ import { createStore, produce } from 'solid-js/store';
 import { useNavigate } from '@solidjs/router';
 
 import Input from '../components/Input/Input';
+import handleCommand from '../components/Input/command';
 
 import io from 'socket.io-client';
 const socket = io();
@@ -55,7 +56,7 @@ const Chat: Component = () => {
 
       if (input.length === 0) return;
 
-      if (input === 'disconnect' || input === 'exit') {
+      if (connected() && (input === 'disconnect' || input === 'exit')) {
         socket.disconnect();
         setConnected(false);
       } else if (!connected()) {
@@ -63,12 +64,8 @@ const Chat: Component = () => {
           // @ts-expect-error e.target is an EventTarget instead of HTMLInputElement
           e.target.value = '';
           socket.connect();
-        } else if (input.includes('home')) {
-          navigate('/');
-        } else if (input.includes('project')) {
-          navigate('/projects');
-        } else if (input.includes('chat')) {
-          navigate('/chat');
+        } else {
+          handleCommand(input, navigate);
         }
         return;
       } else {
