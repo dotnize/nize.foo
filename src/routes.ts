@@ -1,13 +1,15 @@
 import { lazy } from 'solid-js';
+import NotFound from './routes/404';
+import Home from './routes/Home';
 
 const routes = [
   {
     path: '*',
-    component: lazy(() => import('./routes/404'))
+    component: NotFound
   },
   {
     path: '/',
-    component: lazy(() => import('./routes/Home'))
+    component: Home
   },
   {
     path: '/projects',
