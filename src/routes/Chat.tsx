@@ -51,8 +51,7 @@ const Chat: Component = () => {
 
   function handleInput(e: KeyboardEvent) {
     if (e.key === 'Enter') {
-      // @ts-expect-error e.target is an EventTarget instead of HTMLInputElement
-      const input: string = e.target.value;
+      const input: string = (e.target as HTMLInputElement).value;
 
       if (input.length === 0) return;
 
@@ -61,8 +60,7 @@ const Chat: Component = () => {
         setConnected(false);
       } else if (!connected()) {
         if (input === 'connect' || input == 'reconnect') {
-          // @ts-expect-error e.target is an EventTarget instead of HTMLInputElement
-          e.target.value = '';
+          (e.target as HTMLInputElement).value = '';
           socket.connect();
         } else {
           handleCommand(input, navigate);
@@ -73,8 +71,7 @@ const Chat: Component = () => {
         addMessage({ author: 'me', message: input });
       }
 
-      // @ts-expect-error e.target is an EventTarget instead of HTMLInputElement
-      e.target.value = '';
+      (e.target as HTMLInputElement).value = '';
     }
   }
 
