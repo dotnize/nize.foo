@@ -1,4 +1,4 @@
-import { Navigator } from '@solidjs/router';
+import type { Navigator } from '@solidjs/router';
 
 export default function handleCommand(command: string, navigate: Navigator): boolean {
   if (command.includes('home')) {
