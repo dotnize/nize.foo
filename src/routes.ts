@@ -1,6 +1,7 @@
 import { lazy } from 'solid-js';
 import NotFound from './routes/404';
 import Home from './routes/Home';
+import Projects from './routes/Projects';
 
 const routes = [
   {
@@ -13,7 +14,7 @@ const routes = [
   },
   {
     path: '/projects',
-    component: lazy(() => import('./routes/Projects'))
+    component: Projects
   },
   {
     path: '/chat',
