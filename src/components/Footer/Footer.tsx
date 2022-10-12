@@ -12,19 +12,19 @@ const Footer: Component = () => {
   return (
     <footer>
       <a href="mailto:contact@nize.ph" title="Email">
-        <img src={mail} />
+        <img src={mail} alt="Email" />
       </a>
       <a href="https://github.com/nizewn" title="GitHub" target="_blank">
-        <img src={github} />
+        <img src={github} alt="GitHub" />
       </a>
       <a href="https://gitlab.com/nizewn" title="GitLab" target="_blank">
-        <img src={gitlab} />
+        <img src={gitlab} alt="GitLab" />
       </a>
       <a href="https://linkedin.com/in/nize" title="LinkedIn" target="_blank">
-        <img src={linkedin} />
+        <img src={linkedin} alt="LinkedIn" />
       </a>
       <a href="https://twitter.com/nizewn" title="Twitter" target="_blank">
-        <img src={twitter} />
+        <img src={twitter} alt="Twitter" />
       </a>
       <br />
       nize &#169; 2022

@@ -37,6 +37,7 @@ const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = (props) => {
         class="space-top"
         maxlength={128}
         spellcheck={false}
+        aria-label="Input"
         type="text"
         onBlur={handleBlur}
         onKeyUp={handleInput}
