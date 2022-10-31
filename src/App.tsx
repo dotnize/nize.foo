@@ -10,7 +10,7 @@ const App: Component = () => {
   const Routes = useRoutes(routes);
 
   return (
-    <div class="main">
+    <div class="wrapper">
       <Window>
         <Routes />
       </Window>

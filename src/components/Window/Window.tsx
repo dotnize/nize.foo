@@ -12,21 +12,21 @@ const Window: ParentComponent = (props) => {
 
   return (
     <div class="window">
-      <div class="titlebar">
+      <header class="titlebar">
         nize.ph
         <div class="titlebar-buttons close" />
         <div class="titlebar-buttons max" />
         <div class="titlebar-buttons min" />
-      </div>
-      <section class="content">
+      </header>
+      <div class="content">
         <span class="cmd">ls</span>
         <Nav />
         <span class="cmd">{route() === 'chat' ? `./chat.sh` : `cat ${route() || 'home'}.txt`}</span>
 
-        {props.children}
+        <main>{props.children}</main>
 
         {route() === 'chat' ? null : <Input />}
-      </section>
+      </div>
     </div>
   );
 };
