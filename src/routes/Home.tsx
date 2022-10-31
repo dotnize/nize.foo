@@ -5,7 +5,7 @@ const Home: Component = () => {
     <div>
       <p class="text-justify space-bottom">Hello! I am Nathaniel Tampus, also known as nize.</p>
       <p class="text-justify">
-        I'm a developer currently studying in Cebu Institute of Technology University for my
+        I'm a developer currently studying at Cebu Institute of Technology University for my
         Bachelor's degree in Information Technology.
       </p>
     </div>
