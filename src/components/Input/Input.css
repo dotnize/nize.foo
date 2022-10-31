@@ -1,10 +1,11 @@
 .cmd {
   display: block;
+  color: #bda393;
 }
 
 .cmd:before {
   content: '> ';
-  color: #a3be8c;
+  color: #8ec07c;
 }
 
 input {
@@ -12,7 +13,7 @@ input {
   color: inherit;
   background: none;
   border: none;
-  caret-color: rgb(171, 185, 207);
+  caret-color: #ebdbb2;
   width: 90%;
 }
 

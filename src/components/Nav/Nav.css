@@ -4,10 +4,10 @@ nav {
 
 nav .navlink {
   display: inline-block;
-  color: #b48ead;
+  color: #d3869b;
   text-decoration: none;
 }
 
 nav .navlink:hover {
-  color: rgb(171, 185, 207);
+  color: #b16286;
 }
