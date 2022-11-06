@@ -14,11 +14,9 @@ type Message = {
   message: string;
 };
 
-let gMessages: Message[] = [];
-
 const Chat: Component = () => {
   const [connected, setConnected] = createSignal(socket.connected);
-  const [messages, setMessages] = createStore<Message[]>(gMessages);
+  const [messages, setMessages] = createStore<Message[]>([]);
   const navigate = useNavigate();
 
   onMount(() => {
@@ -33,7 +31,6 @@ const Chat: Component = () => {
     });
 
     socket.on('chat', (message) => {
-      gMessages.push(message);
       addMessage({ author: 'nize', message });
     });
   });
@@ -50,8 +47,6 @@ const Chat: Component = () => {
         messages.push(m);
       })
     );
-    // eslint-disable-next-line solid/reactivity
-    gMessages = messages;
   }
 
   function handleInput(e: KeyboardEvent) {
