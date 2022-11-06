@@ -15,7 +15,7 @@ type Message = {
 };
 
 const Chat: Component = () => {
-  const [connected, setConnected] = createSignal(false);
+  const [connected, setConnected] = createSignal(socket.connected);
   const [messages, setMessages] = createStore<Message[]>([]);
   const navigate = useNavigate();
 
