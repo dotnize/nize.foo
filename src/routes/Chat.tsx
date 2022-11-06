@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { createSignal, For, onCleanup, onMount } from 'solid-js';
+import { createSignal, For, onMount } from 'solid-js';
 import { createStore, produce } from 'solid-js/store';
 import { useNavigate } from '@solidjs/router';
 
@@ -14,12 +14,18 @@ type Message = {
   message: string;
 };
 
+const gMessages: Message[] = [];
+
 const Chat: Component = () => {
   const [connected, setConnected] = createSignal(socket.connected);
-  const [messages, setMessages] = createStore<Message[]>([]);
+  const [messages, setMessages] = createStore<Message[]>(gMessages);
   const navigate = useNavigate();
 
   onMount(() => {
+    socket.off('connect');
+    socket.off('disconnect');
+    socket.off('chat');
+
     socket.on('connect', () => {
       setConnected(true);
       addMessage({ author: 'connect', message: 'connected to server.' });
@@ -33,12 +39,6 @@ const Chat: Component = () => {
     socket.on('chat', (message) => {
       addMessage({ author: 'nize', message });
     });
-  });
-
-  onCleanup(() => {
-    socket.off('connect');
-    socket.off('disconnect');
-    socket.off('chat');
   });
 
   function addMessage(m: Message) {
