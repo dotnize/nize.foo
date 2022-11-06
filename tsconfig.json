@@ -11,5 +11,8 @@
     "types": ["vite/client"],
     "noEmit": true,
     "isolatedModules": true
-  }
+  },
+  "exclude": [
+    "chat-server"
+  ]
 }
