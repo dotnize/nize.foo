@@ -7,7 +7,7 @@ import Input from '../components/Input/Input';
 import handleCommand from '../components/Input/command';
 
 import io from 'socket.io-client';
-const socket = io();
+const socket = io('https://homepage-chat.onrender.com:3000');
 
 type Message = {
   author: string;
@@ -87,10 +87,8 @@ const Chat: Component = () => {
       </p>
       <p>
         {connected()
-          ? 'Type "disconnect" or "exit" to end the chat session.'
-          : //  still gotta build the socket backend/server
-            // 'Type "connect" to start chatting.'
-            'Chat functionality is currently disabled.'}
+          ? 'Type "disconnect" to end the chat session.'
+          : 'Type "connect" to start chatting.'}
       </p>
       <For each={messages}>
         {(m) =>
