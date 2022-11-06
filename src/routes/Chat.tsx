@@ -33,6 +33,7 @@ const Chat: Component = () => {
     });
 
     socket.on('chat', (message) => {
+      gMessages.push(message);
       addMessage({ author: 'nize', message });
     });
   });
