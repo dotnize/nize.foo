@@ -14,9 +14,11 @@ type Message = {
   message: string;
 };
 
+let gMessages: Message[] = [];
+
 const Chat: Component = () => {
   const [connected, setConnected] = createSignal(socket.connected);
-  const [messages, setMessages] = createStore<Message[]>([]);
+  const [messages, setMessages] = createStore<Message[]>(gMessages);
   const navigate = useNavigate();
 
   onMount(() => {
@@ -44,9 +46,11 @@ const Chat: Component = () => {
   function addMessage(m: Message) {
     setMessages(
       produce((messages) => {
-        messages.push({ author: m.author, message: m.message });
+        messages.push(m);
       })
     );
+    // eslint-disable-next-line solid/reactivity
+    gMessages = messages;
   }
 
   function handleInput(e: KeyboardEvent) {
