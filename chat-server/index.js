@@ -25,7 +25,7 @@ client.once("ready", c => {
 
 io.on("connection", (socket) => {
 	socket.on("chat", async (msg) => {
-		let thread = channel.threads.cache.find(x => x.name === socket.id && x.archived === false);
+		let thread = channel?.threads?.cache.find(x => x.name === socket.id && x.archived === false);
 		if (!thread) {
 			thread = await channel.threads.create({
 				name: socket.id,
@@ -36,7 +36,7 @@ io.on("connection", (socket) => {
 		thread.send(msg);
 	});
 	socket.on("disconnect", async (reason) => {
-		let thread = channel.threads.cache.find(x => x.name === socket.id && x.archived === false);
+		let thread = channel?.threads?.cache.find(x => x.name === socket.id && x.archived === false);
 		if (thread) {
 			thread.send(`**Socket has disconnected.**\n\`${reason}\``);
 			thread.setArchived(true);
@@ -47,7 +47,7 @@ io.on("connection", (socket) => {
 client.on("messageCreate", message => {
 	if (message.author.bot) return;
 
-	const thread = channel.threads.cache.find(x => x.id === message.channelId);
+	const thread = channel?.threads?.cache.find(x => x.id === message.channelId);
 	if (!thread) return;
 
 	io.to(thread.name).emit("chat", message.content);
