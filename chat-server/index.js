@@ -9,7 +9,7 @@ let channel;
 const { Server } = require("socket.io");
 const { Client, GatewayIntentBits } = require('discord.js');
 
-const io = new Server(port, { cors: { origin: "https://nize.ph" } });
+const io = new Server({ cors: { origin: "https://nize.ph" } });
 const client = new Client({ 
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -19,7 +19,7 @@ const client = new Client({
 });
 
 client.once("ready", c => {
-	console.log(`Ready! Logged in as ${c.user.tag}`);
+	console.log(`Ready! Logged in as ${c.user.tag}.`);
 	channel = client.channels.cache.get(channelid);
 });
 
@@ -56,3 +56,6 @@ client.on("messageCreate", message => {
 })
 
 client.login(token);
+io.listen(port, () => {
+	console.log(`Socket server running at port ${port}.`);
+});
