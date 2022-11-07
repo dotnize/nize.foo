@@ -7,7 +7,7 @@ import Input from '../components/Input/Input';
 import handleCommand from '../components/Input/command';
 
 import io from 'socket.io-client';
-const socket = io('https://homepage-chat.onrender.com');
+const socket = io('https://chat-server-production-1aed.up.railway.app');
 
 type Message = {
   author: string;
