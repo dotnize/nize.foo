@@ -25,6 +25,7 @@ client.once("ready", c => {
 
 io.on("connection", (socket) => {
 	socket.on("chat", async (msg) => {
+		if (!channel) return;
 		let thread = channel?.threads?.cache.find(x => x.name === socket.id && x.archived === false);
 		if (!thread) {
 			thread = await channel.threads.create({
@@ -36,6 +37,7 @@ io.on("connection", (socket) => {
 		thread.send(msg);
 	});
 	socket.on("disconnect", async (reason) => {
+		if (!channel) return;
 		let thread = channel?.threads?.cache.find(x => x.name === socket.id && x.archived === false);
 		if (thread) {
 			thread.send(`**Socket has disconnected.**\n\`${reason}\``);
