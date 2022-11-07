@@ -56,6 +56,4 @@ client.on("messageCreate", message => {
 })
 
 client.login(token);
-io.listen(port, () => {
-	console.log(`Socket server running at port ${port}.`);
-});
+io.listen(port);
