@@ -87,7 +87,7 @@ const Chat: Component = () => {
       </p>
       <p>
         {connected()
-          ? 'Type "disconnect" to end the chat session.'
+          ? 'These messages will be sent to me anonymously, but I may not always be able to respond.'
           : 'Type "connect" to start chatting.'}
       </p>
       <For each={messages}>
