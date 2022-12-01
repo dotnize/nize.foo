@@ -38,9 +38,9 @@ io.on("connection", (socket) => {
 	});
 	socket.on("disconnect", async (reason) => {
 		if (!channel) return;
-		let thread = channel?.threads?.cache.find(x => x.name === socket.id && x.archived === false);
+		const thread = channel?.threads?.cache.find(x => x.name === socket.id && x.archived === false);
 		if (thread) {
-			thread.send(`**Socket has disconnected.**\n\`${reason}\``);
+			await thread.send(`**Socket has disconnected.**\n\`${reason}\``);
 			thread.setArchived(true);
 		}
 	})
