@@ -6,7 +6,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.6.0",
-    "socket.io": "^4.5.3"
+    "discord.js": "^14.7.0",
+    "socket.io": "^4.5.4"
   }
 }
