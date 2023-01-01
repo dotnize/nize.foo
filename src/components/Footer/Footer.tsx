@@ -27,7 +27,7 @@ const Footer: Component = () => {
         <img src={twitter} alt="Twitter" width={25} height={25} />
       </a>
       <br />
-      nize &#169; 2022
+      nize &#169; {new Date().getFullYear()}
     </footer>
   );
 };
