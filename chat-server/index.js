@@ -1,8 +1,6 @@
-// dont judger pls :<
-
 const token = process.env.TOKEN;
 const port = process.env.PORT;
-const channelid = process.env.CHANNELID;
+const channelid = process.env.CHANNELID; // channel id for threads
 
 let channel;
 
