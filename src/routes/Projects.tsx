@@ -3,6 +3,12 @@ import { For } from 'solid-js';
 
 const projects = [
   {
+    name: 'chessu',
+    url: 'https://github.com/nizewn/chessu',
+    description:
+      'An online multiplayer chess site built on React and Express/Node.js with socket.io.'
+  },
+  {
     name: 'Dodong',
     url: 'https://github.com/nizewn/Dodong',
     description: 'A music bot for the Discord chat platform built with discord.js and Node.'
@@ -12,12 +18,6 @@ const projects = [
     url: 'https://github.com/nizewn/moodle-scrape',
     description:
       'A simple Node.js package for scraping student data and resources from Moodle LMS sites.'
-  },
-  {
-    name: 'chessu',
-    url: 'https://github.com/nizewn/chessu',
-    description:
-      'An online multiplayer chess site built on React and Express/Node.js with socket.io.'
   }
 ];
 
