@@ -7,7 +7,7 @@ let channel;
 const { Server } = require("socket.io");
 const { Client, GatewayIntentBits } = require('discord.js');
 
-const io = new Server({ cors: { origin: "https://nize.ph" } });
+const io = new Server({ cors: { origin: "https://nize.ph" }, pingInterval: 30000, pingTimeout: 50000 });
 const client = new Client({ 
 	intents: [
 		GatewayIntentBits.Guilds,
