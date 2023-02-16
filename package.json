@@ -11,20 +11,20 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-solid": "^0.9.4",
-    "prettier": "2.8.3",
+    "prettier": "2.8.4",
     "typescript": "^4.9.5",
-    "vite": "^4.0.4",
+    "vite": "^4.1.1",
     "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
     "@solidjs/router": "^0.7.0",
-    "socket.io-client": "^4.5.4",
-    "solid-js": "^1.6.10"
+    "socket.io-client": "^4.6.0",
+    "solid-js": "^1.6.11"
   }
 }
