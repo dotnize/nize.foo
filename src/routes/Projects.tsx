@@ -6,7 +6,7 @@ const projects = [
     name: 'chessu',
     url: 'https://github.com/nizewn/chessu',
     description:
-      'An online multiplayer chess site built on React and Express/Node.js with socket.io.'
+      'An online multiplayer chess site built with React, Next.js, Express/Node.js, and socket.io.'
   },
   {
     name: 'Dodong',
