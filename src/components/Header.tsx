@@ -3,7 +3,7 @@ import { A } from "solid-start";
 export default function Header() {
     return (
         <header class="mx-3 h-[calc(25vh-1.5rem)] md:mx-16 md:h-[calc(25vh-2rem)] lg:mx-36 xl:mx-52 2xl:mx-72">
-            <nav class="flex h-full w-full items-center justify-evenly text-sm">
+            <nav class="flex h-full w-full items-center justify-evenly font-roboto text-sm">
                 <A
                     class="__highlight flex h-16 w-16 flex-col items-center justify-center gap-1 rounded-lg border-2 border-transparent p-2 transition-all hover:border-gruvbox-bg1 dark:hover:border-gruvboxDark-bg1"
                     activeClass=" pointer-events-none shadow-md hmd:border-gruvbox-bg dark:hmd:border-gruvboxDark-bg"

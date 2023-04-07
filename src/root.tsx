@@ -107,7 +107,7 @@ export default function Root() {
                 <Meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <Body
-                class="bg-gruvbox-bgH font-roboto text-gruvbox-fg dark:bg-gruvboxDark-bgH dark:text-gruvboxDark-fg"
+                class="bg-gruvbox-bgH text-gruvbox-fg dark:bg-gruvboxDark-bgH dark:text-gruvboxDark-fg"
                 lang="en"
             >
                 <Suspense>

@@ -7,7 +7,7 @@ export default function Window(props: ParentProps) {
 
     return (
         <div id="trail_highlightarea" class="mx-3 shadow-xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
-            <div class="flex h-6 items-center justify-between rounded-t-2xl bg-gruvbox-bgS px-3 dark:bg-gruvboxDark-bgS md:h-8">
+            <div class="flex h-6 items-center justify-between rounded-t-2xl bg-gruvbox-bgS px-3 drop-shadow-sm dark:bg-gruvboxDark-bgS md:h-8">
                 <div class="font-azeret text-sm md:text-base">
                     <Switch>
                         <Match when={location.pathname === "/"}>Home</Match>
@@ -29,7 +29,9 @@ export default function Window(props: ParentProps) {
                     (location.pathname.startsWith("/blog") ? " h-[calc(100vh-3rem)]" : " h-[75vh]")
                 }
             >
-                <main>{props.children}</main>
+                <main class={`min-h-[${location.pathname.startsWith("/blog") ? "70" : "55"}vh]`}>
+                    {props.children}
+                </main>
                 <Footer />
             </div>
         </div>
