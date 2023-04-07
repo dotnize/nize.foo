@@ -16,9 +16,17 @@
 .trail_highlight {
     height: 0.4rem;
     width: 0.4rem;
-    background: #3c3836;
+    @apply bg-gruvbox-fg dark:bg-gruvboxDark-fg;
 }
 
-.dark .trail_highlight {
-    background: #ebdbb2;
+* {
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-gruvbox-bg2 dark:bg-gruvboxDark-bg2;
 }
