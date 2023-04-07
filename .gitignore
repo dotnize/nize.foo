@@ -5,6 +5,7 @@ dist
 .vercel
 .netlify
 netlify
+.env
 
 # dependencies
 /node_modules
