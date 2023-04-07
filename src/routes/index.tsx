@@ -1,6 +1,6 @@
 export default function Home() {
     return (
-        <main class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4">
             <div class="font-azeret text-sm">
                 <span class="text-gruvbox-aqua dark:text-gruvboxDark-aqua2">&gt;&nbsp;</span>
                 nizefetch
@@ -78,6 +78,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }
