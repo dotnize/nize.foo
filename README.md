@@ -1,10 +1,9 @@
 # homepage
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a27f2f64-c442-432d-a43a-f4406507660c/deploy-status)](https://nize.ph)
 
-My personal site built with [Solid.js](https://www.solidjs.com) (Vite + TypeScript)
+My personal site built with SolidJS + SolidStart
 
-Development
---------
+## Development
+
 ```sh
 # install dependencies
 npm install
@@ -15,6 +14,6 @@ npm run dev
 # build for production
 npm run build
 
-# preview production build in local server
-npm run serve
+# run production build
+npm start
 ```

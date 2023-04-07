@@ -1,30 +1,42 @@
 {
-  "name": "nize-homepage",
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier \"src/**/*.{tsx,ts,json,css}\" --config ./.prettierrc",
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-solid": "^0.11.0",
-    "prettier": "2.8.4",
-    "typescript": "^5.0.2",
-    "vite": "^4.2.0",
-    "vite-plugin-solid": "^2.6.1"
-  },
-  "dependencies": {
-    "@solidjs/router": "^0.8.0",
-    "socket.io-client": "^4.6.1",
-    "solid-js": "^1.6.15"
-  }
+    "name": "nize-homepage",
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "dev": "solid-start dev",
+        "build": "solid-start build",
+        "start": "solid-start start"
+    },
+    "type": "module",
+    "devDependencies": {
+        "@types/node": "^18.15.11",
+        "@typescript-eslint/eslint-plugin": "^5.57.1",
+        "@typescript-eslint/parser": "^5.57.1",
+        "autoprefixer": "^10.4.14",
+        "esbuild": "^0.17.15",
+        "eslint": "^8.37.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-solid": "^0.12.0",
+        "postcss": "^8.4.21",
+        "prettier": "^2.8.7",
+        "prettier-plugin-tailwindcss": "^0.2.7",
+        "solid-start-node": "^0.2.26",
+        "solid-start-vercel": "^0.2.26",
+        "tailwindcss": "^3.3.1",
+        "typescript": "^5.0.3",
+        "vite": "^4.2.1"
+    },
+    "dependencies": {
+        "@fontsource/azeret-mono": "^4.5.12",
+        "@fontsource/bebas-neue": "^4.5.9",
+        "@fontsource/roboto": "^4.5.8",
+        "@solidjs/meta": "^0.28.4",
+        "@solidjs/router": "^0.8.2",
+        "solid-js": "^1.7.2",
+        "solid-start": "^0.2.26",
+        "undici": "^5.21.0"
+    },
+    "engines": {
+        "node": ">=18"
+    }
 }

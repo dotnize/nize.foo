@@ -1,9 +1,7 @@
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
+import solid from "solid-start/vite";
+import { defineConfig } from "vite";
+import vercel from "solid-start-vercel";
 
 export default defineConfig({
-  plugins: [solidPlugin()],
-  server: {
-    port: 1227
-  }
+    plugins: [solid({ ssr: true, adapter: vercel({ prerender: { expiration: false } }) })]
 });
