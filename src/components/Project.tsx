@@ -8,7 +8,7 @@ export default function Project(props: ProjectProps) {
         <div class="flex flex-col gap-2 rounded-lg bg-gruvbox-bgH p-3 shadow-md dark:bg-gruvboxDark-bgH">
             <div class="flex justify-between">
                 <div class="text-2xl font-bold">{props.name}</div>
-                <div class="flex items-center gap-8 text-sm">
+                <div class="flex items-center gap-8 font-roboto text-sm">
                     {props.demo && (
                         <a
                             href={props.demo}
