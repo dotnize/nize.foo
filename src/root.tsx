@@ -105,6 +105,10 @@ export default function Root() {
                 <Title>Nathaniel Tampus | nize</Title>
                 <Meta charset="utf-8" />
                 <Meta name="viewport" content="width=device-width, initial-scale=1" />
+                <Meta
+                    name="description"
+                    content="A developer from the Philippines with a passion for full-stack web and game development."
+                />
             </Head>
             <Body
                 class="bg-gruvbox-bgH text-gruvbox-fg dark:bg-gruvboxDark-bgH dark:text-gruvboxDark-fg"

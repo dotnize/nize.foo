@@ -9,7 +9,13 @@ export default function Home() {
             <Cmd text="whoami -h" />
             <div class="flex w-full flex-col items-center gap-8">
                 <div class="flex w-full max-w-[90ch] flex-wrap items-center justify-center gap-4 md:flex-nowrap">
-                    <img src="./images/nize.png" width={160} height={160} class="h-40 w-40" />
+                    <img
+                        src="./images/nize.jpg"
+                        alt="nize's avatar"
+                        width={160}
+                        height={160}
+                        class="rounded-lg"
+                    />
                     <div>
                         <div class="mb-4 flex flex-wrap items-end">
                             <h1 class="mr-2 font-bebas text-6xl leading-[44px]">
