@@ -7,6 +7,7 @@ import {
     Head,
     Html,
     Meta,
+    Link,
     Routes,
     Scripts,
     Title
@@ -109,6 +110,13 @@ export default function Root() {
                     name="description"
                     content="A developer from the Philippines with a passion for full-stack web and game development."
                 />
+
+                <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                <Link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                <Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+                <Link rel="manifest" href="/site.webmanifest" />
+                <Meta name="msapplication-TileColor" content="#fbf1c7" />
+                <Meta name="theme-color" content="#fbf1c7" />
             </Head>
             <Body
                 class="bg-gruvbox-bgH text-gruvbox-fg dark:bg-gruvboxDark-bgH dark:text-gruvboxDark-fg"
