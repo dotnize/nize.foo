@@ -118,8 +118,8 @@ export default function Contact() {
                     </a>
                 </div>
                 <div class="flex w-full max-w-[90ch] flex-col items-center gap-2">
-                    <div class="flex items-center gap-1">
-                        ... or send me an anonymous message!{" "}
+                    <div class="flex flex-wrap items-center gap-1">
+                        ... or send me an anonymous message!
                         <span class="text-xs">via Discord webhooks</span>
                     </div>
                     <input
