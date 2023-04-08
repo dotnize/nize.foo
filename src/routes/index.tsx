@@ -14,7 +14,7 @@ export default function Home() {
                         alt="nize's avatar"
                         width={150}
                         height={150}
-                        class="rounded-full bg-gruvboxDark-bg shadow-sm shadow-gruvboxDark-bgH dark:bg-gruvbox-bg"
+                        class="rounded-full bg-gruvboxDark-bgS shadow-sm shadow-gruvboxDark-bgH dark:bg-gruvbox-bg"
                     />
                     <div class="mb-4 flex flex-col flex-wrap">
                         <h1 class="text-center font-bebas text-6xl leading-[44px]">
