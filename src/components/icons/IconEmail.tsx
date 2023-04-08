@@ -1,3 +1,5 @@
+// from https://heroicons.com/
+
 export default function IconEmail(props: { class: string }) {
     return (
         <svg

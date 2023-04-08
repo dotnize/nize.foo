@@ -1,3 +1,5 @@
+// from https://heroicons.com/
+
 export default function IconGlobe(props: { class: string }) {
     return (
         <svg
