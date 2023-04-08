@@ -99,7 +99,7 @@ export default function Contact() {
                     />
                     <div class="flex w-full justify-end">
                         <button
-                            class="flex items-center gap-1 rounded-lg border border-transparent bg-gruvbox-bg1 p-3 px-6 text-lg shadow-md transition-all hover:brightness-125 active:border-gruvbox-fg disabled:pointer-events-none dark:bg-gruvboxDark-bgS dark:active:border-gruvboxDark-fg"
+                            class="flex w-36 items-center justify-center gap-1 rounded-lg border border-transparent bg-gruvbox-bg1 p-3 text-lg shadow-md transition-all hover:brightness-125 active:border-gruvbox-fg disabled:pointer-events-none disabled:bg-gruvboxDark-aqua2 dark:bg-gruvboxDark-bgS dark:active:border-gruvboxDark-fg dark:disabled:bg-gruvbox-aqua2"
                             onClick={sendMessage}
                             disabled={sent()}
                         >
