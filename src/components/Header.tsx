@@ -82,8 +82,9 @@ export default function Header() {
                     <span>Contact</span>
                 </A>
                 <button
+                    title="Toggle theme"
                     class={
-                        "__highlight transition-all duration-300" +
+                        "__highlight p-4 transition-all duration-300" +
                         (typeof localStorage !== "undefined"
                             ? (dark() || !dark()) /* to force rerender */ && "theme" in localStorage
                                 ? " animate-pulse"
