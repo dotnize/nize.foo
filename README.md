@@ -1,4 +1,4 @@
-# homepage
+# [nize.ph](https://nize.ph)
 
 My personal site built with SolidJS + SolidStart.
 
