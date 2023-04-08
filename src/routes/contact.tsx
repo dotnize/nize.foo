@@ -1,29 +1,16 @@
-import { Title } from "solid-start";
-import { createSignal } from "solid-js";
+import { Title, APIEvent } from "solid-start";
+import { Switch, Match, createSignal } from "solid-js";
 import Cmd from "~/components/Cmd";
 
 import IconEmail from "~/components/icons/IconEmail";
 import IconGitHub from "~/components/icons/IconGitHub";
 import IconLinkedIn from "~/components/icons/IconLinkedIn";
 
-export default function Contact() {
-    // eslint-disable-next-line prefer-const
-    let messageTitleRef: HTMLInputElement | undefined = undefined;
-    // eslint-disable-next-line prefer-const
-    let messageTextRef: HTMLTextAreaElement | undefined = undefined;
-
-    const [sent, setSent] = createSignal(false);
-
-    async function sendMessage() {
-        if (!messageTextRef || !messageTitleRef) return;
-        const messageText = messageTextRef.value;
-        const messageTitle = messageTitleRef?.value;
-
-        if (messageText) {
-            setSent(true);
-            messageTextRef.value = "";
-            messageTitleRef.value = "";
-            await fetch(import.meta.env.VITE_DISCORD_WEBHOOK, {
+export async function POST(e: APIEvent) {
+    try {
+        const msg = (await e.request.json()) as { title?: string; text?: string };
+        if (msg && msg.text) {
+            const res = await fetch(process.env.SERVER_DISCORD_WEBHOOK as string, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -31,15 +18,70 @@ export default function Contact() {
                 body: JSON.stringify({
                     embeds: [
                         {
-                            title: messageTitle,
-                            description: messageText
+                            title: msg.title,
+                            description: msg.text
                         }
                     ]
                 })
             });
-            setTimeout(() => {
-                setSent(false);
-            }, 10000);
+            if (res && res.ok) {
+                return new Response("Sent!", { status: 200 });
+            } else {
+                return new Response("Message not sent", { status: 500 });
+            }
+        }
+        return new Response("Invalid request", { status: 400 });
+    } catch (err) {
+        console.error(err);
+        return new Response("Internal server error", { status: 500 });
+    }
+}
+
+export default function Contact() {
+    // eslint-disable-next-line prefer-const
+    let messageTitleRef: HTMLInputElement | undefined = undefined;
+    // eslint-disable-next-line prefer-const
+    let messageTextRef: HTMLTextAreaElement | undefined = undefined;
+
+    const [status, setStatus] = createSignal<null | "sent" | "error" | "sending">(null);
+
+    async function sendMessage() {
+        if (!messageTextRef || !messageTitleRef) return;
+        const messageText = messageTextRef.value;
+        const messageTitle = messageTitleRef?.value;
+
+        if (messageText && status() === null) {
+            setStatus("sending");
+            try {
+                const res = await fetch("/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        title: messageTitle,
+                        text: messageText
+                    })
+                });
+                if (res && res.ok) {
+                    messageTextRef.value = "";
+                    messageTitleRef.value = "";
+                    setStatus("sent");
+                    setTimeout(() => {
+                        setStatus(null);
+                    }, 10000);
+                } else {
+                    setStatus("error");
+                    setTimeout(() => {
+                        setStatus(null);
+                    }, 4000);
+                }
+            } catch (err) {
+                setStatus("error");
+                setTimeout(() => {
+                    setStatus(null);
+                }, 4000);
+            }
         }
     }
 
@@ -99,11 +141,22 @@ export default function Contact() {
                     />
                     <div class="flex w-full justify-end">
                         <button
-                            class="flex w-36 items-center justify-center gap-1 rounded-lg border border-transparent bg-gruvbox-bg1 p-3 text-lg shadow-md transition-all hover:brightness-125 active:border-gruvbox-fg disabled:pointer-events-none disabled:bg-gruvboxDark-aqua2 dark:bg-gruvboxDark-bgS dark:active:border-gruvboxDark-fg dark:disabled:bg-gruvbox-aqua2"
+                            class={
+                                "flex max-w-full items-center justify-center gap-1 rounded-lg border border-transparent p-3 px-5 text-lg shadow-md transition-all hover:brightness-125 active:border-gruvbox-fg disabled:pointer-events-none dark:active:border-gruvboxDark-fg" +
+                                (status() === null
+                                    ? " bg-gruvbox-bg1 dark:bg-gruvboxDark-bgS"
+                                    : "") +
+                                (status() === "sent"
+                                    ? " bg-gruvboxDark-aqua2 dark:bg-gruvbox-aqua2"
+                                    : "") +
+                                (status() === "error"
+                                    ? " bg-gruvboxDark-orange2 dark:bg-gruvbox-orange2"
+                                    : "")
+                            }
                             onClick={sendMessage}
-                            disabled={sent()}
+                            disabled={status() !== null}
                         >
-                            {sent() && (
+                            {status() === "sent" && (
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -119,7 +172,12 @@ export default function Contact() {
                                     />
                                 </svg>
                             )}
-                            {sent() ? "Sent!" : "Send"}
+                            <Switch>
+                                <Match when={status() === "error"}>Error: Message not sent.</Match>
+                                <Match when={status() === "sending"}>Sending...</Match>
+                                <Match when={status() === "sent"}>Sent!</Match>
+                                <Match when={status() === null}>Send</Match>
+                            </Switch>
                         </button>
                     </div>
                 </div>
