@@ -12,8 +12,8 @@ export default function Home() {
                     <img
                         src="./images/nize.png"
                         alt="nize's avatar"
-                        width={160}
-                        height={160}
+                        width={150}
+                        height={150}
                         class="rounded-full bg-gruvboxDark-bg shadow-sm shadow-gruvboxDark-bgH dark:bg-gruvbox-bg"
                     />
                     <div class="mb-4 flex flex-col flex-wrap">
