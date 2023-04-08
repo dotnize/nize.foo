@@ -1,3 +1,26 @@
-node_modules
+
 dist
+.solid
+.output
+.vercel
+.netlify
+netlify
+.env
+
+# dependencies
+/node_modules
 package-lock.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+
+# Temp
+gitignore
+
+# System Files
+.DS_Store
+Thumbs.db
