@@ -35,8 +35,5 @@
         "solid-js": "^1.7.3",
         "solid-start": "^0.2.26",
         "undici": "^5.21.0"
-    },
-    "engines": {
-        "node": ">=18"
     }
 }
