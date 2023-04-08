@@ -1,6 +1,6 @@
 # [nize.ph](https://nize.ph)
 
-My personal site built with SolidJS + SolidStart.
+My personal site built with SolidJS and SolidStart.
 
 ## Development
 
@@ -17,4 +17,11 @@ npm run build
 
 # run production build
 npm start
+```
+
+Environment variables
+
+```env
+# discord webhook url (for contacts page)
+SERVER_DISCORD_WEBHOOK=https://discord.com/api/webhooks/...
 ```
