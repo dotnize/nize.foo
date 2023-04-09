@@ -43,12 +43,12 @@ export default function Home() {
                             <span class="w-1/2 text-left">PostgreSQL / MySQL</span>
                         </div>
                     </div>
-                    <div class="flex flex-grow flex-col gap-1">
+                    <div class="flex flex-grow flex-col">
                         <div class="w-full text-center text-xs font-black">featured</div>
-                        <div class="flex w-full items-center gap-2">
+                        <div class="flex w-full items-center">
                             <span class="w-1/2 text-right text-xs">project:</span>
                             <a
-                                class="w-1/2 text-left hover:underline"
+                                class="w-1/2 px-1 text-left text-lg hover:underline"
                                 href="https://ches.su"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -57,10 +57,10 @@ export default function Home() {
                                 chessu
                             </a>
                         </div>
-                        <div class="flex w-full items-center gap-2">
+                        <div class="flex w-full items-center">
                             <span class="w-1/2 text-right text-xs">github:</span>
                             <a
-                                class="w-1/2 text-left hover:underline"
+                                class="w-1/2 px-1 text-left text-lg hover:underline"
                                 href="https://github.com/nizewn"
                                 target="_blank"
                                 rel="noopener noreferrer"
