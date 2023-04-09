@@ -47,12 +47,12 @@ export default function Root() {
             };
 
             trail.animate(keyframes, {
-                duration: 700,
+                duration: 350,
                 fill: "forwards"
             });
 
             trailOutline.animate(keyframes2, {
-                duration: highlighted ? 700 : 1500,
+                duration: highlighted ? 300 : 750,
                 fill: "forwards"
             });
         });
@@ -106,6 +106,7 @@ export default function Root() {
                 <Title>Nathaniel Tampus | nize</Title>
                 <Meta charset="utf-8" />
                 <Meta name="viewport" content="width=device-width, initial-scale=1" />
+                <Meta name="author" content="Nathaniel Tampus" />
                 <Meta
                     name="description"
                     content="A developer from the Philippines with a passion for full-stack web and game development."
@@ -126,7 +127,7 @@ export default function Root() {
                     <ErrorBoundary>
                         <div
                             id="trail_main"
-                            class="pointer-events-none fixed left-0 top-0 z-50 h-4 w-4 rounded-full bg-gruvbox-fg opacity-0  transition-all duration-300 dark:bg-gruvboxDark-fg"
+                            class="pointer-events-none fixed left-0 top-0 z-50 h-3 w-3 rounded-full bg-gruvbox-fg opacity-0  transition-all duration-300 dark:bg-gruvboxDark-fg"
                         />
                         <div
                             id="trail_outline"
