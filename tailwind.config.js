@@ -13,7 +13,7 @@ export default {
                 }
             },
             fontFamily: {
-                bebas: ["Bebas Neue", "Impact", "sans-serif"],
+                bebas: ["Bebas Neue", "sans-serif"],
                 azeret: ["Azeret Mono", "monospace"],
                 roboto: ["Roboto", "sans-serif"]
             },
