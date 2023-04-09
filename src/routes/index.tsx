@@ -1,6 +1,5 @@
 import { Title } from "solid-start";
 import Cmd from "~/components/Cmd";
-import IconGitHub from "~/components/icons/IconGitHub";
 
 export default function Home() {
     return (
@@ -50,19 +49,16 @@ export default function Home() {
                             <span class="w-1/2 text-right text-xs">project:</span>
                             <a
                                 class="w-1/2 text-left hover:underline"
-                                href="https://github.com/nizewn/chessu"
+                                href="https://ches.su"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                title="chessu on GitHub"
+                                title="ches.su"
                             >
                                 chessu
                             </a>
                         </div>
                         <div class="flex w-full items-center gap-2">
-                            <span class="flex w-1/2 items-center justify-end gap-1 text-xs">
-                                <IconGitHub class="h-4 w-4" />
-                                github:
-                            </span>
+                            <span class="w-1/2 text-right text-xs">github:</span>
                             <a
                                 class="w-1/2 text-left hover:underline"
                                 href="https://github.com/nizewn"
