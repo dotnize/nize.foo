@@ -7,7 +7,15 @@ export default function Project(props: ProjectProps) {
     return (
         <div class="flex flex-col gap-2 rounded-lg bg-gruvbox-bgH p-3 shadow-md dark:bg-gruvboxDark-bgH">
             <div class="flex justify-between">
-                <div class="text-2xl font-bold">{props.name}</div>
+                <a
+                    href={props.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`${props.name} on GitHub`}
+                    class="text-2xl font-bold"
+                >
+                    {props.name}
+                </a>
                 <div class="flex items-center gap-8 font-roboto text-sm">
                     {props.demo && (
                         <a
