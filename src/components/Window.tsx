@@ -6,7 +6,10 @@ export default function Window(props: ParentProps) {
     const location = useLocation();
 
     return (
-        <div id="trail_highlightarea" class="mx-3 shadow-xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
+        <div
+            id="trail_highlightarea"
+            class="mx-3 shadow-2xl dark:shadow-xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72"
+        >
             <div class="flex h-6 items-center justify-between rounded-t-2xl bg-gruvbox-bgS px-3 drop-shadow-sm dark:bg-gruvboxDark-bgS md:h-8">
                 <div class="font-azeret text-sm md:text-base">
                     <Switch fallback={"404"}>
