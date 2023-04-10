@@ -29,7 +29,9 @@ export default function Window(props: ParentProps) {
                     (location.pathname.startsWith("/blog") ? " h-[calc(100vh-3rem)]" : " h-[75vh]")
                 }
             >
-                <main class={`min-h-[${location.pathname.startsWith("/blog") ? "70" : "55"}vh]`}>
+                <main
+                    class={location.pathname.startsWith("/blog") ? "min-h-[70vh]" : "min-h-[50vh]"}
+                >
                     {props.children}
                 </main>
                 <Footer />
