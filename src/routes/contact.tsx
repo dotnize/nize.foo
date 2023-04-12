@@ -144,7 +144,7 @@ export default function Contact() {
                             class={
                                 "flex max-w-full items-center justify-center gap-1 rounded-lg border p-3 px-5 text-lg font-bold shadow-md transition-all hover:brightness-90 active:border-gruvbox-fg disabled:pointer-events-none dark:active:border-gruvboxDark-fg" +
                                 (status() === null
-                                    ? " border-gruvbox-bg2 bg-gruvbox-bg1 dark:border-gruvboxDark-bg2 dark:bg-gruvboxDark-bg1"
+                                    ? " border-gruvbox-bg2 bg-gruvbox-bgS dark:border-gruvboxDark-bg2 dark:bg-gruvboxDark-bgS"
                                     : "") +
                                 (status() === "sent"
                                     ? " border-transparent bg-gruvboxDark-aqua2 dark:bg-gruvbox-aqua2"
