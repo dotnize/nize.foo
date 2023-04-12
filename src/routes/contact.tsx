@@ -142,15 +142,15 @@ export default function Contact() {
                     <div class="flex w-full justify-end">
                         <button
                             class={
-                                "flex max-w-full items-center justify-center gap-1 rounded-lg border border-transparent p-3 px-5 text-lg font-bold shadow-md transition-all hover:brightness-90 active:border-gruvbox-fg disabled:pointer-events-none dark:active:border-gruvboxDark-fg" +
+                                "flex max-w-full items-center justify-center gap-1 rounded-lg border p-3 px-5 text-lg font-bold shadow-md transition-all hover:brightness-90 active:border-gruvbox-fg disabled:pointer-events-none dark:active:border-gruvboxDark-fg" +
                                 (status() === null
                                     ? " border-gruvbox-bg2 bg-gruvbox-bg1 dark:border-gruvboxDark-bg2 dark:bg-gruvboxDark-bg1"
                                     : "") +
                                 (status() === "sent"
-                                    ? " bg-gruvboxDark-aqua2 dark:bg-gruvbox-aqua2"
+                                    ? " border-transparent bg-gruvboxDark-aqua2 dark:bg-gruvbox-aqua2"
                                     : "") +
                                 (status() === "error"
-                                    ? " bg-gruvboxDark-orange2 dark:bg-gruvbox-orange2"
+                                    ? " border-transparent bg-gruvboxDark-orange2 dark:bg-gruvbox-orange2"
                                     : "")
                             }
                             onClick={sendMessage}
