@@ -13,9 +13,9 @@ My name is Nathaniel, but I usually go by _nize_ online. I'm an aspiring game de
 
 ## Redesigning my site
 
-I have always considered myself to be a back-end developer due to my limited front-end skills. However, I recently started playing around with Tailwind CSS, which made my front-end work easier and helped me redesign [chessu](https://github.com/nizewn/chessu). This gave me the opportunity to revamp my old website, which wasn't very user-friendly, only contained some basic information due to a lack of space, and was quite boring to look at.
+I have always considered myself to be a back-end developer due to my limited front-end skills. However, I recently started playing around with Tailwind CSS, which made my front-end work easier and helped me redesign [chessu](https://github.com/nizewn/chessu). This gave me the opportunity to revamp [my old website](http://old.nize.ph), which wasn't very user-friendly, only contained some basic information due to a lack of space, and was quite boring to look at.
 
-With Tailwind CSS, I rewrote my site using three highly-performant frameworks: **SolidStart**, **Qwik**, and **Astro**. I settled on Astro for various reasons, which I may write more about in a future post.
+Along with Tailwind CSS, I rewrote my site using three highly-performant frameworks: **SolidStart**, **Qwik**, and **Astro**. I settled on Astro for various reasons, which I may write more about in a future post.
 
 ## Why I started this blog
 
