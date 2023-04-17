@@ -42,7 +42,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <h1 class="text-4xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
           {title}
         </h1>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" class="rounded-md" />}
+        {
+          heroImage && (
+            <img width={720} height={360} src={heroImage} alt="" class="rounded-md shadow-md" />
+          )
+        }
       </div>
 
       <div class="prose prose-gruvbox min-w-0 dark:prose-invert">
