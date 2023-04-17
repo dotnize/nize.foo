@@ -31,7 +31,7 @@ I'm also interested in game development. I've played around with the Godot Engin
 
 Since I'm still in the early stages of my journey, I'll be writing mostly about my learning experience and progress with my projects. In the future, I hope to write tutorials on topics I'm confident in.
 
-I'm not very good at writing lengthy amounts of text, but I'll do my best to keep my posts informative and concise. I'm also quite busy, so I may not write very often. For now, I aim to publish at least three posts a year.
+I'm not good at writing lengthy amounts of text, but I'll do my best to keep my posts informative and concise. I'm also very busy, so I may not write very often. For now, I aim to publish at least three posts a year.
 
 ---
 
