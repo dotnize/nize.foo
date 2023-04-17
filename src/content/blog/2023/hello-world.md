@@ -7,6 +7,10 @@ heroImage: "/images/cover.jpg"
 
 Welcome to my blog! I'm excited to start this endeavour, and I hope that this will be the first of many posts that I'll be writing.
 
+```js
+console.log("Hello, world!");
+```
+
 ## Me
 
 My name is Nathaniel, but I usually go by _nize_ online. I'm an aspiring game developer who loves exploring different technologies and skills. As of writing this post, I'm in my second year of college pursuing my Bachelor's degree in Information Technology, and my current focus is on web development with TypeScript. In my free time, I enjoy playing video games, creating pixel art, and watching various TV shows.
