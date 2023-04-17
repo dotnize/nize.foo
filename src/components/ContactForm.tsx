@@ -49,7 +49,7 @@ export default function ContactForm() {
     <div class="flex w-full max-w-[80ch] flex-col items-center gap-2">
       <div class="flex flex-wrap items-center gap-1">
         ... or send me an anonymous message!
-        <span class="text-xs text-gruvbox-fg4 dark:text-gruvboxDark-fg4" aria-hidden="true">
+        <span class="text-xs text-gruvbox-fg4 dark:text-gruvboxDark-fg4" aria-disabled="true">
           via Discord webhooks
         </span>
       </div>
