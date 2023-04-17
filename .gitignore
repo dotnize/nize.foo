@@ -1,26 +1,24 @@
-
-dist
-.solid
-.output
-.vercel
-.netlify
-netlify
-.env
+# build output
+dist/
+# generated types
+.astro/
 
 # dependencies
-/node_modules
+node_modules/
 package-lock.json
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-*.launch
-.settings/
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Temp
-gitignore
+# environment variables
+.env
+.env.production
 
-# System Files
+# macOS-specific files
 .DS_Store
-Thumbs.db
+
+# editor files
+.vscode/

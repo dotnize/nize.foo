@@ -7,5 +7,5 @@ insert_final_newline = true
 [*.{js,ts,json}]
 indent_size = 4
 
-[*.{jsx,tsx,html}]
+[*.{jsx,tsx,html,astro,md,mdx}]
 indent_size = 2

@@ -1,39 +1,33 @@
 {
     "name": "nize.ph",
-    "private": true,
-    "license": "MIT",
-    "scripts": {
-        "dev": "solid-start dev",
-        "build": "solid-start build",
-        "start": "solid-start start"
-    },
     "type": "module",
-    "devDependencies": {
-        "@types/node": "^18.15.11",
-        "@typescript-eslint/eslint-plugin": "^5.57.1",
-        "@typescript-eslint/parser": "^5.57.1",
-        "autoprefixer": "^10.4.14",
-        "esbuild": "^0.17.15",
-        "eslint": "^8.38.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-solid": "^0.12.0",
-        "postcss": "^8.4.21",
-        "prettier": "^2.8.7",
-        "prettier-plugin-tailwindcss": "^0.2.7",
-        "solid-start-node": "^0.2.26",
-        "solid-start-vercel": "^0.2.26",
-        "tailwindcss": "^3.3.1",
-        "typescript": "^5.0.4",
-        "vite": "^4.2.1"
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "format": "prettier -w . --ignore-path .gitignore"
     },
     "dependencies": {
+        "@astrojs/mdx": "^0.19.0",
+        "@astrojs/prefetch": "^0.2.1",
+        "@astrojs/rss": "^2.3.2",
+        "@astrojs/sitemap": "^1.2.2",
+        "@astrojs/solid-js": "^2.1.0",
+        "@astrojs/tailwind": "^3.1.1",
+        "@astrojs/vercel": "^3.2.4",
         "@fontsource/azeret-mono": "^4.5.12",
         "@fontsource/bebas-neue": "^4.5.9",
         "@fontsource/roboto": "^4.5.8",
-        "@solidjs/meta": "^0.28.4",
-        "@solidjs/router": "^0.8.2",
+        "@tailwindcss/typography": "^0.5.9",
+        "astro": "^2.3.0",
         "solid-js": "^1.7.3",
-        "solid-start": "^0.2.26",
-        "undici": "^5.21.2"
+        "tailwindcss": "^3.3.1"
+    },
+    "devDependencies": {
+        "prettier": "^2.8.7",
+        "prettier-plugin-astro": "^0.8.0",
+        "prettier-plugin-tailwindcss": "^0.2.7"
     }
 }

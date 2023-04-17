@@ -1,6 +1,10 @@
-# [nize.ph](https://nize.ph)
+# web
 
-My personal site built with SolidJS and SolidStart.
+https://nize.ph
+
+My personal site built with Astro and SolidJS.
+
+Styled with Tailwind CSS and the gruvbox color scheme ([config](https://gist.github.com/nizewn/d765eb1ff53c94b8e44f832e0b896b98)).
 
 ## Development
 
@@ -9,19 +13,15 @@ My personal site built with SolidJS and SolidStart.
 npm install
 
 # start local dev server
-npm run dev
-
-# build for production
-# (currently configured for Vercel)
-npm run build
-
-# run production build
 npm start
+
+# build for production (configured for Vercel)
+npm run build
 ```
 
 Environment variables
 
 ```env
-# discord webhook url (for contacts page)
-SERVER_DISCORD_WEBHOOK=https://discord.com/api/webhooks/...
+# for contact page
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/...
 ```

@@ -1,0 +1,44 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import IconEmail from "../components/icons/IconEmail.astro";
+import IconGitHub from "../components/icons/IconGitHub.astro";
+import IconLinkedIn from "../components/icons/IconLinkedIn.astro";
+import ContactForm from "../components/ContactForm";
+---
+
+<BaseLayout title="Contact" image="/images/cover.jpg">
+  <div class="flex w-full flex-col items-center gap-4">
+    <div
+      class="flex w-full max-w-[80ch] flex-wrap justify-center gap-4 font-roboto text-lg text-gruvbox-fg dark:text-gruvboxDark-fg md:gap-16"
+    >
+      <a
+        href="mailto:contact@nize.ph"
+        title="Email"
+        class="flex items-center gap-1 font-bold hover:underline"
+      >
+        <IconEmail class="h-5 w-5" /> contact@nize.ph
+      </a>
+      <a
+        href="https://github.com/nizewn"
+        title="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1 font-bold hover:underline"
+      >
+        <IconGitHub class="h-5 w-5" /> nizewn
+      </a>
+      <a
+        href="https://linkedin.com/in/nize"
+        title="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1 font-bold hover:underline"
+      >
+        <IconLinkedIn class="h-5 w-5" /> nize
+      </a>
+    </div>
+    <ContactForm client:idle />
+  </div>
+</BaseLayout>

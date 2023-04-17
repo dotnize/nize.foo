@@ -1,0 +1,42 @@
+---
+export const prerender = true;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="Blog" image="/images/cover.jpg">
+  <section class="mt-8 flex w-full justify-center md:mt-0">
+    <ul class="flex w-full max-w-[75ch] flex-col">
+      {
+        posts.map((post) => (
+          <li class="flex w-full flex-wrap gap-1 md:flex-nowrap md:gap-0">
+            <div class="flex w-[20ch] gap-2 text-sm">
+              <div class="h-full w-[1px] bg-gruvbox-bg1 dark:bg-gruvboxDark-bg1" />
+              <span class="text-gruvbox-fg3 dark:text-gruvboxDark-fg4 md:mt-1">
+                <FormattedDate date={post.data.pubDate} />
+              </span>
+            </div>
+
+            <a
+              href={`/blog/${post.slug.split("/").pop()}/`}
+              class="group relative mb-10 flex w-full flex-col gap-2"
+            >
+              <span class="font-medium text-gruvbox-fg transition-all group-hover:font-black group-hover:text-gruvbox-blue2 dark:text-gruvboxDark-fg dark:group-hover:text-gruvboxDark-blue2">
+                {post.data.title}
+              </span>
+              <span class="h-full text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg3">
+                {post.data.description}
+              </span>
+              <div class="absolute hidden h-full w-full border-b border-gruvbox-bg2 py-4 opacity-0 transition-all group-hover:scale-y-125 group-hover:opacity-100 dark:border-gruvboxDark-bg2 md:block" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
