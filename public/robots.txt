@@ -1,3 +1,5 @@
 User-Agent: *
 Allow: /
 Disallow: /images/ 
+
+Sitemap: https://nize.ph/sitemap-index.xml
