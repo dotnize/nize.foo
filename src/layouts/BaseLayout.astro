@@ -70,8 +70,10 @@ if (isBlogPost) {
     </div>
     <script is:inline>
       if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        typeof localStorage !== "undefined" &&
+        (localStorage.theme === "dark" ||
+          (!localStorage.getItem("theme") &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches))
       ) {
         document.documentElement.classList.add("dark");
       } else {
