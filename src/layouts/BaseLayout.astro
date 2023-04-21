@@ -42,28 +42,21 @@ if (isBlogPost) {
     <Header />
     <div class="mx-3 shadow-2xl dark:shadow-xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
       <div
-        class="flex h-6 items-center justify-between rounded-t-2xl bg-gruvbox-bgS px-3 drop-shadow-sm dark:bg-gruvboxDark-bgS md:h-8"
+        class="flex h-6 items-center justify-between rounded-t-2xl bg-gruvbox-bgS px-3 drop-shadow-sm dark:bg-gruvboxDark-bgS"
       >
-        <div class="font-azeret text-sm md:text-base">
+        <div class="font-azeret text-sm">
           {isBlogPost ? "Blog" : title || "Home"}
         </div>
         <div class="flex gap-2">
-          <div
-            class="h-2 w-2 rounded-full bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2 md:h-3 md:w-3"
-          >
-          </div>
-          <div
-            class="h-2 w-2 rounded-full bg-gruvbox-green dark:bg-gruvboxDark-green2 md:h-3 md:w-3"
-          >
-          </div>
-          <div class="h-2 w-2 rounded-full bg-gruvbox-red dark:bg-gruvboxDark-red2 md:h-3 md:w-3">
-          </div>
+          <div class="h-2 w-2 rounded-full bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
+          <div class="h-2 w-2 rounded-full bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
+          <div class="h-2 w-2 rounded-full bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
         </div>
       </div>
       <div
         id="scrollable"
         class={"relative overflow-y-auto bg-gruvbox-bg p-4 dark:bg-gruvboxDark-bg" +
-          (isBlogPost ? " h-[calc(100vh-2rem)]" : " h-[75vh]")}
+          (isBlogPost ? " h-[calc(100vh-1.5rem)]" : " h-[75vh]")}
       >
         <div class="absolute right-0 top-0 overflow-hidden">
           <ThemeToggle client:only="solid-js" />
