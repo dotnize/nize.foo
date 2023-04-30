@@ -30,7 +30,7 @@ export default function ContactForm() {
           setStatus("sent");
           setTimeout(() => {
             setStatus(null);
-          }, 10000);
+          }, 8000);
         } else {
           setStatus("error");
           setTimeout(() => {
