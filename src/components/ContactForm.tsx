@@ -66,7 +66,7 @@ export default function ContactForm() {
         rows={6}
         name="messageText"
         required
-        placeholder="Enter message here..."
+        placeholder="Enter message here. You may include your contact info if you want me to respond."
         id="messageText"
         ref={messageTextRef}
       ></textarea>
