@@ -5,8 +5,6 @@ import tailwind from "@astrojs/tailwind";
 import solidJs from "@astrojs/solid-js";
 import vercel from "@astrojs/vercel/serverless";
 
-import prefetch from "@astrojs/prefetch";
-
 // https://astro.build/config
 export default defineConfig({
   markdown: {
@@ -21,8 +19,7 @@ export default defineConfig({
         applyBaseStyles: false
       }
     }),
-    solidJs(),
-    prefetch()
+    solidJs()
   ],
   output: "server",
   adapter: vercel()

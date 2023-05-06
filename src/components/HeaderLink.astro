@@ -7,7 +7,6 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <li>
   <a
     href={href}
-    rel="prefetch"
     class={"group relative flex h-16 w-16 flex-col items-center justify-center gap-1 rounded-lg border border-transparent p-2" +
       (isActive
         ? " pointer-events-none shadow-md hmd:border-gruvbox-bg2 dark:hmd:border-gruvboxDark-bg2"
