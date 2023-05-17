@@ -6,6 +6,7 @@ export const post: APIRoute = async ({ request }) => {
             const msg = (await request.json()) as {
                 title?: string;
                 text?: string;
+                contact?: string;
             };
             if (msg && msg.text) {
                 const res = await fetch(import.meta.env.DISCORD_WEBHOOK_URL, {
@@ -17,7 +18,12 @@ export const post: APIRoute = async ({ request }) => {
                         embeds: [
                             {
                                 title: msg.title,
-                                description: msg.text
+                                description: msg.text,
+                                footer: msg.contact
+                                    ? {
+                                          text: "👤 " + msg.contact
+                                      }
+                                    : undefined
                             }
                         ]
                     })

@@ -3,13 +3,28 @@ import { Switch, Match, createSignal } from "solid-js";
 export default function ContactForm() {
   let messageTitleRef: HTMLInputElement | undefined = undefined;
   let messageTextRef: HTMLTextAreaElement | undefined = undefined;
+  let messageContactRef: HTMLInputElement | undefined = undefined;
 
   const [status, setStatus] = createSignal<null | "sent" | "error" | "sending">(null);
+  const [anon, setAnon] = createSignal(true);
+
+  function checkAnonymous(
+    e: Event & {
+      currentTarget: HTMLInputElement;
+    }
+  ) {
+    if (anon() && e.currentTarget.value && e.currentTarget.value !== "") {
+      setAnon(false);
+    } else if (!anon() && (!e.currentTarget.value || e.currentTarget.value === "")) {
+      setAnon(true);
+    }
+  }
 
   async function sendMessage() {
-    if (!messageTextRef || !messageTitleRef) return;
+    if (!messageTextRef || !messageTitleRef || !messageContactRef) return;
     const messageText = messageTextRef.value;
-    const messageTitle = messageTitleRef?.value;
+    const messageTitle = messageTitleRef.value;
+    const messageContact = messageContactRef.value;
 
     if (messageText && status() === null) {
       setStatus("sending");
@@ -21,7 +36,8 @@ export default function ContactForm() {
           },
           body: JSON.stringify({
             title: messageTitle,
-            text: messageText
+            text: messageText,
+            contact: messageContact
           })
         });
         if (res && res.ok) {
@@ -46,27 +62,38 @@ export default function ContactForm() {
     }
   }
   return (
-    <div class="flex w-full max-w-[80ch] flex-col items-center gap-2">
+    <div class="mt-1 flex w-full max-w-[80ch] flex-col items-center gap-2">
       <div class="flex flex-wrap items-center gap-1">
-        ... or send me an anonymous message!
+        or send me an <span class={anon() ? "" : "line-through"}>anonymous</span> message!
         <span class="text-xs text-gruvbox-fg4 dark:text-gruvboxDark-fg4" aria-disabled="true">
           via Discord webhooks
         </span>
       </div>
-      <input
-        type="text"
-        name="messageTitle"
-        id="messageTitle"
-        ref={messageTitleRef}
-        placeholder="Title (optional)"
-        class="w-full rounded-lg bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 shadow-md outline-none outline-1 focus:outline-gruvbox-bg2 dark:bg-gruvboxDark-bgH dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2"
-      />
+      <div class="flex w-full flex-wrap gap-2">
+        <input
+          type="text"
+          name="messageTitle"
+          id="messageTitle"
+          ref={messageTitleRef}
+          placeholder="Title (optional)"
+          class="flex-1 rounded-lg bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 shadow-md outline-none outline-1 focus:outline-gruvbox-bg2 dark:bg-gruvboxDark-bgH dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2"
+        />
+        <input
+          type="text"
+          name="messageContact"
+          id="messageContact"
+          ref={messageContactRef}
+          onChange={checkAnonymous}
+          placeholder="Contact info/email (optional)"
+          class="min-w-[27ch] flex-1 rounded-lg bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 shadow-md outline-none outline-1 focus:outline-gruvbox-bg2 dark:bg-gruvboxDark-bgH dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2"
+        />
+      </div>
       <textarea
         class="w-full rounded-lg bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 shadow-md outline-none outline-1 focus:outline-gruvbox-bg2 dark:bg-gruvboxDark-bgH dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2"
         rows={6}
         name="messageText"
         required
-        placeholder="Enter message here. You may include your contact info if you want me to respond."
+        placeholder="Enter message here..."
         id="messageText"
         ref={messageTextRef}
       ></textarea>
