@@ -30,6 +30,7 @@ module.exports = {
           bg: "#282828",
           bg0: "#282828",
           bgH: "#1d2021",
+          bgXH: "#131516", // custom darker hard
           bgS: "#32302f",
           bg1: "#3c3836",
           bg2: "#504945",

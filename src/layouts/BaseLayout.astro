@@ -36,15 +36,15 @@ if (isBlogPost) {
 <html lang="en">
   <BaseHead title={title} description={description} image={image} />
   <body
-    class={"bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgH dark:text-gruvboxDark-fg2" +
+    class={"bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg2" +
       (pathname.startsWith("/blog") ? "" : " overflow-hidden")}
   >
     <Header />
     <div class="mx-3 shadow-2xl dark:shadow-xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
       <div
-        class="flex h-6 items-center justify-between rounded-t-2xl bg-gruvbox-bgS px-3 drop-shadow-sm dark:bg-gruvboxDark-bgS"
+        class="flex h-6 items-center justify-between rounded-t-3xl bg-gruvbox-bg px-3.5 pt-1.5 dark:bg-gruvboxDark-bgH"
       >
-        <div class="font-azeret text-sm">
+        <div class="font-azeret text-xs">
           {isBlogPost ? "Blog" : title || "Home"}
         </div>
         <div class="flex gap-2">
@@ -55,7 +55,7 @@ if (isBlogPost) {
       </div>
       <div
         id="scrollable"
-        class={"relative overflow-y-auto bg-gruvbox-bg p-4 dark:bg-gruvboxDark-bg" +
+        class={"relative overflow-y-auto bg-gruvbox-bg p-4 dark:bg-gruvboxDark-bgH" +
           (isBlogPost ? " h-[calc(100vh-1.5rem)]" : " h-[75vh]")}
       >
         <div class="absolute right-0 top-0 overflow-hidden">
