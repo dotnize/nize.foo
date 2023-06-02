@@ -36,11 +36,11 @@ if (isBlogPost) {
 <html lang="en">
   <BaseHead title={title} description={description} image={image} />
   <body
-    class={"bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgH dark:text-gruvboxDark-fg2" +
+    class={"bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3" +
       (pathname.startsWith("/blog") ? "" : " overflow-hidden")}
   >
     <Header />
-    <div class="mx-3 shadow-2xl dark:shadow-xl rounded-t-3xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72 bg-gruvbox-bg dark:bg-gruvboxDark-bg">
+    <div class="mx-3 shadow-2xl dark:shadow-xl rounded-t-3xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72 bg-gruvbox-bg dark:bg-gruvboxDark-bgH">
       <div
         class="flex h-6 items-center justify-between px-3.5 pt-1.5"
       >
