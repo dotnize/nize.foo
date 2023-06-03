@@ -9,7 +9,7 @@ import ContactForm from "../components/ContactForm";
 ---
 
 <BaseLayout title="Contact" image="/images/cover.jpg">
-  <div class="flex w-full flex-col items-center gap-4">
+  <div class="mt-4 flex w-full flex-col items-center gap-8">
     <div
       class="flex w-full max-w-[80ch] flex-wrap justify-center gap-4 font-roboto text-lg text-gruvbox-fg dark:text-gruvboxDark-fg md:gap-16"
     >
@@ -18,7 +18,7 @@ import ContactForm from "../components/ContactForm";
         title="Email"
         class="flex items-center gap-1 font-bold hover:underline"
       >
-        <IconEmail class="h-5 w-5" /> contact@nize.ph
+        <IconEmail class="h-5 w-5 text-gruvbox-yellow" /> contact@nize.ph
       </a>
       <a
         href="https://github.com/nizewn"
@@ -27,7 +27,7 @@ import ContactForm from "../components/ContactForm";
         rel="noopener noreferrer"
         class="flex items-center gap-1 font-bold hover:underline"
       >
-        <IconGitHub class="h-5 w-5" /> nizewn
+        <IconGitHub class="h-5 w-5 text-gruvbox-fg0 dark:text-gruvboxDark-fg0" /> nizewn
       </a>
       <a
         href="https://linkedin.com/in/nize"
@@ -36,7 +36,7 @@ import ContactForm from "../components/ContactForm";
         rel="noopener noreferrer"
         class="flex items-center gap-1 font-bold hover:underline"
       >
-        <IconLinkedIn class="h-5 w-5" /> nize
+        <IconLinkedIn class="h-5 w-5 text-gruvbox-blue" /> nize
       </a>
     </div>
     <ContactForm client:idle />

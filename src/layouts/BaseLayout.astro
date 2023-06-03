@@ -11,6 +11,7 @@ import Footer from "../components/Footer.astro";
 
 import ThemeToggle from "../components/ThemeToggle";
 import Cmd from "../components/Cmd.astro";
+import ScrollTop from "../components/ScrollTop";
 
 const { title, description, image } = Astro.props;
 const { pathname } = Astro.url;
@@ -23,8 +24,6 @@ if (isBlogPost) {
   cmdText = `whoami -h`;
 } else if (pathname.startsWith("/blog")) {
   cmdText = `blog --index`;
-} else if (pathname.startsWith("/projects")) {
-  cmdText = `projects --featured`;
 } else if (pathname.startsWith("/contact")) {
   cmdText = `contact --me`;
 } else {
@@ -36,104 +35,39 @@ if (isBlogPost) {
 <html lang="en">
   <BaseHead title={title} description={description} image={image} />
   <body
-    class={"bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3" +
-      (pathname.startsWith("/blog") ? "" : " overflow-hidden")}
+    class="mx-3 bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72"
   >
     <Header />
-    <div class="mx-3 shadow-2xl dark:shadow-xl rounded-t-3xl md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72 bg-gruvbox-bg dark:bg-gruvboxDark-bgH">
-      <div
-        class="flex h-6 items-center justify-between px-3.5 pt-1.5"
-      >
-        <div class="font-azeret text-xs">
-          {isBlogPost ? "Blog" : title || "Home"}
-        </div>
-        <div class="flex gap-2">
-          <div class="h-2 w-2 rounded-full bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
-          <div class="h-2 w-2 rounded-full bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
-          <div class="h-2 w-2 rounded-full bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
-        </div>
+
+    <ScrollTop client:idle />
+
+    {/* Title bar */}
+    <div
+      class="sticky top-0 z-50 flex h-6 items-center justify-between rounded-t-xl bg-gruvbox-bg px-3 pt-1 dark:bg-gruvboxDark-bgH"
+    >
+      <div class="font-azeret text-xs">
+        {isBlogPost ? "Blog" : title || "Home"}
       </div>
-      <div
-        id="scrollable"
-        class={"relative overflow-y-auto p-4" +
-          (isBlogPost ? " h-[calc(100vh-1.5rem)]" : " h-[75vh]")}
-      >
-        <div class="absolute right-0 top-0 overflow-hidden">
-          <ThemeToggle client:only="solid-js" />
-        </div>
-        {!isBlogPost && <Cmd text={cmdText} />}
-        <main class={isBlogPost ? "min-h-[70vh]" : "min-h-[50vh] mt-4"}>
-          <slot />
-        </main>
-        <Footer />
+      <div class="flex gap-2">
+        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
+        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
+        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
       </div>
     </div>
-    <script>
-      const scrollableDiv = document.getElementById("scrollable");
-      let startY = 0;
-      document.body.addEventListener(
-        "wheel",
-        (event) => {
-          if (!scrollableDiv?.contains(event.target as Node)) {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight =
-              document.documentElement.scrollHeight || document.body.scrollHeight;
-            const clientHeight = document.documentElement.clientHeight;
 
-            const deltaY = event.deltaY;
-            const scrollAmount = 150;
-            if (deltaY >= 0 && scrollTop + clientHeight < scrollHeight) {
-              return;
-            }
-            scrollableDiv?.scrollBy({
-              top: deltaY < 0 ? -scrollAmount : scrollAmount,
-              behavior: "smooth"
-            });
-          }
-        },
-        { passive: true }
-      );
-      scrollableDiv?.addEventListener(
-        "wheel",
-        function (event) {
-          if (event.deltaY > 0) {
-            window.scrollBy({
-              top: event.deltaY * 2,
-              left: 0,
-              behavior: "smooth"
-            });
-          } else if (scrollableDiv?.scrollTop === 0) {
-            window.scrollBy({
-              top: event.deltaY * 2,
-              left: 0,
-              behavior: "smooth"
-            });
-          }
-        },
-        { passive: true }
-      );
+    {/* window content */}
+    <div
+      class="relative overflow-y-auto bg-gruvbox-bg p-4 shadow-2xl dark:bg-gruvboxDark-bgH dark:shadow-xl"
+    >
+      <div class="absolute right-0 top-0 overflow-hidden">
+        <ThemeToggle client:only="solid-js" />
+      </div>
+      {!isBlogPost && <Cmd text={cmdText} />}
 
-      scrollableDiv?.addEventListener(
-        "touchstart",
-        function (event) {
-          startY = event.touches[0].clientY;
-        },
-        { passive: true }
-      );
-      scrollableDiv?.addEventListener(
-        "touchmove",
-        function (event) {
-          const deltaY = event.touches[0].clientY - startY;
-          if (deltaY < 0) {
-            window.scrollBy({
-              top: -deltaY,
-              left: 0,
-              behavior: "smooth"
-            });
-          }
-        },
-        { passive: true }
-      );
-    </script>
+      <main class="min-h-[calc(100vh-17rem)]">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

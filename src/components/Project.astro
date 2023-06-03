@@ -6,53 +6,49 @@ import IconLink from "./icons/IconLink.astro";
 const { name, repo, demo, description, stack } = Astro.props;
 ---
 
-<li
-  class="flex w-full max-w-[75ch] flex-col gap-2 rounded-lg bg-gruvbox-bgH p-3 shadow-md transition-all duration-300 hover:scale-[1.02] dark:bg-gruvboxDark-bg"
+<div
+  class="flex w-full max-w-[50ch] flex-col gap-2 rounded-lg bg-gruvbox-bgS p-3 shadow-md transition-all hover:scale-[1.02] dark:bg-gruvboxDark-bg"
 >
-  <div class="flex justify-between">
-    <a
-      href={repo}
-      target="_blank"
-      rel="noopener noreferrer"
-      title={`${name} on GitHub`}
-      class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg"
-    >
-      {name}
-    </a>
-    <div
-      class="flex items-center gap-8 font-roboto text-sm text-gruvbox-fg dark:text-gruvboxDark-fg"
-    >
-      {
-        demo && (
-          <a
-            href={demo}
-            class="flex items-center gap-0.5 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Demo"
-          >
-            <IconLink class="h-4 w-4" />
-            {demo.replace(/^https?:\/\//, "")}
-          </a>
-        )
-      }
-      <a
-        href={repo}
-        class="flex items-center gap-1 hover:underline"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="GitHub repository"
-      >
-        <IconGitHub class="h-4 w-4" />
-        GitHub
-      </a>
-    </div>
-  </div>
-  <p class="indent-8">{description}</p>
-  <div class="text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg3">
+  <a
+    href={repo}
+    target="_blank"
+    rel="noopener noreferrer"
+    title={`${name} on GitHub`}
+    class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg"
+  >
+    {name}
+  </a>
+  <div class="mb-2 text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg4">
     <div class="inline-flex items-center">
       <IconTools class="h-3 w-3" />
     </div>
     {stack}
   </div>
-</li>
+  <p class="indent-8">{description}</p>
+  <div class="flex justify-end gap-8 font-roboto text-sm text-gruvbox-fg dark:text-gruvboxDark-fg">
+    {
+      demo && (
+        <a
+          href={demo}
+          class="flex items-center gap-0.5 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Demo"
+        >
+          <IconLink class="h-4 w-4" />
+          {demo.replace(/^https?:\/\//, "")}
+        </a>
+      )
+    }
+    <a
+      href={repo}
+      class="flex items-center gap-1 hover:underline"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="GitHub repository"
+    >
+      <IconGitHub class="h-4 w-4" />
+      GitHub
+    </a>
+  </div>
+</div>

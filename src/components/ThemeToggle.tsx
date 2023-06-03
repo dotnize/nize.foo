@@ -29,6 +29,7 @@ export default function ThemeToggle() {
   return (
     <button
       title="Toggle theme"
+      aria-label="Toggle theme"
       class={
         "p-3 text-gruvbox-fg transition-opacity duration-200 hover:opacity-100 dark:text-gruvboxDark-fg" +
         (typeof localStorage !== "undefined"

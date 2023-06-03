@@ -4,7 +4,7 @@ import IconDocument from "./icons/IconDocument.astro";
 import IconEmail from "./icons/IconEmail.astro";
 ---
 
-<header class="mx-3 h-[calc(25vh-1.5rem)] md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
+<header class="h-36">
   <nav class="h-full w-full">
     <ul
       class="flex h-full w-full items-center justify-evenly font-roboto text-sm text-gruvbox-fg dark:text-gruvboxDark-fg"
@@ -14,7 +14,7 @@ import IconEmail from "./icons/IconEmail.astro";
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          class="hidden h-6 w-6 hmd:flex"
+          class="h-6 w-6"
         >
           <path
             d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
@@ -26,28 +26,15 @@ import IconEmail from "./icons/IconEmail.astro";
 
         <span>Home</span>
       </HeaderLink>
+
       <HeaderLink href="/blog/">
-        <IconDocument class="hidden h-6 w-6 hmd:flex" />
+        <IconDocument class="h-6 w-6" />
 
         <span>Blog</span>
       </HeaderLink>
-      <HeaderLink href="/projects/">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="hidden h-6 w-6 hmd:flex"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm14.25 6a.75.75 0 01-.22.53l-2.25 2.25a.75.75 0 11-1.06-1.06L15.44 12l-1.72-1.72a.75.75 0 111.06-1.06l2.25 2.25c.141.14.22.331.22.53zm-10.28-.53a.75.75 0 000 1.06l2.25 2.25a.75.75 0 101.06-1.06L8.56 12l1.72-1.72a.75.75 0 10-1.06-1.06l-2.25 2.25z"
-            clip-rule="evenodd"></path>
-        </svg>
 
-        <span>Projects</span>
-      </HeaderLink>
       <HeaderLink href="/contact/">
-        <IconEmail class="hidden h-6 w-6 hmd:flex" />
+        <IconEmail class="h-6 w-6" />
 
         <span>Contact</span>
       </HeaderLink>

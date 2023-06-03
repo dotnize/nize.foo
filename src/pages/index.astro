@@ -1,81 +1,134 @@
 ---
 export const prerender = true;
 import BaseLayout from "../layouts/BaseLayout.astro";
-import IconLink from "../components/icons/IconLink.astro";
+import Cmd from "../components/Cmd.astro";
+import type { ProjectProps } from "../consts";
+import Project from "../components/Project.astro";
+import IconEmail from "../components/icons/IconEmail.astro";
+import IconGitHub from "../components/icons/IconGitHub.astro";
+import IconLinkedIn from "../components/icons/IconLinkedIn.astro";
+import IconDocument from "../components/icons/IconDocument.astro";
+
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const featuredProject: ProjectProps = {
+  name: "chessu",
+  description:
+    "An online multiplayer chess site for real-time games with spectator support and optional user authentication.",
+  stack: "React/Next.js, Tailwind CSS, Express.js, socket.io, PostgreSQL",
+  repo: "https://github.com/nizewn/chessu",
+  demo: "https://ches.su"
+};
+
+const latestPost = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)[0];
 ---
 
 <BaseLayout image="/images/cover.jpg">
-  <div class="flex w-full flex-col items-center gap-4">
-    <div
-      class="flex w-full max-w-[90ch] flex-wrap items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg md:flex-nowrap"
-    >
-      <img
-        src="./images/nize.png"
-        alt="nize's avatar"
-        width={150}
-        height={150}
-        class="rounded-full bg-gruvboxDark-bgS shadow-sm shadow-gruvboxDark-bgH dark:bg-gruvbox-bg"
-      />
-      <div class="mb-4 flex flex-col flex-wrap">
-        <h1 class="text-center font-bebas text-6xl leading-[3rem]">Nathaniel Tampus</h1>
-        <h2 class="text-center font-azeret text-lg leading-5 sm:text-start">// nize</h2>
+  <div class="flex w-full flex-col gap-32">
+    <div class="mt-4 flex w-full flex-col items-center gap-4">
+      <div
+        class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
+      >
+        <img
+          src="./images/nize.png"
+          alt="nize's avatar"
+          width={100}
+          height={100}
+          class="rounded-md bg-gruvboxDark-bg1 shadow-sm shadow-gruvboxDark-bgH dark:bg-gruvbox-bg"
+        />
+        <div class="flex flex-col flex-wrap">
+          <h1 class="text-center font-bebas text-5xl leading-[2.5rem]">Nathaniel Tampus</h1>
+          <h2 class="text-center font-azeret text-lg leading-5 sm:text-start">// nize</h2>
+        </div>
+      </div>
+      <p class="my-4 flex w-full max-w-prose indent-8 font-sans font-medium sm:my-1">
+        I'm a developer currently studying at Cebu Institute of Technology University for my
+        Bachelor's degree in Information Technology.
+      </p>
+      <div class="flex w-full max-w-prose flex-col items-center justify-evenly gap-3 sm:flex-row">
+        <a
+          href="mailto:contact@nize.ph"
+          title="contact@nize.ph"
+          class="flex items-center gap-1 hover:underline"
+        >
+          <IconEmail class="h-5 w-5 text-gruvbox-yellow" /> Email
+        </a>
+        <a
+          href="https://github.com/nizewn"
+          title="nizewn"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1 hover:underline"
+        >
+          <IconGitHub class="h-5 w-5 text-gruvbox-fg0 dark:text-gruvboxDark-fg0" /> GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/nize"
+          title="nize"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1 hover:underline"
+        >
+          <IconLinkedIn class="h-5 w-5 text-gruvbox-blue" /> LinkedIn
+        </a>
       </div>
     </div>
-    <p class="flex w-full max-w-prose indent-8 font-sans text-lg">
-      Hi there! My name is Nathaniel Tampus, and I'm also known online as nize. I'm a developer
-      currently studying at Cebu Institute of Technology University for my Bachelor's degree in
-      Information Technology.
-    </p>
-    <div class="flex w-full max-w-[90ch] flex-wrap gap-8 font-roboto">
-      <div class="flex flex-grow flex-col gap-1">
+    <div class="flex flex-col gap-4">
+      <Cmd text="stuff --featured" />
+
+      <div class="flex w-full flex-wrap justify-center gap-2">
+        <Project
+          name={featuredProject.name}
+          description={featuredProject.description}
+          stack={featuredProject.stack}
+          repo={featuredProject.repo}
+          demo={featuredProject.demo}
+        />
         <div
-          class="w-full text-center text-xs font-semibold text-gruvbox-fg dark:text-gruvboxDark-fg"
+          class="flex w-full max-w-[35ch] flex-col gap-2 rounded-lg bg-gruvbox-bgS p-3 shadow-md transition-all hover:scale-[1.02] dark:bg-gruvboxDark-bg"
         >
-          my primary stack
-        </div>
-        <div class="flex w-full items-center gap-2">
-          <span class="w-1/2 text-right text-xs">frontend:</span>
-          <span class="w-1/2 text-left">Next.js + Tailwind CSS</span>
-        </div>
-        <div class="flex w-full items-center gap-2">
-          <span class="w-1/2 text-right text-xs">backend:</span>
-          <span class="w-1/2 text-left">Express.js</span>
-        </div>
-        <div class="flex w-full items-center gap-2">
-          <span class="w-1/2 text-right text-xs">database:</span>
-          <span class="w-1/2 text-left">PostgreSQL / MySQL</span>
+          {/* latest blog post */}
+          <a
+            href={`/blog/${latestPost.slug.split("/").pop()}/`}
+            class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg"
+          >
+            {latestPost.data.title}
+          </a>
+          <div class="mb-2 text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg4">
+            <div class="inline-flex items-center">
+              <IconDocument class="h-3 w-3" />
+            </div>
+            Latest post - <FormattedDate date={latestPost.data.pubDate} />
+          </div>
+          <p class="indent-8">{latestPost.data.description}</p>
+          <a
+            href={`/blog/${latestPost.slug.split("/").pop()}/`}
+            title="Read blog post"
+            class="text-end font-roboto text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
+          >
+            Read post
+          </a>
         </div>
       </div>
-      <div class="flex flex-grow flex-col gap-1">
-        <div
-          class="flex w-full items-center justify-center gap-1 text-xs font-semibold text-gruvbox-fg dark:text-gruvboxDark-fg"
+    </div>
+
+    <div class="mb-24 flex flex-col gap-4">
+      <Cmd text="getintouch" />
+      <div class="flex flex-col items-center gap-2">
+        <span>
+          <span class="inline-flex h-3 w-3 rounded-full bg-gruvbox-aqua2"></span>
+          I'm open to new opportunities and projects to collaborate on.
+        </span>
+        <a
+          href="/contact/"
+          class="flex items-center gap-1 rounded-lg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-colors hover:bg-gruvbox-aqua"
         >
-          featured <IconLink class="h-3 w-3" />
-        </div>
-        <div class="flex w-full items-center">
-          <span class="w-1/2 text-right text-xs">project:</span>
-          <a
-            class="px-1 text-left text-lg hover:underline"
-            href="https://ches.su"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="ches.su"
-          >
-            chessu
-          </a>
-        </div>
-        <div class="flex w-full items-center">
-          <span class="w-1/2 text-right text-xs">github:</span>
-          <a
-            class="px-1 text-left text-lg hover:underline"
-            href="https://github.com/nizewn"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="GitHub"
-          >
-            nizewn
-          </a>
-        </div>
+          <IconEmail class="h-5 w-5" />
+          Contact me!</a
+        >
       </div>
     </div>
   </div>
