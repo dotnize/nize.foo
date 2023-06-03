@@ -62,7 +62,7 @@ export default function ContactForm() {
     }
   }
   return (
-    <div class="mt-1 flex w-full max-w-[80ch] flex-col items-center gap-2">
+    <div class="flex w-full max-w-[80ch] flex-col items-center gap-2">
       <div class="flex flex-wrap items-center gap-1">
         or send me an <span class={anon() ? "" : "line-through"}>anonymous</span> message!
         <span class="text-xs text-gruvbox-fg4 dark:text-gruvboxDark-fg4" aria-disabled="true">

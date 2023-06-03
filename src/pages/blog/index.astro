@@ -10,7 +10,7 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout title="Blog" image="/images/cover.jpg">
-  <section class="mt-8 flex w-full justify-center md:mt-0">
+  <section class="flex w-full justify-center pt-8 md:pt-4">
     <ul class="flex w-full max-w-[75ch] flex-col">
       {
         posts.map((post) => (

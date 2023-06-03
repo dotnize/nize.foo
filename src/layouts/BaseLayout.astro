@@ -18,16 +18,14 @@ const { pathname } = Astro.url;
 const isBlogPost = pathname !== "/blog" && pathname !== "/blog/" && pathname.startsWith("/blog/");
 
 let cmdText;
-if (isBlogPost) {
-  cmdText = undefined;
+if (title === "404") {
+  cmdText = `cd ${pathname}`;
 } else if (pathname === "/") {
   cmdText = `whoami -h`;
-} else if (pathname.startsWith("/blog")) {
+} else if (pathname.startsWith("/blog") && !isBlogPost) {
   cmdText = `blog --index`;
 } else if (pathname.startsWith("/contact")) {
   cmdText = `contact --me`;
-} else {
-  cmdText = `cd ${pathname}`;
 }
 ---
 
@@ -62,9 +60,9 @@ if (isBlogPost) {
       <div class="absolute right-0 top-0 overflow-hidden">
         <ThemeToggle client:only="solid-js" />
       </div>
-      {!isBlogPost && <Cmd text={cmdText} />}
+      {cmdText && <Cmd text={cmdText} />}
 
-      <main class="min-h-[calc(100vh-17rem)]">
+      <main class="min-h-[calc(100vh-18rem)]">
         <slot />
       </main>
       <Footer />
