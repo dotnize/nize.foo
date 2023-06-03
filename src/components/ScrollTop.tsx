@@ -5,7 +5,7 @@ export default function ScrollTop() {
 
   onMount(() => {
     window.addEventListener("scroll", () => {
-      setShown(window.scrollY > 300);
+      setShown(window.scrollY > 350);
     });
   });
 
