@@ -34,7 +34,7 @@ export default function ThemeToggle() {
         "p-3 text-gruvbox-fg transition-opacity duration-200 hover:opacity-100 dark:text-gruvboxDark-fg" +
         (typeof localStorage !== "undefined"
           ? (dark() || !dark()) /* to force rerender */ && "theme" in localStorage
-            ? " opacity-50"
+            ? " opacity-60"
             : " animate-rotate opacity-80"
           : "")
       }
