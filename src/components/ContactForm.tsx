@@ -76,7 +76,7 @@ export default function ContactForm() {
           id="messageTitle"
           ref={messageTitleRef}
           placeholder="Title (optional)"
-          class="flex-1 rounded-lg bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 shadow-md outline-none outline-1 focus:outline-gruvbox-bg2 dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2"
+          class="flex-1 rounded-lg border border-gruvbox-bg4 bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 outline-none outline-1 focus:outline-gruvbox-bg4 dark:border-none dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:shadow-md dark:focus:outline-gruvboxDark-bg2"
         />
         <input
           type="text"
@@ -85,11 +85,11 @@ export default function ContactForm() {
           ref={messageContactRef}
           onChange={checkAnonymous}
           placeholder="Contact info/email (optional)"
-          class="min-w-[27ch] flex-1 rounded-lg bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 shadow-md outline-none outline-1 focus:outline-gruvbox-bg2 dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2"
+          class="min-w-[27ch] flex-1 rounded-lg border border-gruvbox-bg4 bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 outline-none outline-1 focus:outline-gruvbox-bg4 dark:border-none dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:shadow-md dark:focus:outline-gruvboxDark-bg2"
         />
       </div>
       <textarea
-        class="w-full rounded-lg bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 shadow-md outline-none outline-1 focus:outline-gruvbox-bg2 dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2"
+        class="w-full rounded-lg border border-gruvbox-bg4 bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 outline-none outline-1 focus:outline-gruvbox-bg4 dark:border-none dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:shadow-md dark:focus:outline-gruvboxDark-bg2"
         rows={6}
         name="messageText"
         required

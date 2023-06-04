@@ -13,3 +13,12 @@
 *::-webkit-scrollbar-thumb {
   @apply bg-gruvbox-bg2 dark:bg-gruvboxDark-bg2;
 }
+
+@layer utilities {
+  .box-shadow-black {
+    box-shadow: 0.125rem 0.125rem 0 0px #3c3836;
+  }
+  .box-shadow-black:hover {
+    box-shadow: 0.25rem 0.25rem 0 0px #3c3836;
+  }
+}
