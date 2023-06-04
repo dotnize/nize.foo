@@ -121,7 +121,9 @@ const latestPost = (await getCollection("blog")).sort(
       <Cmd text="getintouch" />
       <div class="flex flex-col items-center gap-3">
         <span>
-          <span class="inline-flex h-3 w-3 rounded-full bg-gruvbox-aqua2"></span>
+          <span
+            class="inline-flex h-3 w-3 rounded-full border border-gruvbox-fg0 bg-gruvbox-aqua2 dark:border-none"
+          ></span>
           I'm open to new opportunities and projects to collaborate on.
         </span>
         <a
