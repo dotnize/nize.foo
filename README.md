@@ -1,6 +1,4 @@
-# web
-
-https://nize.ph
+# [nize.ph](https://nize.ph)
 
 My personal site built with Astro and SolidJS.
 
