@@ -90,7 +90,7 @@ const latestPost = (await getCollection("blog")).sort(
           demo={featuredProject.demo}
         />
         <div
-          class="box-shadow-black flex w-full max-w-[35ch] flex-col gap-2 border border-gruvbox-fg bg-gruvbox-bg p-3 transition-all dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:scale-[1.02]"
+          class="box-shadow-black flex w-full max-w-[35ch] flex-col gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-3 transition-all dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:scale-[1.02]"
         >
           {/* latest blog post */}
           <a
@@ -126,7 +126,7 @@ const latestPost = (await getCollection("blog")).sort(
         </span>
         <a
           href="/contact/"
-          class="box-shadow-black flex items-center gap-1 rounded-sm border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:hover:bg-gruvbox-aqua"
+          class="box-shadow-black flex items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:hover:bg-gruvbox-aqua"
         >
           <IconEmail class="h-5 w-5" />
           Contact me!</a
