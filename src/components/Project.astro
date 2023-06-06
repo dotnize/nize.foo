@@ -1,23 +1,17 @@
 ---
 import IconGitHub from "./icons/IconGitHub.astro";
-import IconTools from "./icons/IconTools.astro";
 import IconLink from "./icons/IconLink.astro";
+import IconTools from "./icons/IconTools.astro";
 
 const { name, repo, demo, description, stack } = Astro.props;
 ---
 
 <div
-  class="nb-shadow flex w-full max-w-[50ch] flex-col gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-3 transition-all dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:scale-[1.02]"
+  class="nb-shadow flex w-full max-w-[50ch] flex-col gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-4 transition-all dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:scale-[1.02]"
 >
-  <a
-    href={repo}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={`${name} on GitHub`}
-    class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg"
-  >
+  <h2 class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
     {name}
-  </a>
+  </h2>
   <div class="mb-2 text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg4">
     <div class="inline-flex items-center">
       <IconTools class="h-3 w-3" />
