@@ -15,10 +15,7 @@
 }
 
 @layer utilities {
-  .nb-shadow {
-    box-shadow: 0.15rem 0.15rem 0 0px #3c3836;
-  }
   .nb-shadow:hover {
-    box-shadow: 0.3rem 0.3rem 0 0px #3c3836;
+    box-shadow: 0.25rem 0.25rem 0 0px #3c3836;
   }
 }
