@@ -4,6 +4,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      transitionProperty: {
+        shape: "border-radius, box-shadow, transform, border-width"
+      },
       animation: {
         blink: "blink 1.5s steps(1) infinite",
         rotate: "rotate 6s ease-in-out infinite"
