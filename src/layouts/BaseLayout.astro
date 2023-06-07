@@ -5,13 +5,13 @@ import "@fontsource/roboto";
 
 import "../styles/base.css";
 
-import BaseHead from "./BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseHead from "./BaseHead.astro";
 
-import ThemeToggle from "../components/ThemeToggle";
 import Cmd from "../components/Cmd.astro";
 import ScrollTop from "../components/ScrollTop";
+import ThemeToggle from "../components/ThemeToggle";
 
 const { title, description, image } = Astro.props;
 const { pathname } = Astro.url;
@@ -41,7 +41,7 @@ if (title === "404") {
 
     {/* Title bar */}
     <div
-      class="sticky top-0 z-50 flex h-6 items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg px-3 pt-1 dark:rounded-t-lg dark:border-none dark:bg-gruvboxDark-bgH"
+      class="sticky top-0 z-50 flex h-6 items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg px-3 pt-1 dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
     >
       <div class="font-azeret text-xs">
         {isBlogPost ? "Blog" : title || "Home"}
@@ -55,7 +55,7 @@ if (title === "404") {
 
     {/* window content */}
     <div
-      class="relative overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-none dark:bg-gruvboxDark-bgH"
+      class="relative overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
     >
       <div class="absolute right-0 top-0 overflow-hidden">
         <ThemeToggle client:only="solid-js" />
