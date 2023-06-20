@@ -19,9 +19,7 @@ export default defineConfig({
       filter: (page) => page !== "https://nize.ph/rss.xml/" && page !== "https://nize.ph/msg/"
     }),
     tailwind({
-      config: {
-        applyBaseStyles: false
-      }
+      applyBaseStyles: false
     }),
     solidJs()
   ],
