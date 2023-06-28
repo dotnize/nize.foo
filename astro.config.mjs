@@ -12,11 +12,11 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: "dark-plus" }
   },
-  site: "https://nize.ph",
+  site: "https://nize.foo",
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => page !== "https://nize.ph/rss.xml/" && page !== "https://nize.ph/msg/"
+      filter: (page) => page !== "https://nize.foo/rss.xml/" && page !== "https://nize.foo/msg/"
     }),
     tailwind({
       applyBaseStyles: false

@@ -1,5 +1,5 @@
 {
-    "name": "nize.ph",
+    "name": "nize.foo",
     "type": "module",
     "scripts": {
         "dev": "astro dev",
