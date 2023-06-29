@@ -21,18 +21,11 @@
 }
 
 @media (pointer: fine) {
-  body:hover > #trail_main,
-  body:hover > #trail_outline {
+  body:hover > #__trail {
     opacity: 1;
   }
 }
 
 .trail_hidden {
   opacity: 0 !important;
-}
-
-.trail_highlight {
-  height: 0.4rem;
-  width: 0.4rem;
-  @apply bg-gruvbox-fg dark:bg-gruvboxDark-fg;
 }

@@ -35,15 +35,11 @@ if (title === "404") {
   <body class="bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3">
     {/* cursor trail */}
     <div
-      id="trail_main"
+      id="__trail"
       class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 h-2 w-2 rounded-full bg-gruvbox-fg opacity-0 transition-all duration-300 dark:bg-gruvboxDark-fg"
     >
     </div>
-    <div
-      id="trail_outline"
-      class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 h-7 w-7 rounded-full border-2 border-gruvbox-fg opacity-0 transition-all duration-300 dark:border-gruvboxDark-fg"
-    >
-    </div>
+
     <div class="mx-2 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
       <Header />
 
@@ -80,44 +76,29 @@ if (title === "404") {
     </div>
 
     <script>
-      const trail = document.getElementById("trail_main");
-      const trailOutline = document.getElementById("trail_outline");
+      const trail = document.getElementById("__trail");
 
       let highlighted = false;
       let hasMoved = false;
 
       window.addEventListener("mousemove", (e) => {
-        let duration1 = 350;
-        let duration2 = highlighted ? 300 : 750;
+        let duration = 400;
 
         if (!hasMoved) {
           hasMoved = true;
-          trailOutline.classList.remove("trail_hidden");
           trail.classList.remove("trail_hidden");
-          duration1 = 0;
-          duration2 = 0;
+          duration = 0;
         }
 
         const x = e.clientX - trail.offsetWidth / 2,
           y = e.clientY - trail.offsetHeight / 2;
 
-        const x2 = e.clientX - trailOutline.offsetWidth / 2,
-          y2 = e.clientY - trailOutline.offsetHeight / 2;
-
         const keyframes = {
           transform: `translate(${x}px, ${y}px)`
         };
-        const keyframes2 = {
-          transform: `translate(${x2}px, ${y2}px)`
-        };
 
         trail.animate(keyframes, {
-          duration: duration1,
-          fill: "forwards"
-        });
-
-        trailOutline.animate(keyframes2, {
-          duration: duration2,
+          duration: duration,
           fill: "forwards"
         });
       });
@@ -130,16 +111,10 @@ if (title === "404") {
           if (!trail.classList.contains("trail_hidden")) {
             trail.classList.add("trail_hidden");
           }
-          if (!trailOutline.classList.contains("trail_highlight")) {
-            trailOutline.classList.add("trail_highlight");
-          }
         } else {
           if (highlighted) highlighted = false;
           if (hasMoved && trail.classList.contains("trail_hidden")) {
             trail.classList.remove("trail_hidden");
-          }
-          if (trailOutline.classList.contains("trail_highlight")) {
-            trailOutline.classList.remove("trail_highlight");
           }
         }
       });
