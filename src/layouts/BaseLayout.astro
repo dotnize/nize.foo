@@ -65,7 +65,7 @@ if (title === "404") {
 
       {/* window content */}
       <div
-        class="relative overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg z-50 dark:bg-gruvboxDark-bgH"
+        class="relative z-50 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
       >
         <div class="absolute right-0 top-0 overflow-hidden">
           <ThemeToggle client:only="solid-js" />
@@ -87,8 +87,8 @@ if (title === "404") {
       let hasMoved = false;
 
       window.addEventListener("mousemove", (e) => {
-        let duration1 = 350;
-        let duration2 = highlighted ? 300 : 750;
+        let duration1 = 400;
+        let duration2 = highlighted ? 350 : 800;
 
         if (!hasMoved) {
           hasMoved = true;
