@@ -19,3 +19,20 @@
     box-shadow: 0.25rem 0.25rem 0 0px #3c3836;
   }
 }
+
+@media (pointer: fine) {
+  body:hover > #trail_main,
+  body:hover > #trail_outline {
+    opacity: 1;
+  }
+}
+
+.trail_hidden {
+  opacity: 0 !important;
+}
+
+.trail_highlight {
+  height: 0.4rem;
+  width: 0.4rem;
+  @apply bg-gruvbox-fg dark:bg-gruvboxDark-fg;
+}
