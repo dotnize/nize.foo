@@ -20,7 +20,7 @@
         "@fontsource/bebas-neue": "^5.0.3",
         "@fontsource/roboto": "^5.0.3",
         "@tailwindcss/typography": "^0.5.9",
-        "astro": "^2.7.1",
+        "astro": "^2.7.2",
         "solid-js": "^1.7.7",
         "tailwindcss": "^3.3.2"
     },
