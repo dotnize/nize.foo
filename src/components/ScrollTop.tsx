@@ -15,7 +15,7 @@ export default function ScrollTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       title="Scroll to top"
       aria-label="Scroll to top"
-      class="fixed bottom-8 right-2 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gruvboxDark-bg1 text-gruvboxDark-fg shadow-md transition-opacity duration-300 md:right-10 lg:right-28 xl:right-36 2xl:right-48"
+      class="__highlight fixed bottom-8 right-2 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gruvboxDark-bg1 text-gruvboxDark-fg shadow-md transition-opacity duration-300 md:right-10 lg:right-28 xl:right-36 2xl:right-48"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
