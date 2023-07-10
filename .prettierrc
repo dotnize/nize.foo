@@ -2,10 +2,11 @@
   "semi": true,
   "printWidth": 100,
   "singleQuote": false,
-  "trailingComma": "none",
+  "trailingComma": "es5",
   "endOfLine": "auto",
 
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": false,
   "overrides": [
     {
       "files": "*.astro",
