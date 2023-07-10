@@ -5,28 +5,28 @@ module.exports = {
   theme: {
     extend: {
       transitionProperty: {
-        shape: "border-radius, box-shadow, transform, border-width"
+        shape: "border-radius, box-shadow, transform, border-width",
       },
       animation: {
         blink: "blink 1.5s steps(1) infinite",
-        rotate: "rotate 6s ease-in-out infinite"
+        rotate: "rotate 6s ease-in-out infinite",
       },
       keyframes: {
         blink: {
-          "50%": { "border-color": "transparent" }
+          "50%": { "border-color": "transparent" },
         },
         rotate: {
           "0%, 75%": { transform: "rotate(0deg)" },
-          "25%, 50%": { transform: "rotate(360deg)" }
-        }
+          "25%, 50%": { transform: "rotate(360deg)" },
+        },
       },
       fontFamily: {
         bebas: ["Bebas Neue", "sans-serif"],
         azeret: ["Azeret Mono", "monospace"],
-        roboto: ["Roboto", "sans-serif"]
+        roboto: ["Roboto", "sans-serif"],
       },
       screens: {
-        hmd: { raw: "(min-height: 400px)" }
+        hmd: { raw: "(min-height: 400px)" },
       },
       colors: {
         gruvboxDark: {
@@ -62,7 +62,7 @@ module.exports = {
           orange: "#d65d0e",
           orange2: "#fe8019",
           gray: "#a89984",
-          gray2: "#928374"
+          gray2: "#928374",
         },
         gruvbox: {
           bg: "#fbf1c7",
@@ -96,8 +96,8 @@ module.exports = {
           orange: "#d65d0e",
           orange2: "#af3a03",
           gray: "#7c6f64",
-          gray2: "#928374"
-        }
+          gray2: "#928374",
+        },
       },
       typography: ({ theme }) => ({
         gruvbox: {
@@ -134,11 +134,11 @@ module.exports = {
             "--tw-prose-invert-pre-code": theme("colors.gruvboxDark.fg"),
             "--tw-prose-invert-pre-bg": theme("colors.gruvboxDark.bgH"),
             "--tw-prose-invert-th-borders": theme("colors.gruvboxDark.bg2"),
-            "--tw-prose-invert-td-borders": theme("colors.gruvboxDark.bg1")
-          }
-        }
-      })
-    }
+            "--tw-prose-invert-td-borders": theme("colors.gruvboxDark.bg1"),
+          },
+        },
+      }),
+    },
   },
-  plugins: [require("@tailwindcss/typography")]
+  plugins: [require("@tailwindcss/typography")],
 };

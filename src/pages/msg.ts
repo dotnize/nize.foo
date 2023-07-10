@@ -14,7 +14,7 @@ export const post: APIRoute = async ({ request }) => {
                 const res = await fetch(import.meta.env.DISCORD_WEBHOOK_URL, {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
                         embeds: [
@@ -23,12 +23,12 @@ export const post: APIRoute = async ({ request }) => {
                                 description: msg.text,
                                 footer: msg.contact
                                     ? {
-                                          text: "👤 " + msg.contact
+                                          text: "👤 " + msg.contact,
                                       }
-                                    : undefined
-                            }
-                        ]
-                    })
+                                    : undefined,
+                            },
+                        ],
+                    }),
                 });
                 if (res && res.ok) {
                     return new Response("Sent!", { status: 200 });

@@ -10,19 +10,19 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   markdown: {
-    shikiConfig: { theme: "dark-plus" }
+    shikiConfig: { theme: "dark-plus" },
   },
   site: "https://nize.foo",
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => page !== "https://nize.foo/rss.xml/" && page !== "https://nize.foo/msg/"
+      filter: (page) => page !== "https://nize.foo/rss.xml/" && page !== "https://nize.foo/msg/",
     }),
     tailwind({
-      applyBaseStyles: false
+      applyBaseStyles: false,
     }),
-    solidJs()
+    solidJs(),
   ],
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel(),
 });

@@ -32,13 +32,13 @@ export default function ContactForm() {
         const res = await fetch("/msg", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             title: messageTitle,
             text: messageText,
-            contact: messageContact
-          })
+            contact: messageContact,
+          }),
         });
         if (res && res.ok) {
           messageTextRef.value = "";
