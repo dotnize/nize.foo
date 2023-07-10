@@ -68,7 +68,7 @@ if (title === "404") {
         </div>
         {cmdText && <Cmd text={cmdText} />}
 
-        <main class="min-h-[calc(100vh-18rem)]">
+        <main class="min-h-[calc(100vh-17.5rem)]">
           <slot />
         </main>
         <Footer />
@@ -94,12 +94,12 @@ if (title === "404") {
           y = e.clientY - trail.offsetHeight / 2;
 
         const keyframes = {
-          transform: `translate(${x}px, ${y}px)`
+          transform: `translate(${x}px, ${y}px)`,
         };
 
         trail.animate(keyframes, {
           duration: duration,
-          fill: "forwards"
+          fill: "forwards",
         });
       });
       document.addEventListener("mouseover", (e) => {
