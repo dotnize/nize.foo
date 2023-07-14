@@ -17,7 +17,7 @@ const featuredProject: ProjectProps = {
     "Online multiplayer chess web app with spectator support and optional user authentication.",
   stack: "React/Next.js, Tailwind CSS, Express.js, socket.io, PostgreSQL",
   repo: "https://github.com/nizefoo/chessu",
-  demo: "https://ches.su"
+  demo: "https://ches.su",
 };
 
 const latestPost = (await getCollection("blog")).sort(
@@ -144,15 +144,27 @@ const latestPost = (await getCollection("blog")).sort(
       </div>
     </div>
 
-    <div class="mb-4 flex w-full justify-center">
-      <webring-banner theme="borderline" scheme="dark">
-        <p>Member of the <a href="https://webring.antaresph.dev">Pinoy Websites</a> webring</p>
-        <a href="https://webring.antaresph.dev/previous">Previous</a>
-        <a href="https://webring.antaresph.dev/random">Random</a>
-        <a href="https://webring.antaresph.dev/next">Next</a>
-      </webring-banner>
+    <div class="my-4 flex w-full flex-col items-center">
+      <p>
+        Member of the <a
+          class="text-gruvbox-fg0 hover:underline dark:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev">Pinoy Websites</a
+        > webring
+      </p>
+      <div class="flex flex-col items-center gap-1 font-bold sm:flex-row sm:gap-4">
+        <a
+          class="underline transition-all hover:text-gruvbox-fg0 dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/previous">Previous</a
+        >
+        <a
+          class="transition-all hover:text-gruvbox-fg0 hover:underline dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/random">Random</a
+        >
+        <a
+          class="underline transition-all hover:text-gruvbox-fg0 dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/next">Next</a
+        >
+      </div>
     </div>
   </div>
-
-  <script is:inline async src="https://webring.antaresph.dev/embed.js" charset="utf-8"></script>
 </BaseLayout>
