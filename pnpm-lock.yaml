@@ -26,7 +26,7 @@ dependencies:
   '@fontsource/azeret-mono':
     specifier: ^5.0.5
     version: 5.0.5
-  '@fontsource/staatliches':
+  '@fontsource/museomoderno':
     specifier: ^5.0.5
     version: 5.0.5
   '@tailwindcss/typography':
@@ -888,8 +888,8 @@ packages:
     resolution: {integrity: sha512-0aLl8mM0Z578vDcDcY5/OD/a2YsEUvprRxPDVjRLj4TT7sQOoZQnRJiO0VwLPUr44MchUdwJlMwg9W/YtA7wng==}
     dev: false
 
-  /@fontsource/staatliches@5.0.5:
-    resolution: {integrity: sha512-z5T2C4ASElYj9JaGU9lSCtKp3F8hUXB+40ZxdbcTsldruMt1wxJfQEtKY5IKX5o3KxL/xO86GXSIQ3xpaUqj1A==}
+  /@fontsource/museomoderno@5.0.5:
+    resolution: {integrity: sha512-MwN39FlFpYBcuTuH3shfZr/xAHIq6fNm36fgCsDsYqNnF/Cx7amiUmV/6GUds9dUxVtiKsiE+NCIcqFZ08nAgg==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -3893,8 +3893,8 @@ packages:
       glob: 7.2.3
     dev: false
 
-  /rollup@3.26.2:
-    resolution: {integrity: sha512-6umBIGVz93er97pMgQO08LuH3m6PUb3jlDUUGFsNJB6VgTCUaDFpupf5JfU30529m/UKOgmiX+uY6Sx8cOYpLA==}
+  /rollup@3.26.3:
+    resolution: {integrity: sha512-7Tin0C8l86TkpcMtXvQu6saWH93nhG3dGQ1/+l5V2TDMceTxO7kDiK6GzbfLWNNxqJXm591PcEZUozZm51ogwQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -4472,7 +4472,7 @@ packages:
     dependencies:
       esbuild: 0.18.13
       postcss: 8.4.26
-      rollup: 3.26.2
+      rollup: 3.26.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: false

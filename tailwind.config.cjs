@@ -21,7 +21,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        staatliches: ["Staatliches", "sans-serif"],
+        museomoderno: ["MuseoModerno", "sans-serif"],
         azeret: ["Azeret Mono", "monospace"],
       },
       screens: {

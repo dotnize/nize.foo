@@ -17,7 +17,7 @@
         "@astrojs/tailwind": "^4.0.0",
         "@astrojs/vercel": "^3.7.2",
         "@fontsource/azeret-mono": "^5.0.5",
-        "@fontsource/staatliches": "^5.0.5",
+        "@fontsource/museomoderno": "^5.0.5",
         "@tailwindcss/typography": "^0.5.9",
         "astro": "^2.8.3",
         "solid-js": "^1.7.8",
