@@ -8,13 +8,13 @@ Styled with Tailwind CSS and the gruvbox color scheme ([config](https://gist.git
 
 ```sh
 # install dependencies
-npm install
+pnpm install # or npm install
 
 # start local dev server
-npm start
+pnpm start # or npm start
 
 # build for production (configured for Vercel)
-npm run build
+pnpm build # or npm run build
 ```
 
 Environment variables
