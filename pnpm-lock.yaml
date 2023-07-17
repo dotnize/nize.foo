@@ -26,10 +26,7 @@ dependencies:
   '@fontsource/azeret-mono':
     specifier: ^5.0.5
     version: 5.0.5
-  '@fontsource/bebas-neue':
-    specifier: ^5.0.5
-    version: 5.0.5
-  '@fontsource/roboto':
+  '@fontsource/staatliches':
     specifier: ^5.0.5
     version: 5.0.5
   '@tailwindcss/typography':
@@ -891,12 +888,8 @@ packages:
     resolution: {integrity: sha512-0aLl8mM0Z578vDcDcY5/OD/a2YsEUvprRxPDVjRLj4TT7sQOoZQnRJiO0VwLPUr44MchUdwJlMwg9W/YtA7wng==}
     dev: false
 
-  /@fontsource/bebas-neue@5.0.5:
-    resolution: {integrity: sha512-VglWDCvT92isc7bBgzTXC227lq19U6WXYBmi3E4GgZ0GYE7q+X+a0SaDB5NezkPF1O9Kpz9EjH7H+zBKJdrplw==}
-    dev: false
-
-  /@fontsource/roboto@5.0.5:
-    resolution: {integrity: sha512-IMXFq5AMgGx0sgNLfwWsmPuy3qa7lmDmQcXXihqwF4mT2UpD725cbxZj93ERY793OWon+6V1ANax02I3nt9+4w==}
+  /@fontsource/staatliches@5.0.5:
+    resolution: {integrity: sha512-z5T2C4ASElYj9JaGU9lSCtKp3F8hUXB+40ZxdbcTsldruMt1wxJfQEtKY5IKX5o3KxL/xO86GXSIQ3xpaUqj1A==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:

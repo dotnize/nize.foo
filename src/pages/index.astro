@@ -39,8 +39,8 @@ const latestPost = (await getCollection("blog")).sort(
           class="nb-shadow rounded-sm border border-gruvbox-fg bg-gruvbox-bg transition-shape duration-200 dark:rounded-[50px] dark:border-none dark:shadow-none dark:hover:scale-[1.04]"
         />
         <div class="flex flex-col flex-wrap">
-          <h1 class="text-center font-bebas text-5xl leading-[2.5rem]">Nathaniel Tampus</h1>
-          <span class="text-center font-azeret text-lg leading-5 sm:text-start">// nize</span>
+          <h1 class="text-center font-staatliches text-5xl leading-10">Nathaniel Tampus</h1>
+          <span class="text-center font-azeret text-lg leading-6 sm:text-start">// nize</span>
         </div>
       </div>
       <p
@@ -49,9 +49,7 @@ const latestPost = (await getCollection("blog")).sort(
         I'm Nathaniel, a developer from the Philippines. I currently specialize in creating
         full-stack web experiences using a diverse range of frameworks and technologies.
       </p>
-      <div
-        class="flex w-full max-w-prose flex-col items-center justify-evenly gap-3 font-roboto sm:flex-row"
-      >
+      <div class="flex w-full max-w-prose flex-col items-center justify-evenly gap-3 sm:flex-row">
         <a
           href="mailto:contact@nize.foo"
           title="contact@nize.foo"
@@ -106,7 +104,7 @@ const latestPost = (await getCollection("blog")).sort(
           <a
             href={`/blog/${latestPost.slug.split("/").pop()}/`}
             title="Read blog post"
-            class="flex items-center justify-end font-roboto text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
+            class="flex items-center justify-end text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
           >
             Read post
             <svg

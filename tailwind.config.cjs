@@ -21,9 +21,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        bebas: ["Bebas Neue", "sans-serif"],
+        staatliches: ["Staatliches", "sans-serif"],
         azeret: ["Azeret Mono", "monospace"],
-        roboto: ["Roboto", "sans-serif"],
       },
       screens: {
         hmd: { raw: "(min-height: 400px)" },
