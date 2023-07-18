@@ -15,9 +15,7 @@ export default defineConfig({
   site: "https://nize.foo",
   integrations: [
     mdx(),
-    sitemap({
-      filter: (page) => page !== "https://nize.foo/rss.xml/" && page !== "https://nize.foo/msg/",
-    }),
+    sitemap(),
     tailwind({
       applyBaseStyles: false,
     }),
