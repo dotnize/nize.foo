@@ -1,15 +1,15 @@
 ---
-import Cmd from "../components/Cmd.astro";
-import Project from "../components/Project.astro";
-import IconDocument from "../components/icons/IconDocument.astro";
-import IconEmail from "../components/icons/IconEmail.astro";
-import IconGitHub from "../components/icons/IconGitHub.astro";
-import IconLinkedIn from "../components/icons/IconLinkedIn.astro";
-import type { ProjectProps } from "../consts";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Cmd from "~/components/Cmd.astro";
+import Project from "~/components/Project.astro";
+import IconDocument from "~/components/icons/IconDocument.astro";
+import IconEmail from "~/components/icons/IconEmail.astro";
+import IconGitHub from "~/components/icons/IconGitHub.astro";
+import IconLinkedIn from "~/components/icons/IconLinkedIn.astro";
+import type { ProjectProps } from "~/consts";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 
 import { getCollection } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
+import FormattedDate from "~/components/FormattedDate.astro";
 
 const featuredProject: ProjectProps = {
   name: "chessu",

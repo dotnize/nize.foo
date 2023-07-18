@@ -4,13 +4,13 @@ import "@fontsource/museomoderno/500.css";
 
 import "../styles/base.css";
 
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "~/components/Footer.astro";
+import Header from "~/components/Header.astro";
 import BaseHead from "./BaseHead.astro";
 
-import Cmd from "../components/Cmd.astro";
-import ScrollTop from "../components/ScrollTop";
-import ThemeToggle from "../components/ThemeToggle";
+import Cmd from "~/components/Cmd.astro";
+import ScrollTop from "~/components/ScrollTop";
+import ThemeToggle from "~/components/ThemeToggle";
 
 const { title, description, image } = Astro.props;
 const { pathname } = Astro.url;
