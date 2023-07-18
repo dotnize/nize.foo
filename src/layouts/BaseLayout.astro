@@ -6,15 +6,19 @@ import "../styles/base.css";
 
 import Footer from "~/components/Footer.astro";
 import Header from "~/components/Header.astro";
-import BaseHead from "./BaseHead.astro";
+import Base from "./_base.astro";
 
 import Cmd from "~/components/Cmd.astro";
 import ScrollTop from "~/components/ScrollTop";
 import ThemeToggle from "~/components/ThemeToggle";
 
+import type { LayoutProps } from "~/consts";
+export type Props = LayoutProps;
+
 const { title, description, image } = Astro.props;
 const { pathname } = Astro.url;
 const isBlogPost = pathname !== "/blog" && pathname !== "/blog/" && pathname.startsWith("/blog/");
+const pageImage = image || (title !== "404" && !isBlogPost ? "/images/cover.jpg" : undefined);
 
 let cmdText;
 if (title === "404") {
@@ -28,95 +32,93 @@ if (title === "404") {
 }
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <BaseHead title={title} description={description} image={image} />
-  <body class="bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3">
-    {/* cursor trail */}
+<Base title={title} description={description} image={pageImage}>
+  {/* cursor trail */}
+  <div
+    id="__trail"
+    class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 h-2 w-2 rounded-full bg-gruvbox-fg opacity-0 transition-all duration-200 dark:bg-gruvboxDark-fg"
+  >
+  </div>
+
+  <div class="mx-2 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
+    <Header />
+
+    <ScrollTop client:idle />
+
+    {/* Title bar */}
     <div
-      id="__trail"
-      class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 h-2 w-2 rounded-full bg-gruvbox-fg opacity-0 transition-all duration-200 dark:bg-gruvboxDark-fg"
+      class="sticky top-0 z-50 flex h-6 items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg px-3 pt-1 dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
     >
-    </div>
-
-    <div class="mx-2 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
-      <Header />
-
-      <ScrollTop client:idle />
-
-      {/* Title bar */}
-      <div
-        class="sticky top-0 z-50 flex h-6 items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg px-3 pt-1 dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
-      >
-        <div class="font-azeret text-xs">
-          {isBlogPost ? "Blog" : title || "Home"}
-        </div>
-        <div class="flex gap-2">
-          <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
-          <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
-          <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
-        </div>
+      <div class="font-azeret text-xs">
+        {isBlogPost ? "Blog" : title || "Home"}
       </div>
-
-      {/* window content */}
-      <div
-        class="relative z-20 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
-      >
-        <div class="absolute right-0 top-0 overflow-hidden">
-          <ThemeToggle client:only="solid-js" />
-        </div>
-        {cmdText && <Cmd text={cmdText} />}
-
-        <main class="min-h-[calc(100vh-17.5rem)]">
-          <slot />
-        </main>
-        <Footer />
+      <div class="flex gap-2">
+        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
+        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
+        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
       </div>
     </div>
 
-    <script>
-      const trail = document.getElementById("__trail");
+    {/* window content */}
+    <div
+      class="relative z-20 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
+    >
+      <div class="absolute right-0 top-0 overflow-hidden">
+        <ThemeToggle client:only="solid-js" />
+      </div>
+      {cmdText && <Cmd text={cmdText} />}
 
-      let highlighted = false;
-      let hasMoved = false;
+      <main class="min-h-[calc(100vh-17.5rem)]">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </div>
 
-      window.addEventListener("mousemove", (e) => {
-        let duration = 400;
+  <script>
+    const trail = document.getElementById("__trail");
 
-        if (!hasMoved) {
-          hasMoved = true;
+    let highlighted = false;
+    let hasMoved = false;
+
+    window.addEventListener("mousemove", (e) => {
+      if (!trail) return;
+      let duration = 400;
+
+      if (!hasMoved) {
+        hasMoved = true;
+        trail.classList.remove("trail_hidden");
+        duration = 0;
+      }
+
+      const x = e.clientX - trail.offsetWidth / 2,
+        y = e.clientY - trail.offsetHeight / 2;
+
+      const keyframes = {
+        transform: `translate(${x}px, ${y}px)`,
+      };
+
+      trail.animate(keyframes, {
+        duration: duration,
+        fill: "forwards",
+      });
+    });
+    document.addEventListener("mouseover", (e) => {
+      if (!trail) return;
+      if (
+        (e.target as HTMLElement).classList.contains("__highlight") ||
+        (e.target as HTMLElement).parentElement?.classList.contains("__highlight")
+      ) {
+        if (!highlighted) highlighted = true;
+        if (!trail.classList.contains("trail_hidden")) {
+          trail.classList.add("trail_hidden");
+        }
+      } else {
+        if (highlighted) highlighted = false;
+        if (hasMoved && trail.classList.contains("trail_hidden")) {
           trail.classList.remove("trail_hidden");
-          duration = 0;
         }
-
-        const x = e.clientX - trail.offsetWidth / 2,
-          y = e.clientY - trail.offsetHeight / 2;
-
-        const keyframes = {
-          transform: `translate(${x}px, ${y}px)`,
-        };
-
-        trail.animate(keyframes, {
-          duration: duration,
-          fill: "forwards",
-        });
-      });
-      document.addEventListener("mouseover", (e) => {
-        if (
-          (e.target as HTMLElement).classList.contains("__highlight") ||
-          (e.target as HTMLElement).parentElement?.classList.contains("__highlight")
-        ) {
-          if (!highlighted) highlighted = true;
-          if (!trail.classList.contains("trail_hidden")) {
-            trail.classList.add("trail_hidden");
-          }
-        } else {
-          if (highlighted) highlighted = false;
-          if (hasMoved && trail.classList.contains("trail_hidden")) {
-            trail.classList.remove("trail_hidden");
-          }
-        }
-      });
-    </script>
-  </body>
-</html>
+      }
+    });
+  </script>
+</Base>

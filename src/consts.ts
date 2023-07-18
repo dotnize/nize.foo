@@ -8,3 +8,10 @@ export interface ProjectProps {
     repo: string;
     demo?: string;
 }
+
+export interface LayoutProps {
+    title?: string;
+    description?: string;
+    image?: string;
+    children: any;
+}
