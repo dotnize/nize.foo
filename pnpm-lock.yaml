@@ -7,34 +7,34 @@ settings:
 dependencies:
   '@astrojs/mdx':
     specifier: ^0.19.7
-    version: 0.19.7(astro@2.8.5)
+    version: 0.19.7(astro@2.9.0)
   '@astrojs/rss':
     specifier: ^2.4.3
     version: 2.4.3
   '@astrojs/sitemap':
-    specifier: ^2.0.0
-    version: 2.0.0
+    specifier: ^2.0.1
+    version: 2.0.1
   '@astrojs/solid-js':
     specifier: ^2.2.0
     version: 2.2.0(@babel/core@7.22.9)(solid-js@1.7.8)
   '@astrojs/tailwind':
     specifier: ^4.0.0
-    version: 4.0.0(astro@2.8.5)(tailwindcss@3.3.3)
+    version: 4.0.0(astro@2.9.0)(tailwindcss@3.3.3)
   '@astrojs/vercel':
     specifier: ^3.7.3
-    version: 3.7.3(astro@2.8.5)(react@18.2.0)
+    version: 3.7.3(astro@2.9.0)(react@18.2.0)
   '@fontsource/azeret-mono':
     specifier: ^5.0.5
     version: 5.0.5
-  '@fontsource/museomoderno':
+  '@fontsource/outfit':
     specifier: ^5.0.5
     version: 5.0.5
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.3)
   astro:
-    specifier: ^2.8.5
-    version: 2.8.5
+    specifier: ^2.9.0
+    version: 2.9.0
   solid-js:
     specifier: ^1.7.8
     version: 1.7.8
@@ -68,8 +68,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.18
     dev: false
 
-  /@astrojs/compiler@1.6.0:
-    resolution: {integrity: sha512-vxuzp09jAW/ZQ8C4Itf6/OsF76TNjBQC06FNpcayKOzxYkCGHTLh7+0lF4ywmG/fDgSc+f1x7kKxxEKl4nqXvQ==}
+  /@astrojs/compiler@1.6.1:
+    resolution: {integrity: sha512-QZZhV2kOhvyXEfpaGLgHWNPUOlkMVx3Zw+5IlXXU2p448NwtyYt3C6MuS7baVsTlluH3EedAoDBmelt9hPhfiQ==}
 
   /@astrojs/internal-helpers@0.1.1:
     resolution: {integrity: sha512-+LySbvFbjv2nO2m/e78suleQOGEru4Cnx73VsZbrQgB2u7A4ddsQg3P2T0zC0e10jgcT+c6nNlKeLpa6nRhQIg==}
@@ -79,7 +79,7 @@ packages:
     resolution: {integrity: sha512-gssRxLGb8XnvKpqSzrDW5jdzdFnXD7eBXVkPCkkt2hv7Qzb+SAzv6hVgMok3jDCxpR1aeB+XNd9Qszj2h29iog==}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 1.6.0
+      '@astrojs/compiler': 1.6.1
       '@jridgewell/trace-mapping': 0.3.18
       '@vscode/emmet-helper': 2.9.2
       events: 3.3.0
@@ -94,13 +94,13 @@ packages:
       vscode-uri: 3.0.7
     dev: false
 
-  /@astrojs/markdown-remark@2.2.1(astro@2.8.5):
+  /@astrojs/markdown-remark@2.2.1(astro@2.9.0):
     resolution: {integrity: sha512-VF0HRv4GpC1XEMLnsKf6jth7JSmlt9qpqP0josQgA2eSpCIAC/Et+y94mgdBIZVBYH/yFnMoIxgKVe93xfO2GA==}
     peerDependencies:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.8.5
+      astro: 2.9.0
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -117,11 +117,11 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@0.19.7(astro@2.8.5):
+  /@astrojs/mdx@0.19.7(astro@2.9.0):
     resolution: {integrity: sha512-mfEbBD7oi8yBHhcJucEjnrquREkJ3os+jioURP8BR2B8tOV2rV2j8trvmLUgfS+P/+HevGObxCTjcRYxn6T7eg==}
     engines: {node: '>=16.12.0'}
     dependencies:
-      '@astrojs/markdown-remark': 2.2.1(astro@2.8.5)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.9.0)
       '@astrojs/prism': 2.1.2
       '@mdx-js/mdx': 2.3.0
       acorn: 8.10.0
@@ -158,8 +158,8 @@ packages:
       kleur: 4.1.5
     dev: false
 
-  /@astrojs/sitemap@2.0.0:
-    resolution: {integrity: sha512-hcemuFigv05sdXNiw0U23VO+6Duj9nq9xhINw4ZPWAQEhS/F4EiNvd9IUXb4XJ7pG93MWAnQKF9lP8EtwP6paA==}
+  /@astrojs/sitemap@2.0.1:
+    resolution: {integrity: sha512-unoaSEyHuR8IApsPN467SD5FMm4PBnaQSHbtvt4dVS3PMDObZV5/lKIbjlfSad7ENzuvpBSLCGyLDOykXUNu6w==}
     dependencies:
       sitemap: 7.1.1
       zod: 3.21.4
@@ -173,19 +173,19 @@ packages:
     dependencies:
       babel-preset-solid: 1.7.7(@babel/core@7.22.9)
       solid-js: 1.7.8
-      vitefu: 0.2.4(vite@4.4.4)
+      vitefu: 0.2.4(vite@4.4.6)
     transitivePeerDependencies:
       - '@babel/core'
       - vite
     dev: false
 
-  /@astrojs/tailwind@4.0.0(astro@2.8.5)(tailwindcss@3.3.3):
+  /@astrojs/tailwind@4.0.0(astro@2.9.0)(tailwindcss@3.3.3):
     resolution: {integrity: sha512-HmCAXFFes7MUBt5ihdfH1goa8QyGkHejIpz6Z4XBKK9VNYY9G2E3brCn8+pNn5zAOzcwl3FYcuH2AiOa/NGoMQ==}
     peerDependencies:
       astro: ^2.6.5
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 2.8.5
+      astro: 2.9.0
       autoprefixer: 10.4.14(postcss@8.4.26)
       postcss: 8.4.26
       postcss-load-config: 4.0.1(postcss@8.4.26)
@@ -210,7 +210,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel@3.7.3(astro@2.8.5)(react@18.2.0):
+  /@astrojs/vercel@3.7.3(astro@2.9.0)(react@18.2.0):
     resolution: {integrity: sha512-+1yGRyacXYZX87N3OvVPChvpGUe9WOsroKhAg2RtAmIN/sGQ2sqZloeyD82ZWlz+KphoApPv8l1sqEpVZCEW4A==}
     peerDependencies:
       astro: ^2.8.4
@@ -219,7 +219,7 @@ packages:
       '@astrojs/webapi': 2.2.0
       '@vercel/analytics': 0.1.11(react@18.2.0)
       '@vercel/nft': 0.22.6
-      astro: 2.8.5
+      astro: 2.9.0
       esbuild: 0.17.19
       fast-glob: 3.3.0
       set-cookie-parser: 2.6.0
@@ -888,8 +888,8 @@ packages:
     resolution: {integrity: sha512-0aLl8mM0Z578vDcDcY5/OD/a2YsEUvprRxPDVjRLj4TT7sQOoZQnRJiO0VwLPUr44MchUdwJlMwg9W/YtA7wng==}
     dev: false
 
-  /@fontsource/museomoderno@5.0.5:
-    resolution: {integrity: sha512-MwN39FlFpYBcuTuH3shfZr/xAHIq6fNm36fgCsDsYqNnF/Cx7amiUmV/6GUds9dUxVtiKsiE+NCIcqFZ08nAgg==}
+  /@fontsource/outfit@5.0.5:
+    resolution: {integrity: sha512-DWBT3hEMpmIXw5x/rO7HVCG92MICrO2+yV/8kV++yFOt1vOgNjMQuccrw8eW5bx+0hydlTr84NpjTWjTnx/dJg==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -1060,6 +1060,10 @@ packages:
     resolution: {integrity: sha512-/vPO1EPOs306Cvhwv7KfVfYvOJqA/S/AXjaHQiJboCZzcNDb+TIJFN9/2C9DZ//ijSKWioNyUxD792QmDJ+HKQ==}
     dependencies:
       '@types/ms': 0.7.31
+    dev: false
+
+  /@types/dom-view-transitions@1.0.1:
+    resolution: {integrity: sha512-A9S1ijj/4MX06I1W/6on8lhaYyq1Ir7gaOvfllW1o4RzVWW88HAeqX0pUx9VgOLnNpdiGeUW2CTkg18p5LWIrA==}
     dev: false
 
   /@types/estree-jsx@1.0.0:
@@ -1284,8 +1288,8 @@ packages:
     hasBin: true
     dev: false
 
-  /astro@2.8.5:
-    resolution: {integrity: sha512-qfPUKLpZ9lVi5Hc5MrzyekUUx54AyrEphW5eetNQj/+d0iodHEneZXFDzZxTEsk3rL8Y2Y9pYFXJPmQB3eahUA==}
+  /astro@2.9.0:
+    resolution: {integrity: sha512-qD8hFvFrpLDA1/wGivP9YbKq7vfMfS1XPE9SyrrDaYFB/NXnZPqnwSXOxRD0AA4WSv9OAtUO3DV8dHFj9xWi/Q==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
     peerDependencies:
@@ -1294,10 +1298,10 @@ packages:
       sharp:
         optional: true
     dependencies:
-      '@astrojs/compiler': 1.6.0
+      '@astrojs/compiler': 1.6.1
       '@astrojs/internal-helpers': 0.1.1
       '@astrojs/language-server': 1.0.8
-      '@astrojs/markdown-remark': 2.2.1(astro@2.8.5)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.9.0)
       '@astrojs/telemetry': 2.1.1
       '@astrojs/webapi': 2.2.0
       '@babel/core': 7.22.9
@@ -1307,6 +1311,7 @@ packages:
       '@babel/traverse': 7.22.8
       '@babel/types': 7.22.5
       '@types/babel__core': 7.20.1
+      '@types/dom-view-transitions': 1.0.1
       '@types/yargs-parser': 21.0.0
       acorn: 8.10.0
       boxen: 6.2.1
@@ -1330,6 +1335,7 @@ packages:
       kleur: 4.1.5
       magic-string: 0.27.0
       mime: 3.0.0
+      network-information-types: 0.1.1(typescript@5.1.6)
       ora: 6.3.1
       p-limit: 4.0.0
       path-to-regexp: 6.2.1
@@ -1345,8 +1351,8 @@ packages:
       typescript: 5.1.6
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.4
-      vitefu: 0.2.4(vite@4.4.4)
+      vite: 4.4.6
+      vitefu: 0.2.4(vite@4.4.6)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
       zod: 3.21.4
@@ -1480,7 +1486,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001517
-      electron-to-chromium: 1.4.466
+      electron-to-chromium: 1.4.467
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.9)
     dev: false
@@ -1776,8 +1782,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: false
 
-  /electron-to-chromium@1.4.466:
-    resolution: {integrity: sha512-TSkRvbXRXD8BwhcGlZXDsbI2lRoP8dvqR7LQnqQNk9KxXBc4tG8O+rTuXgTyIpEdiqSGKEBSqrxdqEntnjNncA==}
+  /electron-to-chromium@1.4.467:
+    resolution: {integrity: sha512-2qI70O+rR4poYeF2grcuS/bCps5KJh6y1jtZMDDEteyKJQrzLOEhFyXCLcHW6DTBjKjWkk26JhWoAi+Ux9A0fg==}
     dev: false
 
   /emmet@2.4.5:
@@ -3260,6 +3266,14 @@ packages:
     hasBin: true
     dev: false
 
+  /network-information-types@0.1.1(typescript@5.1.6):
+    resolution: {integrity: sha512-mLXNafJYOkiJB6IlF727YWssTRpXitR+tKSLyA5VAdBi3SOvLf5gtizHgxf241YHPWocnAO/fAhVrB/68tPHDw==}
+    peerDependencies:
+      typescript: '>= 3.0.0'
+    dependencies:
+      typescript: 5.1.6
+    dev: false
+
   /nlcst-to-string@3.1.1:
     resolution: {integrity: sha512-63mVyqaqt0cmn2VcI2aH6kxe1rLAmSROqHMA0i4qqg1tidkfExgpb0FGMikMCn86mw5dFtBtEANfmSSK7TjNHw==}
     dependencies:
@@ -3607,7 +3621,7 @@ packages:
     resolution: {integrity: sha512-dPzop0gKZyVGpTDQmfy+e7FKXC9JT3mlpfYA2diOVz+Ui+QR1U4G/s+OesKl2Hib2JJOtAYJs/l+ovgT0ljlFA==}
     engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
     dependencies:
-      '@astrojs/compiler': 1.6.0
+      '@astrojs/compiler': 1.6.1
       prettier: 2.8.8
       sass-formatter: 0.7.6
     dev: true
@@ -3616,7 +3630,7 @@ packages:
     resolution: {integrity: sha512-pYZXSbdq0eElvzoIMArzv1SBn1NUXzopjlcnt6Ql8VW32PjC12NovwBjXJ6rh8qQLi7vF8jNqAbraKW03UPfag==}
     engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
     dependencies:
-      '@astrojs/compiler': 1.6.0
+      '@astrojs/compiler': 1.6.1
       prettier: 2.8.8
       sass-formatter: 0.7.6
       synckit: 0.8.5
@@ -4442,8 +4456,8 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite@4.4.4:
-    resolution: {integrity: sha512-4mvsTxjkveWrKDJI70QmelfVqTm+ihFAb6+xf4sjEU2TmUCTlVX87tmg/QooPEMQb/lM9qGHT99ebqPziEd3wg==}
+  /vite@4.4.6:
+    resolution: {integrity: sha512-EY6Mm8vJ++S3D4tNAckaZfw3JwG3wa794Vt70M6cNJ6NxT87yhq7EC8Rcap3ahyHdo8AhCmV9PTk+vG1HiYn1A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -4477,7 +4491,7 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /vitefu@0.2.4(vite@4.4.4):
+  /vitefu@0.2.4(vite@4.4.6):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -4485,7 +4499,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.4
+      vite: 4.4.6
     dev: false
 
   /vscode-css-languageservice@6.2.6:
