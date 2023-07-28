@@ -2,7 +2,6 @@
 title: "Hello, world!"
 description: "My first blog post. An introduction to myself and this site."
 pubDate: "April 17 2023"
-heroImage: "/images/cover.jpg"
 ---
 
 Welcome to my blog! I'm excited to start this new journey, and I hope that this will be the first of many posts that I'll be writing.
