@@ -14,7 +14,6 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
@@ -28,23 +27,19 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     <meta name="msapplication-TileColor" content="#fbf1c7" />
     <meta name="theme-color" content="#fbf1c7" />
 
-    <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Primary Meta Tags -->
     <title>{fullTitle}</title>
     <meta name="title" content={fullTitle} />
     <meta name="author" content="Nathaniel Tampus" />
     <meta name="description" content={description} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     {image && <meta property="og:image" content={new URL(image, Astro.url)} />}
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={fullTitle} />
