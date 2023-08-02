@@ -76,6 +76,14 @@ if (title === "404") {
   </div>
 
   <script>
+    // remove fbclid query param
+    const url = new URL(location.href);
+    url.searchParams.delete("fbclid");
+    window.history.replaceState(null, "", url);
+  </script>
+
+  <script>
+    // mouse cursor trail
     const trail = document.getElementById("__trail");
 
     let highlighted = false;
