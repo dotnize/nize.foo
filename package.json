@@ -15,12 +15,12 @@
         "@astrojs/sitemap": "^2.0.1",
         "@astrojs/solid-js": "^2.2.0",
         "@astrojs/tailwind": "^4.0.0",
-        "@astrojs/vercel": "^3.7.5",
-        "@fontsource/azeret-mono": "^5.0.5",
-        "@fontsource/outfit": "^5.0.5",
+        "@astrojs/vercel": "^3.8.0",
+        "@fontsource/azeret-mono": "^5.0.7",
+        "@fontsource/outfit": "^5.0.7",
         "@tailwindcss/typography": "^0.5.9",
-        "astro": "^2.9.7",
-        "solid-js": "^1.7.8",
+        "astro": "^2.10.1",
+        "solid-js": "^1.7.9",
         "tailwindcss": "^3.3.3"
     },
     "devDependencies": {
