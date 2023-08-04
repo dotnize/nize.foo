@@ -78,8 +78,10 @@ if (title === "404") {
   <script>
     // remove fbclid query param
     const url = new URL(location.href);
-    url.searchParams.delete("fbclid");
-    window.history.replaceState(null, "", url);
+    if (url.searchParams.has("fbclid")) {
+      url.searchParams.delete("fbclid");
+      window.history.replaceState(null, "", url);
+    }
   </script>
 
   <script>
