@@ -64,7 +64,7 @@ if (title === "404") {
       class="relative z-20 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
     >
       <div class="absolute right-0 top-0 overflow-hidden">
-        <ThemeToggle client:only="solid-js" />
+        <ThemeToggle client:idle />
       </div>
       {cmdText && <Cmd text={cmdText} />}
 
