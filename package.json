@@ -12,20 +12,20 @@
     "dependencies": {
         "@astrojs/mdx": "^0.19.7",
         "@astrojs/rss": "^2.4.4",
-        "@astrojs/sitemap": "^2.0.1",
+        "@astrojs/sitemap": "^2.0.2",
         "@astrojs/solid-js": "^2.2.0",
         "@astrojs/tailwind": "^4.0.0",
         "@astrojs/vercel": "^3.8.1",
-        "@fontsource/azeret-mono": "^5.0.8",
+        "@fontsource/azeret-mono": "^5.0.9",
         "@fontsource/outfit": "^5.0.8",
         "@tailwindcss/typography": "^0.5.9",
-        "astro": "^2.10.7",
+        "astro": "^2.10.9",
         "solid-js": "^1.7.11",
         "tailwindcss": "^3.3.3"
     },
     "devDependencies": {
-        "prettier": "^3.0.1",
-        "prettier-plugin-astro": "^0.11.0",
-        "prettier-plugin-tailwindcss": "^0.5.2"
+        "prettier": "^3.0.2",
+        "prettier-plugin-astro": "^0.11.1",
+        "prettier-plugin-tailwindcss": "^0.5.3"
     }
 }
