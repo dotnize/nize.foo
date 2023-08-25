@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /images/ 
 
-Sitemap: https://nize.foo/sitemap-index.xml
+Sitemap: https://n9ze.com/sitemap-index.xml

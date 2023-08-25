@@ -1,8 +1,8 @@
-# [nize.foo](https://nize.foo)
+# [n9ze.com](https://n9ze.com)
 
 My personal site built with Astro and SolidJS.
 
-Styled with Tailwind CSS and the gruvbox color scheme ([config](https://gist.github.com/nizefoo/d765eb1ff53c94b8e44f832e0b896b98)).
+Styled with Tailwind CSS and the gruvbox color scheme ([config](https://gist.github.com/99nize/d765eb1ff53c94b8e44f832e0b896b98)).
 
 ## Development
 
