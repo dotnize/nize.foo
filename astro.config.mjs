@@ -22,5 +22,5 @@ export default defineConfig({
     solidJs(),
   ],
   output: "hybrid",
-  adapter: vercel(),
+  adapter: vercel({ functionPerRoute: false }),
 });
