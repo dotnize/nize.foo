@@ -1,8 +1,8 @@
 export const prerender = false;
 
-import type { APIRoute } from "astro";
+import { type APIRoute } from "astro";
 
-export const post: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request }) => {
     try {
         if (request.headers.get("Content-Type") !== "application/json") {
             return new Response("Invalid request", { status: 400 });

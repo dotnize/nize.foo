@@ -21,7 +21,6 @@ export default defineConfig({
     }),
     solidJs(),
   ],
-  compressHTML: true,
   output: "hybrid",
   adapter: vercel(),
 });

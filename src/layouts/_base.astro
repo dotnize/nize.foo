@@ -1,7 +1,5 @@
 ---
-import { SITE_DESCRIPTION, SITE_TITLE } from "~/consts";
-
-import type { LayoutProps } from "~/consts";
+import { SITE_DESCRIPTION, SITE_TITLE, type LayoutProps } from "~/consts";
 export type Props = LayoutProps;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
