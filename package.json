@@ -10,22 +10,22 @@
         "format": "prettier -w . \"!pnpm-lock.yaml\" --ignore-path .gitignore"
     },
     "dependencies": {
-        "@astrojs/mdx": "^0.19.7",
-        "@astrojs/rss": "^2.4.4",
-        "@astrojs/sitemap": "^2.0.2",
-        "@astrojs/solid-js": "^2.2.1",
-        "@astrojs/tailwind": "^4.0.0",
-        "@astrojs/vercel": "^3.8.2",
-        "@fontsource/azeret-mono": "^5.0.9",
+        "@astrojs/mdx": "^1.0.0",
+        "@astrojs/rss": "^3.0.0",
+        "@astrojs/sitemap": "^3.0.0",
+        "@astrojs/solid-js": "^3.0.0",
+        "@astrojs/tailwind": "^5.0.0",
+        "@astrojs/vercel": "^4.0.2",
+        "@fontsource/azeret-mono": "^5.0.11",
         "@fontsource/outfit": "^5.0.8",
         "@tailwindcss/typography": "^0.5.9",
-        "astro": "^2.10.14",
+        "astro": "^3.0.5",
         "solid-js": "^1.7.11",
         "tailwindcss": "^3.3.3"
     },
     "devDependencies": {
-        "prettier": "^3.0.2",
+        "prettier": "^3.0.3",
         "prettier-plugin-astro": "^0.12.0",
-        "prettier-plugin-tailwindcss": "^0.5.3"
+        "prettier-plugin-tailwindcss": "^0.5.4"
     }
 }
