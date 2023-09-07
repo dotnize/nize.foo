@@ -46,10 +46,9 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
 
     <script is:inline>
       if (
-        typeof localStorage !== "undefined" &&
-        (localStorage.theme === "dark" ||
-          (!localStorage.getItem("theme") &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches))
+        localStorage.theme === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
         document.documentElement.classList.add("dark");
       } else {
