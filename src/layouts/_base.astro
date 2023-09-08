@@ -44,7 +44,7 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     <meta property="twitter:description" content={description} />
     {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 
-    <ViewTransitions fallback="swap" />
+    <ViewTransitions fallback="none" />
 
     <script is:inline>
       if (
