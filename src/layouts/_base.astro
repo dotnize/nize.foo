@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_TITLE, type LayoutProps } from "~/consts";
 export type Props = LayoutProps;
 
@@ -10,12 +11,11 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="color-scheme" content="dark light" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -44,6 +44,8 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     <meta property="twitter:description" content={description} />
     {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 
+    <ViewTransitions fallback="none" />
+
     <script is:inline>
       if (
         localStorage.theme === "dark" ||
@@ -54,6 +56,20 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
       } else {
         document.documentElement.classList.remove("dark");
       }
+    </script>
+    <script>
+      function setDarkMode() {
+        if (
+          localStorage.theme === "dark" ||
+          (!localStorage.getItem("theme") &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+      document.addEventListener("astro:after-swap", setDarkMode);
     </script>
   </head>
   <body class="bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3">

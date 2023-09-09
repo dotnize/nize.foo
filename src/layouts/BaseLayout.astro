@@ -84,10 +84,15 @@ if (title === "404") {
     }
 
     // mouse cursor trail
-    const trail = document.getElementById("__trail");
-
     let highlighted = false;
     let hasMoved = false;
+    let trail = document.getElementById("__trail");
+
+    document.addEventListener("astro:page-load", () => {
+      highlighted = false;
+      hasMoved = false;
+      trail = document.getElementById("__trail");
+    });
 
     window.addEventListener("mousemove", (e) => {
       if (!trail) return;
