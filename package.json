@@ -10,16 +10,16 @@
         "format": "prettier -w . \"!pnpm-lock.yaml\" --ignore-path .gitignore"
     },
     "dependencies": {
-        "@astrojs/mdx": "^1.0.3",
+        "@astrojs/mdx": "^1.1.0",
         "@astrojs/rss": "^3.0.0",
         "@astrojs/sitemap": "^3.0.0",
         "@astrojs/solid-js": "^3.0.1",
         "@astrojs/tailwind": "^5.0.0",
-        "@astrojs/vercel": "^4.0.5",
-        "@fontsource/azeret-mono": "^5.0.11",
+        "@astrojs/vercel": "^5.0.0",
+        "@fontsource/azeret-mono": "^5.0.12",
         "@fontsource/outfit": "^5.0.8",
         "@tailwindcss/typography": "^0.5.10",
-        "astro": "^3.0.12",
+        "astro": "^3.1.0",
         "solid-js": "^1.7.11",
         "tailwindcss": "^3.3.3"
     },
