@@ -47,17 +47,6 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     <ViewTransitions fallback="none" />
 
     <script is:inline>
-      if (
-        localStorage.theme === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
-    <script>
       function setDarkMode() {
         if (
           localStorage.theme === "dark" ||
@@ -69,7 +58,9 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
           document.documentElement.classList.remove("dark");
         }
       }
+      setDarkMode();
       document.addEventListener("astro:after-swap", setDarkMode);
+      console.log("Hello, fellow developer! 👋");
     </script>
   </head>
   <body class="bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3">
