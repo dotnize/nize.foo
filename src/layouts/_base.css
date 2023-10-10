@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  * {
+    scrollbar-width: thin;
+  }
+  *::-webkit-scrollbar {
+    width: 2px;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-gruvbox-bg2 dark:bg-gruvboxDark-bg2;
+  }
+}
+
+@layer utilities {
+  .nb-shadow:hover {
+    box-shadow: 0.25rem 0.25rem 0 0px #3c3836;
+  }
+
+  @media (pointer: fine) {
+    body:hover > #__trail {
+      opacity: 1;
+    }
+  }
+  .trail_hidden {
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
