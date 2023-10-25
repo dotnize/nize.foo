@@ -19,7 +19,6 @@ export default function ThemeToggle() {
   }
 
   onMount(() => {
-    console.log("ThemeToggle mounted!");
     if (document.documentElement.classList.contains("dark")) {
       setDark(true);
     } else {
