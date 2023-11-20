@@ -16,7 +16,7 @@ const featuredProject: ProjectProps = {
   description:
     "Online multiplayer chess web app with spectator support and optional user authentication.",
   stack: "React/Next.js, Tailwind CSS, Express.js, socket.io, PostgreSQL",
-  repo: "https://github.com/ninetynize/chessu",
+  repo: "https://github.com/ntampus/chessu",
   demo: "https://ches.su",
 };
 
@@ -33,15 +33,12 @@ const latestPost = (await getCollection("blog")).sort(
       >
         <img
           src="./images/nize.png"
-          alt="nize's avatar"
+          alt="nate's avatar"
           width={96}
           height={96}
           class="nb-shadow rounded-sm border border-gruvbox-fg bg-gruvbox-bg transition-shape duration-200 dark:rounded-[48px] dark:border-none dark:shadow-none dark:hover:scale-[1.04]"
         />
-        <div class="flex flex-col flex-wrap">
-          <h1 class="text-center font-outfit text-3xl">Nathaniel Tampus</h1>
-          <span class="text-center font-azeret text-lg sm:text-start">// nize</span>
-        </div>
+        <h1 class="text-center font-outfit text-3xl">Nathaniel Tampus</h1>
       </div>
       <p
         class="my-4 flex w-full max-w-prose indent-8 font-sans font-medium [text-align-last:center] sm:my-1"
@@ -51,15 +48,15 @@ const latestPost = (await getCollection("blog")).sort(
       </p>
       <div class="flex w-full max-w-prose flex-col items-center justify-evenly gap-3 sm:flex-row">
         <a
-          href="mailto:hi@n9ze.com"
-          title="hi@n9ze.com"
+          href="mailto:nate@mugnavo.com"
+          title="nate@mugnavo.com"
           class="flex items-center gap-1 hover:underline"
         >
           <IconEmail class="h-5 w-5 text-gruvbox-yellow" /> Email
         </a>
         <a
-          href="https://github.com/ninetynize"
-          title="ninetynize"
+          href="https://github.com/ntampus"
+          title="ntampus"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center gap-1 hover:underline"
@@ -67,8 +64,8 @@ const latestPost = (await getCollection("blog")).sort(
           <IconGitHub class="h-5 w-5 text-gruvbox-fg0 dark:text-gruvboxDark-fg0" /> GitHub
         </a>
         <a
-          href="https://linkedin.com/in/nize"
-          title="nize"
+          href="https://linkedin.com/in/ntampus"
+          title="ntampus"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center gap-1 hover:underline"

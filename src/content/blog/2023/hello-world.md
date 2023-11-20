@@ -12,7 +12,7 @@ console.log("Hello, world!");
 
 ## Me
 
-My name is Nathaniel, but I usually go by _nize_ online. I'm an aspiring game developer who loves exploring new technologies and skills. Currently, I'm focusing on web development with TypeScript, exploring different web frameworks through various projects. In my free time, I enjoy playing video games, creating pixel art, and watching TV shows.
+I'm Nate, an aspiring game developer who loves exploring new technologies and skills. Currently, I'm focusing on web development with TypeScript, exploring different web frameworks through various projects. In my free time, I enjoy playing video games, creating pixel art, and watching TV shows.
 
 ## Why I'm starting a blog
 
