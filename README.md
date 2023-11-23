@@ -2,7 +2,7 @@
 
 My personal site built with Astro and SolidJS.
 
-Styled with Tailwind CSS and the gruvbox color scheme ([config](https://gist.github.com/ntampus/d765eb1ff53c94b8e44f832e0b896b98)).
+Styled with Tailwind CSS and the gruvbox color scheme ([config](https://gist.github.com/dotnize/d765eb1ff53c94b8e44f832e0b896b98)).
 
 ## Development
 

@@ -9,9 +9,9 @@ export type Props = LayoutProps;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description = SITE_DESCRIPTION, image } = Astro.props;
+const { title = "Nathaniel Tampus", description = SITE_DESCRIPTION, image } = Astro.props;
 
-const fullTitle = title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
+const fullTitle = `${title} - ${SITE_TITLE}`;
 ---
 
 <!doctype html>
