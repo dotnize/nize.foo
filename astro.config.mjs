@@ -12,7 +12,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: "dark-plus" },
   },
-  site: "https://n9ze.com",
+  site: "https://nize.foo",
   integrations: [
     mdx(),
     sitemap(),

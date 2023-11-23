@@ -1,5 +1,5 @@
 {
-    "name": "n9ze.com",
+    "name": "nize.foo",
     "type": "module",
     "scripts": {
         "dev": "astro dev",

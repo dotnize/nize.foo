@@ -1,4 +1,4 @@
-# [n9ze.com](https://n9ze.com)
+# [nize.foo](https://nize.foo)
 
 My personal site built with Astro and SolidJS.
 
