@@ -51,19 +51,19 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     <ViewTransitions fallback="none" />
 
     <script is:inline>
-      function setDarkMode() {
+      function setDarkMode(doc) {
         if (
           localStorage.theme === "dark" ||
           (!localStorage.getItem("theme") &&
             window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
-          document.documentElement.classList.add("dark");
+          doc.documentElement.classList.add("dark");
         } else {
-          document.documentElement.classList.remove("dark");
+          doc.documentElement.classList.remove("dark");
         }
       }
-      setDarkMode();
-      document.addEventListener("astro:after-swap", setDarkMode);
+      setDarkMode(document);
+      document.addEventListener("astro:before-swap", (ev) => setDarkMode(ev.newDocument));
       console.log("Hello, fellow developer! 👋");
     </script>
   </head>
