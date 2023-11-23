@@ -8,6 +8,7 @@ import IconLinkedIn from "~/components/icons/IconLinkedIn.astro";
 import { type ProjectProps } from "~/consts";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import FormattedDate from "~/components/FormattedDate.astro";
 
@@ -31,8 +32,8 @@ const latestPost = (await getCollection("blog")).sort(
       <div
         class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
       >
-        <img
-          src="./images/nize.png"
+        <Image
+          src="/images/nize.png"
           alt="nize's avatar"
           width={96}
           height={96}
