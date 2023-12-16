@@ -23,4 +23,8 @@ export default defineConfig({
   ],
   output: "hybrid",
   adapter: vercel({ functionPerRoute: false }),
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover"
+  }
 });
