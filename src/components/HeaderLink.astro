@@ -6,6 +6,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 
 <li>
   <a
+    data-astro-prefetch="load"
     href={href}
     class={"__highlight group relative flex h-16 w-16 flex-col items-center justify-center gap-1 rounded-lg border border-transparent p-2" +
       (isActive
