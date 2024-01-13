@@ -18,7 +18,7 @@ const featuredProject: ProjectProps = {
     "Online multiplayer chess web app with spectator support and optional user authentication.",
   stack: "React/Next.js, Tailwind CSS, Express.js, socket.io, PostgreSQL",
   repo: "https://github.com/dotnize/chessu",
-  demo: "https://ches.su",
+  //demo: "https://ches.su",
 };
 
 const latestPost = (await getCollection("blog")).sort(
@@ -82,13 +82,7 @@ const latestPost = (await getCollection("blog")).sort(
       <Cmd text="stuff --featured" />
 
       <div class="flex w-full flex-wrap justify-center gap-3 dark:gap-2">
-        <Project
-          name={featuredProject.name}
-          description={featuredProject.description}
-          stack={featuredProject.stack}
-          repo={featuredProject.repo}
-          demo={featuredProject.demo}
-        />
+        <Project {...featuredProject} />
         <div
           class="nb-shadow flex w-full max-w-[40ch] flex-col gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-4 transition-shape dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:scale-[1.02]"
         >
