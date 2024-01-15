@@ -1,32 +1,32 @@
 {
-    "name": "nize.foo",
-    "type": "module",
-    "scripts": {
-        "dev": "astro dev",
-        "start": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "astro": "astro",
-        "format": "prettier -w . \"!pnpm-lock.yaml\" --ignore-path .gitignore"
-    },
-    "dependencies": {
-        "@astrojs/mdx": "^2.0.4",
-        "@astrojs/rss": "^4.0.2",
-        "@astrojs/sitemap": "^3.0.4",
-        "@astrojs/solid-js": "^4.0.1",
-        "@astrojs/tailwind": "^5.1.0",
-        "@astrojs/vercel": "^6.1.4",
-        "@fontsource/azeret-mono": "^5.0.18",
-        "@fontsource/outfit": "^5.0.8",
-        "@tailwindcss/typography": "^0.5.10",
-        "astro": "^4.1.2",
-        "sharp": "^0.33.2",
-        "solid-js": "^1.8.11",
-        "tailwindcss": "^3.4.1"
-    },
-    "devDependencies": {
-        "prettier": "^3.2.1",
-        "prettier-plugin-astro": "^0.12.3",
-        "prettier-plugin-tailwindcss": "^0.5.11"
-    }
+  "name": "nize.foo",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier -w . \"!pnpm-lock.yaml\" --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^2.0.4",
+    "@astrojs/rss": "^4.0.2",
+    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/solid-js": "^4.0.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^6.1.4",
+    "@fontsource/azeret-mono": "^5.0.18",
+    "@fontsource/outfit": "^5.0.8",
+    "@tailwindcss/typography": "^0.5.10",
+    "astro": "^4.1.2",
+    "sharp": "^0.33.2",
+    "solid-js": "^1.8.11",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.2",
+    "prettier-plugin-astro": "^0.12.3",
+    "prettier-plugin-tailwindcss": "^0.5.11"
+  }
 }
