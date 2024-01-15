@@ -1,9 +1,10 @@
 {
+  "tabWidth": 2,
   "semi": true,
   "printWidth": 100,
   "singleQuote": false,
   "trailingComma": "es5",
-  "endOfLine": "auto",
+  "endOfLine": "lf",
 
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "overrides": [
