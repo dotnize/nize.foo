@@ -1,6 +1,6 @@
 ---
 import Footer from "~/components/Footer.astro";
-import Header from "~/components/Header.astro";
+import Navbar from "~/components/Navbar.astro";
 import Base from "./_base.astro";
 
 import Cmd from "~/components/Cmd.astro";
@@ -35,24 +35,10 @@ if (title === "404") {
   >
   </div>
 
-  <div class="mx-2 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
-    <Header />
-
+  <div class="mx-2 pt-24 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
     <ScrollTop client:idle />
 
-    {/* Title bar */}
-    <div
-      class="sticky top-0 z-50 flex h-6 items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg px-3 pt-1 dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
-    >
-      <div class="font-azeret text-xs">
-        {isBlogPost ? "Blog" : title || "Home"}
-      </div>
-      <div class="flex gap-2">
-        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
-        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
-        <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
-      </div>
-    </div>
+    <Navbar />
 
     {/* window content */}
     <div
@@ -63,7 +49,7 @@ if (title === "404") {
       </div>
       {cmdText && <Cmd text={cmdText} />}
 
-      <main class="min-h-[calc(100vh-17.5rem)]">
+      <main class="min-h-[calc(100vh-14.4rem)]">
         <slot />
       </main>
       <Footer />

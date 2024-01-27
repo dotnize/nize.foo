@@ -26,9 +26,6 @@ export default {
         outfit: ["Outfit", "sans-serif"],
         azeret: ["Azeret Mono", "monospace"],
       },
-      screens: {
-        hmd: { raw: "(min-height: 400px)" },
-      },
       colors: {
         gruvboxDark: {
           bg: "#282828",
