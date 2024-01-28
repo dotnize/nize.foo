@@ -1,37 +1,41 @@
 ---
 import NavLink from "./NavLink.astro";
+import ThemeToggle from "./ThemeToggle";
 import IconDocument from "./icons/IconDocument.astro";
 import IconEmail from "./icons/IconEmail.astro";
 import IconHome from "./icons/IconHome.astro";
 ---
 
 <header
-  class="sticky top-0 z-50 flex items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg1 px-3 pt-1 dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgXH"
+  class="sticky top-0 z-50 flex items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg1 px-3 dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgXH"
 >
-  <nav class="font-azeret text-sm">
-    <ul class="flex h-full gap-1">
-      <NavLink href="/">
-        <IconHome class="h-4 w-4" />
+  <div class="flex items-center gap-3 pt-1">
+    <div class="flex gap-2">
+      <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
+      <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
+      <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
+    </div>
+    <nav class="font-azeret text-sm">
+      <ul class="flex h-full gap-1">
+        <NavLink href="/">
+          <IconHome class="h-4 w-4" />
 
-        <span class="hidden sm:inline">Home</span>
-      </NavLink>
+          <span class="hidden sm:inline">Home</span>
+        </NavLink>
 
-      <NavLink href="/blog/">
-        <IconDocument class="h-4 w-4" />
+        <NavLink href="/blog/">
+          <IconDocument class="h-4 w-4" />
 
-        <span class="hidden sm:inline">Blog</span>
-      </NavLink>
+          <span class="hidden sm:inline">Blog</span>
+        </NavLink>
 
-      <NavLink href="/contact/">
-        <IconEmail class="h-4 w-4" />
+        <NavLink href="/contact/">
+          <IconEmail class="h-4 w-4" />
 
-        <span class="hidden sm:inline">Contact</span>
-      </NavLink>
-    </ul>
-  </nav>
-  <div class="flex gap-2">
-    <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-yellow dark:bg-gruvboxDark-yellow2"></div>
-    <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-green dark:bg-gruvboxDark-green2"></div>
-    <div class="h-1.5 w-1.5 rounded-sm bg-gruvbox-red dark:bg-gruvboxDark-red2"></div>
+          <span class="hidden sm:inline">Contact</span>
+        </NavLink>
+      </ul>
+    </nav>
   </div>
+  <ThemeToggle client:only="solid-js" transition:persist />
 </header>

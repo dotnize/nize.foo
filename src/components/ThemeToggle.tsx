@@ -33,7 +33,7 @@ export default function ThemeToggle() {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="h-6 w-6"
+      class="h-5 w-5"
     >
       <path
         stroke-linecap="round"
@@ -49,7 +49,7 @@ export default function ThemeToggle() {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="h-6 w-6"
+      class="h-5 w-5"
     >
       <path
         stroke-linecap="round"
@@ -64,10 +64,10 @@ export default function ThemeToggle() {
       title="Toggle theme"
       aria-label="Toggle theme"
       class={
-        "p-3 text-gruvbox-fg transition-opacity duration-200 hover:opacity-100 dark:text-gruvboxDark-fg" +
+        "text-gruvbox-fg transition-opacity duration-200 hover:opacity-100 dark:text-gruvboxDark-fg" +
         (typeof localStorage !== "undefined"
-          ? (dark() || !dark()) /* to force rerender */ && "theme" in localStorage
-            ? " opacity-60"
+          ? (dark() || true) /* to force rerender */ && "theme" in localStorage
+            ? " opacity-70"
             : " animate-rotate opacity-80"
           : "")
       }
