@@ -20,19 +20,19 @@ import IconHome from "./icons/IconHome.astro";
         <NavLink href="/">
           <IconHome class="h-4 w-4" />
 
-          <span class="hidden sm:inline">Home</span>
+          <span class="sr-only sm:not-sr-only">Home</span>
         </NavLink>
 
         <NavLink href="/blog/">
           <IconDocument class="h-4 w-4" />
 
-          <span class="hidden sm:inline">Blog</span>
+          <span class="sr-only sm:not-sr-only">Blog</span>
         </NavLink>
 
         <NavLink href="/contact/">
           <IconEmail class="h-4 w-4" />
 
-          <span class="hidden sm:inline">Contact</span>
+          <span class="sr-only sm:not-sr-only">Contact</span>
         </NavLink>
       </ul>
     </nav>
