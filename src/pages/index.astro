@@ -37,7 +37,7 @@ const latestPost = (await getCollection("blog")).sort(
           alt="nize's avatar"
           width={96}
           height={96}
-          class="nb-shadow rounded-sm border border-gruvbox-fg bg-gruvbox-bg transition-shape duration-200 dark:rounded-[48px] dark:border-none dark:shadow-none dark:hover:scale-[1.04]"
+          class="nb-shadow rounded-sm border border-gruvbox-fg bg-gruvbox-bg transition-shape duration-200 dark:rounded-[48px] dark:border-none dark:shadow-none dark:hover:-translate-y-1"
         />
         <div class="flex flex-col flex-wrap">
           <h1 class="text-center font-outfit text-3xl">Nathaniel Tampus</h1>
@@ -84,7 +84,7 @@ const latestPost = (await getCollection("blog")).sort(
       <div class="flex w-full flex-wrap justify-center gap-3 dark:gap-2">
         <Project {...featuredProject} />
         <div
-          class="nb-shadow flex w-full max-w-[40ch] flex-col gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-4 transition-shape dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:scale-[1.02]"
+          class="nb-shadow flex w-full max-w-[40ch] flex-col gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-4 transition-shape dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:-translate-y-1"
         >
           <h2 class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
             {latestPost.data.title}
