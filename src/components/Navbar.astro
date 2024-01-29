@@ -7,7 +7,7 @@ import IconHome from "./icons/IconHome.astro";
 ---
 
 <header
-  class="top-0 z-50 flex items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg1 px-3 dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgXH sm:sticky"
+  class="sticky top-0 z-50 flex items-center justify-between rounded-t border border-b-0 border-gruvbox-bg1 bg-gruvbox-bg1 px-3 transition-all dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgXH md:top-0"
 >
   <div class="flex items-center gap-3 pt-1">
     <div class="flex gap-2">
@@ -39,3 +39,21 @@ import IconHome from "./icons/IconHome.astro";
   </div>
   <ThemeToggle client:only="solid-js" transition:persist />
 </header>
+
+<script>
+  let prevScrollPos = window.scrollY;
+  window.addEventListener("scroll", () => {
+    let currentScrollPos = window.scrollY;
+
+    const header = document.querySelector("header");
+    if (header) {
+      if (prevScrollPos > currentScrollPos) {
+        header.classList.replace("-top-10", "top-0");
+      } else if (currentScrollPos > 400.0) {
+        header.classList.replace("top-0", "-top-10");
+      }
+    }
+
+    prevScrollPos = currentScrollPos;
+  });
+</script>
