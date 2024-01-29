@@ -26,10 +26,10 @@
   @media (pointer: fine) {
     body:hover > #__trail {
       opacity: 1;
+      @apply transition-all duration-200;
     }
   }
   .trail_hidden {
-    width: 0 !important;
-    height: 0 !important;
+    opacity: 0 !important;
   }
 }

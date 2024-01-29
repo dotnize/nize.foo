@@ -5,7 +5,6 @@ import Base from "./_base.astro";
 
 import Cmd from "~/components/Cmd.astro";
 import ScrollTop from "~/components/ScrollTop";
-import ThemeToggle from "~/components/ThemeToggle";
 
 import { type LayoutProps } from "~/consts";
 export type Props = LayoutProps;
@@ -29,10 +28,8 @@ if (title === "404") {
 
 <Base title={title} description={description} image={pageImage}>
   {/* cursor trail */}
-  <div
-    id="__trail"
-    class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 h-2 w-2 rounded-full bg-gruvbox-fg opacity-0 transition-all duration-200 dark:bg-gruvboxDark-fg"
-  >
+  <div id="__trail" class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 opacity-0">
+    <div id="__emoticon" class="animate-emoticon text-sm"></div>
   </div>
 
   <div class="mx-2 pt-24 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
@@ -66,10 +63,31 @@ if (title === "404") {
     let hasMoved = false;
     let trail = document.getElementById("__trail");
 
+    const emoticonChoices = [
+      "(⁠ﾉ⁠◕⁠ヮ⁠◕⁠)⁠ﾉ⁠*⁠.⁠✧",
+      "╰⁠(⁠ ⁠･⁠ ⁠ᗜ⁠ ⁠･⁠ ⁠)⁠➝",
+      "┌⁠(⁠・⁠。⁠・⁠)⁠┘⁠♪",
+      "(⁠人⁠ ⁠•͈⁠ᴗ⁠•͈⁠)",
+      "/⁠ᐠ⁠｡⁠ꞈ⁠｡⁠ᐟ⁠\\",
+      "(⁠^⁠～⁠^⁠;⁠)⁠ゞ",
+      "♪⁠(⁠┌⁠・⁠。⁠・⁠)⁠┌",
+      "^_^",
+    ];
+    let emoticon = document.getElementById("__emoticon");
+
+    function randomEmoticon() {
+      if (!emoticon) return;
+      emoticon.innerText = emoticonChoices[Math.floor(Math.random() * emoticonChoices.length)];
+    }
+
+    randomEmoticon();
+
     document.addEventListener("astro:page-load", () => {
       highlighted = false;
       hasMoved = false;
       trail = document.getElementById("__trail");
+      emoticon = document.getElementById("__emoticon");
+      randomEmoticon();
     });
 
     window.addEventListener("mousemove", (e) => {
