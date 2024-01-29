@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       transitionProperty: {
-        shape: "border-radius, box-shadow, transform, border-width",
+        shape: "border-radius, box-shadow, transform, border-width, top",
       },
       animation: {
         blink: "blink 1.5s steps(1) infinite",
