@@ -28,8 +28,6 @@ I'm also interested in game development. I've played around with the Godot Engin
 
 For this blog, you can expect a lot of tech talk. Since I'm still in the early stages of my journey, I'll be writing mostly about my learning experiences and progress with my projects. In the future, I also hope to write tutorials on topics I'm confident in.
 
-I'm very busy, so I may not write very often. For now, I aim to publish at least three posts a year.
-
 ---
 
 If you've made it this far, thanks for reading, and I look forward to sharing more with you in the future.
