@@ -1,24 +1,23 @@
 ---
 import Cmd from "~/components/Cmd.astro";
-import Project from "~/components/Project.astro";
+import IntroCard, { type Props as CardProps } from "~/components/IntroCard.astro";
+
 import IconDocument from "~/components/icons/IconDocument.astro";
 import IconEmail from "~/components/icons/IconEmail.astro";
 import IconGitHub from "~/components/icons/IconGitHub.astro";
 import IconLinkedIn from "~/components/icons/IconLinkedIn.astro";
-import { type ProjectProps } from "~/consts";
+
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import FormattedDate from "~/components/FormattedDate.astro";
+import IconTools from "~/components/icons/IconTools.astro";
 
-const featuredProject: ProjectProps = {
-  name: "chessu",
+const featuredProjectCard: CardProps = {
+  title: "chessu",
   description:
     "Online multiplayer chess web app with spectator support and optional user authentication.",
-  stack: "React/Next.js, Tailwind CSS, Express.js, socket.io, PostgreSQL",
-  repo: "https://github.com/dotnize/chessu",
-  //demo: "https://ches.su",
 };
 
 const latestPost = (await getCollection("blog")).sort(
@@ -44,11 +43,8 @@ const latestPost = (await getCollection("blog")).sort(
           <span class="text-center font-azeret text-lg sm:text-start">// nize</span>
         </div>
       </div>
-      <p
-        class="my-4 flex w-full max-w-prose indent-8 font-sans font-medium [text-align-last:center] sm:my-1"
-      >
-        I'm Nathaniel, a developer from the Philippines. I currently specialize in creating
-        full-stack web experiences using a diverse range of frameworks and technologies.
+      <p class="my-4 font-sans sm:my-1">
+        I'm Nathaniel, a developer from the Philippines. I like TypeScript and Go.
       </p>
       <div class="flex w-full max-w-prose flex-col items-center justify-evenly gap-3 sm:flex-row">
         <a
@@ -81,22 +77,36 @@ const latestPost = (await getCollection("blog")).sort(
     <div class="flex flex-col gap-4">
       <Cmd text="stuff --featured" />
 
-      <div class="flex w-full flex-wrap justify-center gap-3 dark:gap-2">
-        <Project {...featuredProject} />
-        <div
-          class="nb-shadow flex w-full max-w-[40ch] flex-col gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-4 transition-shape dark:rounded-lg dark:border-none dark:bg-gruvboxDark-bg dark:shadow-md dark:hover:-translate-y-1"
-        >
-          <h2 class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
-            {latestPost.data.title}
-          </h2>
-          <div class="mb-2 text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg4">
+      <div class="flex w-full flex-wrap justify-center gap-3">
+        <IntroCard {...featuredProjectCard}>
+          <div slot="subtitle">
+            <div class="inline-flex items-center">
+              <IconTools class="h-3 w-3" />
+            </div>
+            {" Next.js, Tailwind CSS, Express.js, socket.io"}
+          </div>
+
+          <a
+            slot="link"
+            href="https://github.com/dotnize/chessu"
+            class="flex items-center gap-1 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub repository"
+          >
+            <IconGitHub class="h-4 w-4" />
+            GitHub
+          </a>
+        </IntroCard>
+        <IntroCard title={latestPost.data.title} description={latestPost.data.description}>
+          <div slot="subtitle">
             <div class="inline-flex items-center">
               <IconDocument class="h-3 w-3" />
             </div>
             {" "}Latest post - <FormattedDate date={latestPost.data.pubDate} />
           </div>
-          <p class="indent-8">{latestPost.data.description}</p>
           <a
+            slot="link"
             href={`/blog/${latestPost.slug.split("/").pop()}/`}
             title="Read blog post"
             class="flex items-center justify-end text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
@@ -114,7 +124,7 @@ const latestPost = (await getCollection("blog")).sort(
                 clip-rule="evenodd"></path>
             </svg>
           </a>
-        </div>
+        </IntroCard>
       </div>
     </div>
 
