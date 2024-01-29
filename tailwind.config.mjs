@@ -12,7 +12,7 @@ export default {
       animation: {
         blink: "blink 1.5s steps(1) infinite",
         rotate: "rotate 6s ease-in-out infinite",
-        emoticon: "emoticon 14s linear infinite",
+        emoticon: "emoticon 12s linear infinite",
       },
       keyframes: {
         blink: {
@@ -23,8 +23,8 @@ export default {
           "25%, 50%": { transform: "rotate(360deg)" },
         },
         emoticon: {
-          "0%, 100%": { transform: "rotate(-24deg)" },
-          "50%": { transform: "rotate(24deg)" },
+          "0%, 100%": { transform: "rotate(-20deg)" },
+          "50%": { transform: "rotate(20deg)" },
         },
       },
       fontFamily: {
