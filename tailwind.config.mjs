@@ -28,8 +28,8 @@ export default {
         },
       },
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
-        azeret: ["Azeret Mono", "monospace"],
+        outfit: ["var(--font-outfit)", "sans-serif"],
+        azeret: ["var(--font-azeret)", "monospace"],
       },
       colors: {
         gruvboxDark: {

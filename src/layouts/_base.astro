@@ -1,8 +1,6 @@
 ---
-import "@fontsource/azeret-mono";
-import "@fontsource/outfit/500.css";
 import "./_base.css";
-
+import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_TITLE, type LayoutProps } from "~/consts";
 export type Props = LayoutProps;
@@ -49,7 +47,28 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 
     <ViewTransitions fallback="none" />
-
+    <AstroFont
+      config={[
+        {
+          src: [],
+          preload: false,
+          name: "Outfit",
+          display: "swap",
+          fallback: "sans-serif",
+          cssVariable: "font-outfit",
+          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Outfit:wght@500',
+        },
+        {
+          src: [],
+          preload: false,
+          display: "swap",
+          name: "Azeret Mono",
+          fallback: "sans-serif",
+          cssVariable: "font-azeret",
+          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Azeret+Mono',
+        },
+      ]}
+    />
     <script is:inline>
       function setDarkMode(doc) {
         if (
