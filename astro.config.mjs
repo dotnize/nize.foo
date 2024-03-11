@@ -10,7 +10,7 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   markdown: {
-    shikiConfig: { theme: "dark-plus" },
+    shikiConfig: { themes: { light: "vitesse-light", dark: "vitesse-dark" } },
   },
   site: "https://nize.foo",
   integrations: [
