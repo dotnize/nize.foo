@@ -24,7 +24,7 @@ const pageImage = image || (title !== "404" && !isBlogPost ? "/images/cover.jpg"
     </div>
   </div>
 
-  <div class="mx-2 pt-24 md:mx-16 lg:mx-36 xl:mx-52 2xl:mx-72">
+  <div class="mx-auto max-w-6xl px-2 pt-28">
     <ScrollTop client:idle />
 
     <Navbar />
@@ -33,7 +33,7 @@ const pageImage = image || (title !== "404" && !isBlogPost ? "/images/cover.jpg"
     <div
       class="relative z-20 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
     >
-      <main class="min-h-[calc(100vh-13.34rem)]">
+      <main class="min-h-[calc(100vh-14.3rem)]">
         <slot />
       </main>
       <Footer />
