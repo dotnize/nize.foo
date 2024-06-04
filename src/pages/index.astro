@@ -1,5 +1,4 @@
 ---
-import Cmd from "~/components/Cmd.astro";
 import IntroCard, { type Props as CardProps } from "~/components/IntroCard.astro";
 
 import IconDocument from "~/components/icons/IconDocument.astro";
@@ -26,8 +25,8 @@ const latestPost = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout>
-  <div class="flex w-full flex-col gap-44 pt-8">
-    <div class="mt-4 flex w-full flex-col items-center gap-4">
+  <div class="flex w-full flex-col gap-52 pt-16">
+    <div class="flex w-full flex-col items-center gap-4">
       <div
         class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
       >
@@ -74,77 +73,71 @@ const latestPost = (await getCollection("blog")).sort(
         </a>
       </div>
     </div>
-    <div class="flex flex-col gap-4">
-      <Cmd text="stuff --featured" />
 
-      <div class="flex w-full flex-wrap justify-center gap-3">
-        <IntroCard {...featuredProjectCard}>
-          <div slot="subtitle">
-            <div class="inline-flex items-center">
-              <IconTools class="h-3 w-3" />
-            </div>
-            {" Next.js, Tailwind CSS, Express.js, socket.io"}
+    <div class="flex w-full flex-wrap justify-center gap-3">
+      <IntroCard {...featuredProjectCard}>
+        <div slot="subtitle">
+          <div class="inline-flex items-center">
+            <IconTools class="h-3 w-3" />
           </div>
+          {" Next.js, Tailwind CSS, Express.js, socket.io"}
+        </div>
 
-          <a
-            slot="link"
-            href="https://github.com/dotnize/chessu"
-            class="flex items-center gap-1 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="GitHub repository"
-          >
-            <IconGitHub class="h-4 w-4" />
-            GitHub
-          </a>
-        </IntroCard>
-        <IntroCard title={latestPost.data.title} description={latestPost.data.description}>
-          <div slot="subtitle">
-            <div class="inline-flex items-center">
-              <IconDocument class="h-3 w-3" />
-            </div>
-            {" "}Latest post - <FormattedDate date={latestPost.data.pubDate} />
+        <a
+          slot="link"
+          href="https://github.com/dotnize/chessu"
+          class="flex items-center gap-1 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub repository"
+        >
+          <IconGitHub class="h-4 w-4" />
+          GitHub
+        </a>
+      </IntroCard>
+      <IntroCard title={latestPost.data.title} description={latestPost.data.description}>
+        <div slot="subtitle">
+          <div class="inline-flex items-center">
+            <IconDocument class="h-3 w-3" />
           </div>
-          <a
-            slot="link"
-            href={`/blog/${latestPost.slug.split("/").pop()}/`}
-            title="Read blog post"
-            class="flex items-center justify-end text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
+          {" "}Latest post - <FormattedDate date={latestPost.data.pubDate} />
+        </div>
+        <a
+          slot="link"
+          href={`/blog/${latestPost.slug.split("/").pop()}/`}
+          title="Read blog post"
+          class="flex items-center justify-end text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
+        >
+          Read post
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-5 w-5"
           >
-            Read post
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="h-5 w-5"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </a>
-        </IntroCard>
-      </div>
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </IntroCard>
     </div>
 
-    <div class="flex flex-col gap-5">
-      <Cmd text="getintouch" />
-      <div class="flex flex-col items-center gap-3">
-        <span>
-          <span
-            class="inline-flex h-3 w-3 rounded-full border border-gruvbox-fg0 bg-gruvbox-aqua2 dark:border-none"
-          ></span>
-          I'm open to new opportunities and projects to collaborate on.
-        </span>
-        <a
-          href="/contact/"
-          class="nb-shadow flex items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:hover:bg-gruvbox-aqua"
-        >
-          <IconEmail class="h-5 w-5" />
-          Contact me!</a
-        >
-      </div>
+    <div class="flex flex-col items-center gap-3">
+      <span>
+        <span
+          class="inline-flex h-3 w-3 rounded-full border border-gruvbox-fg0 bg-gruvbox-aqua2 dark:border-none"
+        ></span>
+        I'm open to new opportunities and projects to collaborate on.
+      </span>
+      <a
+        href="/contact/"
+        class="nb-shadow flex items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:hover:bg-gruvbox-aqua"
+      >
+        <IconEmail class="h-5 w-5" />
+        Contact me!</a
+      >
     </div>
 
     <div class="my-4 flex w-full flex-col items-center gap-2">

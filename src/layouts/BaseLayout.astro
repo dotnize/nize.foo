@@ -3,7 +3,6 @@ import Footer from "~/components/Footer.astro";
 import Navbar from "~/components/Navbar.astro";
 import Base from "./_base.astro";
 
-import Cmd from "~/components/Cmd.astro";
 import ScrollTop from "~/components/ScrollTop";
 
 import { type LayoutProps } from "~/consts";
@@ -13,17 +12,6 @@ const { title, description, image } = Astro.props;
 const { pathname } = Astro.url;
 const isBlogPost = pathname !== "/blog" && pathname !== "/blog/" && pathname.startsWith("/blog/");
 const pageImage = image || (title !== "404" && !isBlogPost ? "/images/cover.jpg" : undefined);
-
-let cmdText;
-if (title === "404") {
-  cmdText = `cd ${pathname}`;
-} else if (pathname === "/") {
-  cmdText = `whoami -h`;
-} else if (pathname.startsWith("/blog") && !isBlogPost) {
-  cmdText = `blog --index`;
-} else if (pathname.startsWith("/contact")) {
-  cmdText = `contact --me`;
-}
 ---
 
 <Base title={title} description={description} image={pageImage}>
@@ -45,9 +33,7 @@ if (title === "404") {
     <div
       class="relative z-20 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
     >
-      {cmdText && <Cmd text={cmdText} />}
-
-      <main class="min-h-[calc(100vh-14.3rem)]">
+      <main class="min-h-[calc(100vh-13.34rem)]">
         <slot />
       </main>
       <Footer />
