@@ -25,7 +25,7 @@ const latestPost = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout>
-  <div class="flex w-full flex-col gap-52 pt-16">
+  <div class="flex w-full flex-col gap-48 pt-16">
     <div class="flex w-full flex-col items-center gap-4">
       <div
         class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
@@ -35,6 +35,7 @@ const latestPost = (await getCollection("blog")).sort(
           alt="nize's avatar"
           width={96}
           height={96}
+          loading="eager"
           class="nb-shadow rounded-sm border border-gruvbox-fg bg-gruvbox-bg transition-shape duration-200 dark:rounded-[48px] dark:border-none dark:shadow-none dark:hover:-translate-y-1"
         />
         <div class="flex flex-col flex-wrap">
@@ -74,7 +75,7 @@ const latestPost = (await getCollection("blog")).sort(
       </div>
     </div>
 
-    <div class="flex w-full flex-wrap justify-center gap-3">
+    <div class="flex w-full flex-wrap justify-center gap-4 sm:px-4">
       <IntroCard {...featuredProjectCard}>
         <div slot="subtitle">
           <div class="inline-flex items-center">
