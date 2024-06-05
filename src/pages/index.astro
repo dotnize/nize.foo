@@ -10,6 +10,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import Cmd from "~/components/Cmd.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
 import IconTools from "~/components/icons/IconTools.astro";
 
@@ -25,7 +26,7 @@ const latestPost = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout>
-  <div class="flex w-full flex-col gap-48 pt-16">
+  <div class="flex w-full flex-col gap-44 pt-16">
     <div class="flex w-full flex-col items-center gap-4">
       <div
         class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
@@ -125,41 +126,39 @@ const latestPost = (await getCollection("blog")).sort(
       </IntroCard>
     </div>
 
-    <div class="flex flex-col items-center gap-3">
-      <span>
-        <span
-          class="inline-flex h-3 w-3 rounded-full border border-gruvbox-fg0 bg-gruvbox-aqua2 dark:border-none"
-        ></span>
-        I'm open to new opportunities and projects to collaborate on.
-      </span>
+    <div class="flex flex-col gap-3">
+      <Cmd>I'm open to new opportunities and projects to collaborate on.</Cmd>
       <a
         href="/contact/"
-        class="nb-shadow flex items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:hover:bg-gruvbox-aqua"
+        class="nb-shadow ml-2 flex w-fit items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:hover:bg-gruvbox-aqua sm:ml-5"
       >
         <IconEmail class="h-5 w-5" />
         Contact me!</a
       >
     </div>
 
-    <div class="my-4 flex w-full flex-col items-center gap-2">
-      <p>
-        Member of the <a
+    <div class="mb-32 flex w-full flex-col gap-2">
+      <Cmd
+        >Member of the
+        <a
           class="font-medium text-gruvbox-fg0 hover:underline dark:text-gruvboxDark-fg0"
           href="https://webring.antaresph.dev">Pinoy Websites</a
         > webring
-      </p>
-      <div class="flex flex-col items-center gap-2 font-bold sm:flex-row sm:gap-4">
+      </Cmd>
+      <div
+        class="ml-2 flex w-fit items-center rounded-md border border-gruvbox-bg2 font-azeret text-sm font-medium dark:border-gruvboxDark-bg1 sm:ml-5 sm:text-base"
+      >
         <a
-          class="underline transition-all hover:text-gruvbox-fg0 dark:hover:text-gruvboxDark-fg0"
-          href="https://webring.antaresph.dev/previous">Previous</a
+          class="p-1.5 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/previous">&lt; Previous</a
         >
         <a
-          class="transition-all hover:text-gruvbox-fg0 hover:underline dark:hover:text-gruvboxDark-fg0"
+          class="border-x border-gruvbox-bg2 p-1.5 px-2 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:border-gruvboxDark-bg1 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
           href="https://webring.antaresph.dev/random">Random</a
         >
         <a
-          class="underline transition-all hover:text-gruvbox-fg0 dark:hover:text-gruvboxDark-fg0"
-          href="https://webring.antaresph.dev/next">Next</a
+          class="p-1.5 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/next">Next &gt;</a
         >
       </div>
     </div>
