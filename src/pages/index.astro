@@ -13,6 +13,7 @@ import { getCollection } from "astro:content";
 import Cmd from "~/components/Cmd.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
 import IconTools from "~/components/icons/IconTools.astro";
+import IconX from "~/components/icons/IconX.astro";
 
 const featuredProjectCard: CardProps = {
   title: "chessu",
@@ -47,31 +48,37 @@ const latestPost = (await getCollection("blog")).sort(
       <p class="my-4 text-center font-sans sm:my-1">
         I'm Nathaniel, a developer from the Philippines. I like TypeScript and Go.
       </p>
-      <div class="flex w-full max-w-prose flex-col items-center justify-evenly gap-3 sm:flex-row">
-        <a
-          href="mailto:nize@mugnavo.com"
-          title="nize@mugnavo.com"
-          class="flex items-center gap-1 hover:underline"
-        >
-          <IconEmail class="h-5 w-5 text-gruvbox-yellow" /> Email
+      <div class="flex w-full max-w-xs items-center justify-evenly gap-3">
+        <a href="mailto:nize@mugnavo.com" title="nize@mugnavo.com">
+          <IconEmail class="size-6 text-gruvbox-yellow transition duration-200 hover:scale-110" />
         </a>
         <a
           href="https://github.com/dotnize"
-          title="dotnize"
+          title="dotnize on GitHub"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-1 hover:underline"
         >
-          <IconGitHub class="h-5 w-5 text-gruvbox-fg0 dark:text-gruvboxDark-fg0" /> GitHub
+          <IconGitHub
+            class="size-6 text-gruvbox-fg0 transition duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+          />
+        </a>
+        <a
+          href="https://x.com/dotnize"
+          title="dotnize on X"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconX
+            class="size-6 text-gruvbox-fg0 transition duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+          />
         </a>
         <a
           href="https://linkedin.com/in/nize"
-          title="nize"
+          title="nize on LinkedIn"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-1 hover:underline"
         >
-          <IconLinkedIn class="h-5 w-5 text-gruvbox-blue" /> LinkedIn
+          <IconLinkedIn class="size-6 text-gruvbox-blue transition duration-200 hover:scale-110" />
         </a>
       </div>
     </div>
@@ -115,7 +122,7 @@ const latestPost = (await getCollection("blog")).sort(
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            class="h-5 w-5"
+            class="size-5"
           >
             <path
               fill-rule="evenodd"
@@ -132,7 +139,7 @@ const latestPost = (await getCollection("blog")).sort(
         href="/contact/"
         class="nb-shadow ml-2 flex w-fit items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:transition-none dark:hover:bg-gruvbox-aqua dark:hover:text-white sm:ml-4"
       >
-        <IconEmail class="h-5 w-5" />
+        <IconEmail class="size-5" />
         Contact me!</a
       >
     </div>

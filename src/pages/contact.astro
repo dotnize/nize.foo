@@ -5,37 +5,42 @@ import ContactForm from "~/components/ContactForm";
 import IconEmail from "~/components/icons/IconEmail.astro";
 import IconGitHub from "~/components/icons/IconGitHub.astro";
 import IconLinkedIn from "~/components/icons/IconLinkedIn.astro";
+import IconX from "~/components/icons/IconX.astro";
 ---
 
 <BaseLayout title="Contact">
   <div class="flex w-full flex-col items-center gap-12 pt-12">
-    <div
-      class="flex w-full max-w-[80ch] flex-wrap justify-center gap-4 text-lg text-gruvbox-fg dark:text-gruvboxDark-fg md:gap-16"
-    >
-      <a
-        href="mailto:nize@mugnavo.com"
-        title="Email"
-        class="flex items-center gap-1 hover:underline"
-      >
-        <IconEmail class="h-5 w-5 text-gruvbox-yellow" /> nize@mugnavo.com
+    <div class="flex w-full max-w-sm justify-evenly gap-3">
+      <a href="mailto:nize@mugnavo.com" title="nize@mugnavo.com">
+        <IconEmail class="size-6 text-gruvbox-yellow transition duration-200 hover:scale-110" />
       </a>
       <a
         href="https://github.com/dotnize"
-        title="GitHub"
+        title="dotnize on GitHub"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-1 hover:underline"
       >
-        <IconGitHub class="h-5 w-5 text-gruvbox-fg0 dark:text-gruvboxDark-fg0" /> dotnize
+        <IconGitHub
+          class="size-6 text-gruvbox-fg0 transition duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+        />
+      </a>
+      <a
+        href="https://x.com/dotnize"
+        title="dotnize on X"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IconX
+          class="size-6 text-gruvbox-fg0 transition duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+        />
       </a>
       <a
         href="https://linkedin.com/in/nize"
-        title="LinkedIn"
+        title="nize on LinkedIn"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-1 hover:underline"
       >
-        <IconLinkedIn class="h-5 w-5 text-gruvbox-blue" /> nize
+        <IconLinkedIn class="size-6 text-gruvbox-blue transition duration-200 hover:scale-110" />
       </a>
     </div>
     <ContactForm client:idle />
