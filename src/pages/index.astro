@@ -28,7 +28,7 @@ const latestPost = (await getCollection("blog")).sort(
 
 <BaseLayout>
   <div class="flex w-full flex-col gap-44 pt-16">
-    <div class="flex w-full flex-col items-center gap-4">
+    <div class="flex w-full flex-col items-center gap-5">
       <div
         class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
       >
@@ -45,7 +45,7 @@ const latestPost = (await getCollection("blog")).sort(
           <span class="text-center font-azeret text-lg sm:text-start">// nize</span>
         </div>
       </div>
-      <p class="my-4 text-center font-sans sm:my-1">
+      <p class="my-4 max-w-prose text-center font-sans sm:my-1">
         I'm Nathaniel, a developer from the Philippines. I like TypeScript and Go.
       </p>
       <div class="flex w-full max-w-xs items-center justify-evenly gap-3">
@@ -87,7 +87,7 @@ const latestPost = (await getCollection("blog")).sort(
       <IntroCard {...featuredProjectCard}>
         <div slot="subtitle">
           <div class="inline-flex items-center">
-            <IconTools class="h-3 w-3" />
+            <IconTools class="size-3" />
           </div>
           {" Next.js, Tailwind CSS, Express.js, socket.io"}
         </div>
@@ -100,14 +100,14 @@ const latestPost = (await getCollection("blog")).sort(
           rel="noopener noreferrer"
           title="GitHub repository"
         >
-          <IconGitHub class="h-4 w-4" />
+          <IconGitHub class="size-4" />
           GitHub
         </a>
       </IntroCard>
       <IntroCard title={latestPost.data.title} description={latestPost.data.description}>
         <div slot="subtitle">
           <div class="inline-flex items-center">
-            <IconDocument class="h-3 w-3" />
+            <IconDocument class="size-3" />
           </div>
           {" "}Latest post - <FormattedDate date={latestPost.data.pubDate} />
         </div>
