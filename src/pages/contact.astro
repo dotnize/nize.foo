@@ -12,7 +12,9 @@ import IconX from "~/components/icons/IconX.astro";
   <div class="flex w-full flex-col items-center gap-12 pt-12">
     <div class="flex w-full max-w-sm justify-evenly gap-3">
       <a href="mailto:nize@mugnavo.com" title="nize@mugnavo.com">
-        <IconEmail class="size-6 text-gruvbox-yellow transition duration-200 hover:scale-110" />
+        <IconEmail
+          class="size-6 text-gruvbox-yellow transition-transform duration-200 hover:scale-110"
+        />
       </a>
       <a
         href="https://github.com/dotnize"
@@ -21,7 +23,7 @@ import IconX from "~/components/icons/IconX.astro";
         rel="noopener noreferrer"
       >
         <IconGitHub
-          class="size-6 text-gruvbox-fg0 transition duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+          class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
         />
       </a>
       <a
@@ -31,7 +33,7 @@ import IconX from "~/components/icons/IconX.astro";
         rel="noopener noreferrer"
       >
         <IconX
-          class="size-6 text-gruvbox-fg0 transition duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+          class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
         />
       </a>
       <a
@@ -40,7 +42,9 @@ import IconX from "~/components/icons/IconX.astro";
         target="_blank"
         rel="noopener noreferrer"
       >
-        <IconLinkedIn class="size-6 text-gruvbox-blue transition duration-200 hover:scale-110" />
+        <IconLinkedIn
+          class="size-6 text-gruvbox-blue transition-transform duration-200 hover:scale-110"
+        />
       </a>
     </div>
     <ContactForm client:idle />
