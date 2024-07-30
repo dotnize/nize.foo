@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light dark;
+  }
   html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
