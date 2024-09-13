@@ -27,7 +27,7 @@ const featuredProjects: CardProps[] = [
 ---
 
 <BaseLayout>
-  <div class="flex w-full flex-col gap-44 pt-16">
+  <div class="flex w-full flex-col gap-32 pt-16">
     <div class="flex w-full flex-col items-center gap-5">
       <div
         class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
@@ -86,52 +86,54 @@ const featuredProjects: CardProps[] = [
         </a>
       </div>
     </div>
-
-    <div class="flex w-full flex-wrap justify-center gap-4 sm:px-4">
-      <IntroCard {...featuredProjects[0]}>
-        <div slot="subtitle">
-          <div class="inline-flex items-center">
-            <IconTools class="size-3" />
+    <div class="mb-12 mt-4 flex flex-col gap-4">
+      <Cmd>featured --projects</Cmd>
+      <div class="flex w-full flex-wrap justify-center gap-4 sm:px-4">
+        <IntroCard {...featuredProjects[0]}>
+          <div slot="subtitle">
+            <div class="inline-flex items-center">
+              <IconTools class="size-3" />
+            </div>
+            {" Next.js, Tailwind CSS, Express.js, socket.io"}
           </div>
-          {" Next.js, Tailwind CSS, Express.js, socket.io"}
-        </div>
 
-        <a
-          slot="link"
-          href="https://github.com/dotnize/chessu"
-          class="flex items-center gap-1 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub repository"
-        >
-          <IconGitHub class="size-4" />
-          GitHub
-        </a>
-      </IntroCard>
-      <IntroCard {...featuredProjects[1]}>
-        <div slot="subtitle">
-          <div class="inline-flex items-center">
-            <IconTools class="size-3" />
+          <a
+            slot="link"
+            href="https://github.com/dotnize/chessu"
+            class="flex items-center gap-1 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub repository"
+          >
+            <IconGitHub class="size-4" />
+            GitHub
+          </a>
+        </IntroCard>
+        <IntroCard {...featuredProjects[1]}>
+          <div slot="subtitle">
+            <div class="inline-flex items-center">
+              <IconTools class="size-3" />
+            </div>
+            {" Svelte 5, svelte-dnd-action"}
           </div>
-          {" Svelte 5, svelte-dnd-action"}
-        </div>
 
-        <a
-          slot="link"
-          href="https://github.com/dotnize/svaro"
-          class="flex items-center gap-1 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub repository"
-        >
-          <IconGitHub class="size-4" />
-          GitHub
-        </a>
-      </IntroCard>
+          <a
+            slot="link"
+            href="https://github.com/dotnize/svaro"
+            class="flex items-center gap-1 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub repository"
+          >
+            <IconGitHub class="size-4" />
+            GitHub
+          </a>
+        </IntroCard>
+      </div>
     </div>
 
     <div class="flex flex-col gap-3">
-      <Cmd>I'm open to new opportunities and projects to collaborate on.</Cmd>
+      <Cmd>contact --me</Cmd>
       <a
         href="/contact/"
         class="nb-shadow ml-2 flex w-fit items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:transition-none dark:hover:bg-gruvbox-aqua dark:hover:text-white sm:ml-4"
@@ -141,13 +143,13 @@ const featuredProjects: CardProps[] = [
       >
     </div>
 
-    <div class="mb-32 flex w-full flex-col gap-2">
+    <div class="mb-28 flex w-full flex-col gap-2">
       <Cmd
-        >Member of the
+        >webring -n
         <a
           class="font-medium text-gruvbox-fg0 hover:underline dark:text-gruvboxDark-fg0"
           href="https://webring.antaresph.dev">Pinoy Websites</a
-        > webring
+        >
       </Cmd>
       <div
         class="ml-2 flex w-fit items-center rounded-md border border-gruvbox-bg2 font-azeret text-sm font-medium dark:border-gruvboxDark-bg1 sm:ml-4 sm:text-base"
