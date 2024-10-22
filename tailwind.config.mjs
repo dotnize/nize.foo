@@ -7,26 +7,7 @@ export default {
       transitionProperty: {
         shape: "border-radius, box-shadow, transform, border-width, top",
       },
-      animation: {
-        blink: "blink 1.5s steps(1) infinite",
-        rotate: "rotate 6s ease-in-out infinite",
-        emoticon: "emoticon 12s linear infinite",
-      },
-      keyframes: {
-        blink: {
-          "50%": { "border-color": "transparent" },
-        },
-        rotate: {
-          "0%, 75%": { transform: "rotate(0deg)" },
-          "25%, 50%": { transform: "rotate(360deg)" },
-        },
-        emoticon: {
-          "0%, 100%": { transform: "rotate(-20deg)" },
-          "50%": { transform: "rotate(20deg)" },
-        },
-      },
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
         azeret: ["Azeret Mono", "monospace"],
       },
       colors: {
@@ -34,7 +15,6 @@ export default {
           bg: "#282828",
           bg0: "#282828",
           bgH: "#1d2021",
-          bgXH: "#161818", // custom darker hard
           bgS: "#32302f",
           bg1: "#3c3836",
           bg2: "#504945",

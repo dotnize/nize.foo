@@ -1,9 +1,5 @@
 ---
-import Footer from "~/components/Footer.astro";
-import Navbar from "~/components/Navbar.astro";
 import Base from "./_base.astro";
-
-import ScrollTop from "~/components/ScrollTop";
 
 import { type LayoutProps } from "~/consts";
 export type Props = LayoutProps;
@@ -13,112 +9,16 @@ const pageImage = image || (title !== "404" ? "/images/cover.jpg" : undefined);
 ---
 
 <Base title={title} description={description} image={pageImage}>
-  {/* cursor trail */}
-  <div id="__trail" class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 opacity-0">
-    <div
-      id="__emoticon"
-      class="animate-emoticon text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg4"
-    >
-    </div>
-  </div>
+  <div class="mx-auto flex min-h-screen max-w-prose flex-col justify-center px-2">
+    <slot />
 
-  <div class="mx-auto max-w-5xl px-2 pt-28">
-    <ScrollTop client:idle />
-
-    <Navbar />
-
-    {/* window content */}
-    <div
-      class="relative z-20 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
-    >
-      <main class="min-h-[calc(100vh-14.5rem)]">
-        <slot />
-      </main>
-      <Footer />
-    </div>
-  </div>
-
-  <script>
-    // remove fbclid query param
-    const url = new URL(location.href);
-    if (url.searchParams.has("fbclid")) {
-      url.searchParams.delete("fbclid");
-      window.history.replaceState(null, "", url);
-    }
-
-    // mouse cursor trail
-    let highlighted = false;
-    let hasMoved = false;
-    let trail = document.getElementById("__trail");
-
-    const emoticonChoices = [
-      "(⁠ﾉ⁠◕⁠ヮ⁠◕⁠)⁠ﾉ⁠*⁠.⁠✧",
-      "╰⁠(⁠ ⁠･⁠ ⁠ᗜ⁠ ⁠･⁠ ⁠)⁠➝",
-      "┌⁠(⁠・⁠。⁠・⁠)⁠┘⁠♪",
-      "(⁠人⁠ ⁠•͈⁠ᴗ⁠•͈⁠)",
-      "/⁠ᐠ⁠｡⁠ꞈ⁠｡⁠ᐟ⁠\\",
-      "(⁠^⁠～⁠^⁠;⁠)⁠ゞ",
-      "♪⁠(⁠┌⁠・⁠。⁠・⁠)⁠┌",
-      "^_^",
-      "ヽ(^o^)丿",
-      "ʕ •ᴥ•ʔ",
-      "(●＾o＾●)",
-    ];
-    let emoticon = document.getElementById("__emoticon");
-
-    function randomEmoticon() {
-      if (!emoticon) return;
-      emoticon.innerText = emoticonChoices[Math.floor(Math.random() * emoticonChoices.length)];
-    }
-
-    randomEmoticon();
-
-    document.addEventListener("astro:page-load", () => {
-      highlighted = false;
-      hasMoved = false;
-      trail = document.getElementById("__trail");
-      emoticon = document.getElementById("__emoticon");
-      randomEmoticon();
-    });
-
-    window.addEventListener("mousemove", (e) => {
-      if (!trail) return;
-      let duration = 500;
-
-      if (!hasMoved) {
-        hasMoved = true;
-        trail.classList.remove("trail_hidden");
-        duration = 0;
+    <script>
+      // remove fbclid query param
+      const url = new URL(location.href);
+      if (url.searchParams.has("fbclid")) {
+        url.searchParams.delete("fbclid");
+        window.history.replaceState(null, "", url);
       }
-
-      const x = e.clientX - trail.offsetWidth / 2,
-        y = e.clientY - trail.offsetHeight / 2;
-
-      const keyframes = {
-        transform: `translate(${x}px, ${y}px)`,
-      };
-
-      trail.animate(keyframes, {
-        duration: duration,
-        fill: "forwards",
-      });
-    });
-    document.addEventListener("mouseover", (e) => {
-      if (!trail) return;
-      if (
-        (e.target as HTMLElement).classList.contains("__highlight") ||
-        (e.target as HTMLElement).parentElement?.classList.contains("__highlight")
-      ) {
-        if (!highlighted) highlighted = true;
-        if (!trail.classList.contains("trail_hidden")) {
-          trail.classList.add("trail_hidden");
-        }
-      } else {
-        if (highlighted) highlighted = false;
-        if (hasMoved && trail.classList.contains("trail_hidden")) {
-          trail.classList.remove("trail_hidden");
-        }
-      }
-    });
-  </script>
+    </script>
+  </div>
 </Base>

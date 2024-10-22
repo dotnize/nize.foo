@@ -1,9 +1,7 @@
 ---
 import "@fontsource/azeret-mono";
-import "@fontsource/outfit/500.css";
 import "./_base.css";
 
-import { ViewTransitions } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_TITLE, type LayoutProps } from "~/consts";
 export type Props = LayoutProps;
 
@@ -15,9 +13,9 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="none">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset=" utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -49,8 +47,6 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     <meta property="twitter:description" content={description} />
     {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 
-    <ViewTransitions fallback="none" />
-
     <script is:inline>
       function setDarkMode(doc) {
         if (
@@ -68,7 +64,7 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
       console.log("Hello, fellow developer! 👋");
     </script>
   </head>
-  <body class="bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgXH dark:text-gruvboxDark-fg3">
+  <body class="bg-gruvbox-bgH text-gruvbox-fg2 dark:bg-gruvboxDark-bgH dark:text-gruvboxDark-fg3">
     <slot />
   </body>
 </html>
