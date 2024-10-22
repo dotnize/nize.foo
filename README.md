@@ -11,6 +11,6 @@ pnpm install # or npm install
 # start local dev server
 pnpm start # or npm start
 
-# build for production (configured for Vercel)
+# build for production
 pnpm build # or npm run build
 ```
