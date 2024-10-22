@@ -3,7 +3,14 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="404">
-  <div class="flex items-center justify-center pt-16 font-mono text-3xl font-bold">
+  <div class="flex flex-col items-center justify-center text-center font-mono text-3xl font-bold">
     Error 404: Not found
+
+    <a
+      href="/"
+      class="pt-4 text-center font-mono text-xl font-medium underline hover:text-black dark:hover:text-white"
+    >
+      Back to homepage
+    </a>
   </div>
 </BaseLayout>
