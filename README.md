@@ -1,6 +1,6 @@
 # [nize.foo](https://nize.foo)
 
-My personal site built with Astro and SolidJS.
+My personal site built with Astro.
 
 ## Development
 
