@@ -1,6 +1,6 @@
 # [nize.foo](https://nize.foo)
 
-My personal site built with Astro.
+My personal site built with Astro and Solid.
 
 Styled with Tailwind CSS and the gruvbox color scheme ([config](https://gist.github.com/dotnize/d765eb1ff53c94b8e44f832e0b896b98)).
 
