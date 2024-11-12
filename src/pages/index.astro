@@ -1,52 +1,172 @@
 ---
+import IntroCard, { type Props as CardProps } from "~/components/IntroCard.astro";
+
+import IconEmail from "~/components/icons/IconEmail.astro";
+import IconGitHub from "~/components/icons/IconGitHub.astro";
+import IconLinkedIn from "~/components/icons/IconLinkedIn.astro";
+
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import Contact from "~/components/Contact.astro";
 
 import { Image } from "astro:assets";
+import Cmd from "~/components/Cmd.astro";
+import IconTools from "~/components/icons/IconTools.astro";
+import IconX from "~/components/icons/IconX.astro";
+
+const featuredProjects: CardProps[] = [
+  {
+    title: "chessu",
+    description:
+      "Online multiplayer chess web app with spectator support and optional user authentication.",
+  },
+  {
+    title: "svaro",
+    description:
+      "A visual editor for Svelte 5 for creating no-code editor experiences such as page builders.",
+  },
+];
 ---
 
 <BaseLayout>
-  <div
-    class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row md:-mt-16 xl:-mt-32"
-  >
-    <button type="button" id="avatarBtn">
-      <Image
-        src="/images/nize.png"
-        alt="nize's avatar"
-        width={96}
-        height={96}
-        loading="eager"
-        class="nb-shadow cursor-pointer rounded-sm border border-gruvbox-fg bg-gruvbox-bgH transition-shape duration-200 dark:rounded-[48px] dark:border-none dark:shadow-none dark:hover:-translate-y-1"
-      />
-    </button>
+  <div class="flex w-full flex-col gap-32 pt-16">
+    <div class="flex w-full flex-col items-center gap-5">
+      <div
+        class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row"
+      >
+        <Image
+          src="/images/nize.png"
+          alt="nize's avatar"
+          width={96}
+          height={96}
+          loading="eager"
+          class="nb-shadow rounded-sm border border-gruvbox-fg bg-gruvbox-bg transition-shape duration-200 dark:rounded-[48px] dark:border-none dark:shadow-none dark:hover:-translate-y-1"
+        />
+        <div class="flex flex-col flex-wrap">
+          <h1 class="text-center font-outfit text-3xl">Nathaniel Tampus</h1>
+          <span class="text-center font-azeret text-lg sm:text-start">// nize</span>
+        </div>
+      </div>
+      <p class="my-4 max-w-prose text-center font-sans sm:my-1">
+        I'm Nathaniel, a web developer from the Philippines. I like TypeScript and Go.
+      </p>
+      <div class="flex w-full max-w-xs items-center justify-evenly gap-3">
+        <a href="mailto:nize@mugnavo.com" title="nize@mugnavo.com">
+          <IconEmail
+            class="size-6 text-gruvbox-yellow transition-transform duration-200 hover:scale-110"
+          />
+        </a>
+        <a
+          href="https://github.com/dotnize"
+          title="dotnize on GitHub"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconGitHub
+            class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+          />
+        </a>
+        <a
+          href="https://x.com/dotnize"
+          title="dotnize on X"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconX
+            class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+          />
+        </a>
+        <a
+          href="https://linkedin.com/in/nize"
+          title="nize on LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconLinkedIn
+            class="size-6 text-gruvbox-blue transition-transform duration-200 hover:scale-110"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="mb-12 mt-4 flex flex-col gap-4">
+      <Cmd>featured --projects</Cmd>
+      <div class="flex w-full flex-wrap justify-center gap-4 sm:px-4">
+        <IntroCard {...featuredProjects[0]}>
+          <div slot="subtitle">
+            <div class="inline-flex items-center">
+              <IconTools class="size-3" />
+            </div>
+            {" Next.js, Tailwind CSS, Express.js, socket.io"}
+          </div>
 
-    <div class="flex flex-col flex-wrap">
-      <h1 class="text-center font-azeret text-3xl">Nathaniel Tampus</h1>
-      <span class="text-center font-azeret text-lg sm:text-start">// nize</span>
+          <a
+            slot="link"
+            href="https://github.com/dotnize/chessu"
+            class="flex items-center gap-1 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub repository"
+          >
+            <IconGitHub class="size-4" />
+            GitHub
+          </a>
+        </IntroCard>
+        <IntroCard {...featuredProjects[1]}>
+          <div slot="subtitle">
+            <div class="inline-flex items-center">
+              <IconTools class="size-3" />
+            </div>
+            {" Svelte 5, svelte-dnd-action"}
+          </div>
+
+          <a
+            slot="link"
+            href="https://github.com/dotnize/svaro"
+            class="flex items-center gap-1 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub repository"
+          >
+            <IconGitHub class="size-4" />
+            GitHub
+          </a>
+        </IntroCard>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <Cmd>contact --me</Cmd>
+      <a
+        href="/contact/"
+        class="nb-shadow ml-2 flex w-fit items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:transition-none dark:hover:bg-gruvbox-aqua dark:hover:text-white sm:ml-4"
+      >
+        <IconEmail class="size-5" />
+        Contact me!</a
+      >
+    </div>
+
+    <div class="mb-28 flex w-full flex-col gap-2">
+      <Cmd
+        >webring -n
+        <a
+          class="font-medium text-gruvbox-fg0 hover:underline dark:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev">Pinoy Websites</a
+        >
+      </Cmd>
+      <div
+        class="ml-2 flex w-fit items-center rounded-md border border-gruvbox-bg2 font-azeret text-sm font-medium dark:border-gruvboxDark-bg1 sm:ml-4 sm:text-base"
+      >
+        <a
+          class="p-1.5 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/previous">&lt; Previous</a
+        >
+        <a
+          class="border-x border-gruvbox-bg2 p-1.5 px-2 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:border-gruvboxDark-bg1 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/random">Random</a
+        >
+        <a
+          class="p-1.5 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          href="https://webring.antaresph.dev/next">Next &gt;</a
+        >
+      </div>
     </div>
   </div>
-
-  <p class="my-8 max-w-prose text-center font-sans">
-    I'm Nathaniel, a web developer from the Philippines.
-  </p>
-
-  <Contact />
-
-  <script>
-    const avatarBtn = document.getElementById("avatarBtn");
-    if (avatarBtn) {
-      avatarBtn.addEventListener("click", () => {
-        if (
-          document.documentElement.classList.contains("dark") ||
-          (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.remove("dark");
-          localStorage.theme = "light";
-        } else {
-          document.documentElement.classList.add("dark");
-          localStorage.theme = "dark";
-        }
-      });
-    }
-  </script>
 </BaseLayout>
