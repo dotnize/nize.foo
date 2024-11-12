@@ -1,0 +1,52 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+
+import ContactForm from "~/components/ContactForm";
+import IconEmail from "~/components/icons/IconEmail.astro";
+import IconGitHub from "~/components/icons/IconGitHub.astro";
+import IconLinkedIn from "~/components/icons/IconLinkedIn.astro";
+import IconX from "~/components/icons/IconX.astro";
+---
+
+<BaseLayout title="Contact">
+  <div class="flex w-full flex-col items-center gap-12 pt-12">
+    <div class="flex w-full max-w-sm justify-evenly gap-3">
+      <a href="mailto:nize@mugnavo.com" title="nize@mugnavo.com">
+        <IconEmail
+          class="size-6 text-gruvbox-yellow transition-transform duration-200 hover:scale-110"
+        />
+      </a>
+      <a
+        href="https://github.com/dotnize"
+        title="dotnize on GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IconGitHub
+          class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+        />
+      </a>
+      <a
+        href="https://x.com/dotnize"
+        title="dotnize on X"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IconX
+          class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+        />
+      </a>
+      <a
+        href="https://linkedin.com/in/nize"
+        title="nize on LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IconLinkedIn
+          class="size-6 text-gruvbox-blue transition-transform duration-200 hover:scale-110"
+        />
+      </a>
+    </div>
+    <ContactForm client:idle />
+  </div>
+</BaseLayout>
