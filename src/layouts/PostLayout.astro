@@ -25,14 +25,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <FormattedDate date={pubDate} />
         {
           updatedDate && (
-            <div class="text-xs">
+            <div class="text-xs opacity-90">
               Last updated: <FormattedDate date={updatedDate} />
             </div>
           )
         }
       </div>
       <div class="mb-10 mt-2 flex flex-col gap-1">
-        <h1 class="text-4xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
+        <h1 class="text-3xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
           {title}
         </h1>
         {

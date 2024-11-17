@@ -1,29 +1,30 @@
 ---
 import IntroCard, { type Props as CardProps } from "~/components/IntroCard.astro";
 
+import IconDocument from "~/components/icons/IconDocument.astro";
 import IconEmail from "~/components/icons/IconEmail.astro";
 import IconGitHub from "~/components/icons/IconGitHub.astro";
 import IconLinkedIn from "~/components/icons/IconLinkedIn.astro";
+import IconTools from "~/components/icons/IconTools.astro";
+import IconX from "~/components/icons/IconX.astro";
 
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 import { Image } from "astro:assets";
-import Cmd from "~/components/Cmd.astro";
-import IconTools from "~/components/icons/IconTools.astro";
-import IconX from "~/components/icons/IconX.astro";
+import { getCollection } from "astro:content";
 
-const featuredProjects: CardProps[] = [
-  {
-    title: "chessu",
-    description:
-      "Online multiplayer chess web app with spectator support and optional user authentication.",
-  },
-  {
-    title: "svaro",
-    description:
-      "A visual editor for Svelte 5 for creating no-code editor experiences such as page builders.",
-  },
-];
+import Cmd from "~/components/Cmd.astro";
+import FormattedDate from "~/components/FormattedDate.astro";
+
+const featuredProject: CardProps = {
+  title: "chessu",
+  description:
+    "Online multiplayer chess web app with spectator support and optional user authentication.",
+};
+
+const latestPost = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)[0];
 ---
 
 <BaseLayout>
@@ -87,14 +88,14 @@ const featuredProjects: CardProps[] = [
       </div>
     </div>
     <div class="mb-12 mt-4 flex flex-col gap-4">
-      <Cmd>featured --projects</Cmd>
+      <Cmd>featured --stuff</Cmd>
       <div class="flex w-full flex-wrap justify-center gap-4 sm:px-4">
-        <IntroCard {...featuredProjects[0]}>
+        <IntroCard {...featuredProject}>
           <div slot="subtitle">
             <div class="inline-flex items-center">
               <IconTools class="size-3" />
             </div>
-            {" Next.js, Tailwind CSS, Express.js, socket.io"}
+            {" Featured project"}
           </div>
 
           <a
@@ -109,24 +110,32 @@ const featuredProjects: CardProps[] = [
             GitHub
           </a>
         </IntroCard>
-        <IntroCard {...featuredProjects[1]}>
+        <IntroCard title={latestPost.data.title} description={latestPost.data.description}>
           <div slot="subtitle">
             <div class="inline-flex items-center">
-              <IconTools class="size-3" />
+              <IconDocument class="size-3" />
             </div>
-            {" Svelte 5, svelte-dnd-action"}
+            {" "}Latest post - <FormattedDate date={latestPost.data.pubDate} />
           </div>
 
           <a
             slot="link"
-            href="https://github.com/dotnize/svaro"
-            class="flex items-center gap-1 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="GitHub repository"
+            href={`/blog/${latestPost.id.split("/").pop()}/`}
+            title="Read blog post"
+            class="flex items-center justify-end text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
           >
-            <IconGitHub class="size-4" />
-            GitHub
+            Read post
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"></path>
+            </svg>
           </a>
         </IntroCard>
       </div>
