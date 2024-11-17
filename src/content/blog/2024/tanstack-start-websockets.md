@@ -84,7 +84,7 @@ export default defineConfig({
 });
 ```
 
-Our server is now ready to handle websocket connections at `/_ws`. Let's test it out by connecting from our client.
+Our server is now ready to handle websocket connections at `/_ws`. We can test it out by connecting from our client.
 
 ## Example client
 
