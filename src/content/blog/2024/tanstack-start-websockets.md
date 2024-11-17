@@ -78,7 +78,7 @@ export default defineConfig({
 }).addRouter({
   name: "websocket",
   type: "http",
-  handler: "./app/ws.ts",
+  handler: "./app/ws.ts", // the file we created above
   target: "server",
   base: "/_ws",
 });
