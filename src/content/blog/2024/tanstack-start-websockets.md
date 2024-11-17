@@ -42,7 +42,6 @@ export default defineEventHandler({
   handler() {},
   websocket: defineWebSocket({
     open(peer) {
-      peer.send({ user: "server", message: `Welcome ${peer}!` });
       peer.publish("test", `User ${peer} has connected!`);
       peer.send("You have connected successfully!");
       peer.subscribe("test");
