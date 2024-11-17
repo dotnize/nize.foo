@@ -6,7 +6,7 @@ pubDate: "April 17 2023"
 
 Another developer with a blog. Yay. It's a bit cliché, I know, but I'm excited to start this new journey, and I hope that this will be the first of many posts that I'll be writing.
 
-```js
+```ts
 console.log("Hello, world!");
 ```
 
