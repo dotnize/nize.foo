@@ -4,7 +4,7 @@ pubDate: "November 17 2024"
 description: "Setting up Nitro websockets in TanStack Start."
 ---
 
-For the past few weeks I've been playing around with [TanStack Start](https://tanstack.com/start/latest), a new full-stack React framework by Tanner Linsley, the creator of React Query and other amazing TanStack libraries. The framework uses Vinxi under the hood, which uses Nitro — the same server technology that powers Nuxt and SolidStart.
+For the past few weeks I've been playing around with [TanStack Start](https://tanstack.com/start/latest), a new full-stack React framework by Tanner Linsley, the creator of React Query and other amazing TanStack libraries. The framework uses Vinxi under the hood, which uses Nitro — the same server technology that powers Nuxt and SolidStart. [^1]
 
 > Full-document SSR, Streaming, Server Functions, bundling and more, powered by TanStack Router, Vinxi, and Vite. Ready to deploy to your favorite hosting provider.
 >
@@ -12,7 +12,9 @@ For the past few weeks I've been playing around with [TanStack Start](https://ta
 
 ## Nitro WebSockets
 
-Nitro has experimental support for WebSockets, powered by [h3](https://h3.unjs.io/guide/websocket) and [crossws](https://crossws.unjs.io/). You can read more at https://nitro.build/guide/websocket.
+Nitro provides experimental support for WebSockets, powered by [h3](https://h3.unjs.io/guide/websocket) and [crossws](https://crossws.unjs.io/). This feature can be utilized in Vinxi to enable websockets in our TanStack Start projects.
+
+You can read more at [nitro.build/guide/websocket](https://nitro.build/guide/websocket).
 
 ## Setting up the server
 
@@ -151,3 +153,7 @@ This is supported in crossws 0.3+ or Nitro 2.10+, but is **currently not availab
 - [vinxi issue: update to nitro 2.10](https://github.com/nksaraf/vinxi/issues/409)
 - [crossws 0.3.0 release](https://github.com/unjs/crossws/releases/tag/v0.3.0)
 - [nitro 2.10: upgrade to crossws 0.3](https://github.com/nitrojs/nitro/releases/tag/v2.10.0#:~:text=Experimental%20WebSocket%20support%20is%20better%20with%20crossws%400.3%20upgrade.)
+
+---
+
+[^1]: [SolidStart](https://start.solidjs.com/) is a full-stack framework for Solid that also uses Vinxi. This guide should likely work for SolidStart as well, with some adjustments.
