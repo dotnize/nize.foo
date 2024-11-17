@@ -1,7 +1,7 @@
 ---
 title: "Websockets with TanStack Start"
 pubDate: "November 17 2024"
-description: "Playing around with Nitro websockets in TanStack Start."
+description: "Setting up Nitro websockets in TanStack Start."
 ---
 
 For the past few weeks I've been playing around with [TanStack Start](https://tanstack.com/start/latest), a new full-stack React framework by Tanner Linsley, the creator of React Query and other amazing TanStack libraries. The framework uses Vinxi under the hood, which uses Nitro - the same server technology that powers Nuxt and SolidStart.
