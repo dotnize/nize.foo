@@ -10,17 +10,17 @@ const { title, description } = Astro.props;
 <div
   class="nb-shadow flex w-full flex-col justify-between gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-4 transition-shape dark:rounded-lg dark:border-gruvboxDark-bgS dark:bg-gruvboxDark-bg dark:bg-opacity-70 dark:shadow-md dark:hover:-translate-y-1 lg:max-w-md"
 >
-  <div class="flex flex-col gap-2">
-    <h2 class="text-2xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
-      {title}
-    </h2>
-    <div class="mb-2 text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg4">
+  <div class="flex flex-col gap-1.5">
+    <div class="text-xs text-gruvbox-fg3 dark:text-gruvboxDark-fg4">
       <slot name="subtitle" />
     </div>
-    <p class="indent-8">{description}</p>
+    <h2 class="mb-1 text-xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
+      {title}
+    </h2>
+    <p>{description}</p>
   </div>
 
-  <div class="flex justify-end gap-8 text-sm text-gruvbox-fg dark:text-gruvboxDark-fg">
+  <div class="flex justify-end gap-4 text-sm text-gruvbox-fg dark:text-gruvboxDark-fg">
     <slot name="link" />
   </div>
 </div>
