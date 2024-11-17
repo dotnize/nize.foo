@@ -59,8 +59,10 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
             window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
           doc.documentElement.classList.add("dark");
+          doc.documentElement.classList.remove("light");
         } else {
           doc.documentElement.classList.remove("dark");
+          doc.documentElement.classList.add("light");
         }
       }
       setDarkMode(document);
