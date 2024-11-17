@@ -3,7 +3,7 @@ import "@fontsource/azeret-mono";
 import "@fontsource/outfit/500.css";
 import "./_base.css";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_TITLE, type LayoutProps } from "~/consts";
 export type Props = LayoutProps;
 
@@ -49,7 +49,7 @@ const fullTitle = `${title} - ${SITE_TITLE}`;
     <meta property="twitter:description" content={description} />
     {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 
-    <ViewTransitions fallback="none" />
+    <ClientRouter fallback="none" />
 
     <script is:inline>
       function setDarkMode(doc) {

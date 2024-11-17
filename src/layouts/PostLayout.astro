@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
+import FormattedDate from "~/components/FormattedDate.astro";
+import BaseLayout from "./BaseLayout.astro";
+type Props = CollectionEntry<"blog">["data"];
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={heroImage}>
+  <a
+    class="flex items-center gap-1 pt-2 font-semibold text-gruvbox-fg transition-all hover:text-gruvbox-blue2 dark:text-gruvboxDark-fg dark:hover:text-gruvboxDark-blue2"
+    href="/blog/"
+    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3">
+      <path
+        fill-rule="evenodd"
+        d="M9.53 2.47a.75.75 0 010 1.06L4.81 8.25H15a6.75 6.75 0 010 13.5h-3a.75.75 0 010-1.5h3a5.25 5.25 0 100-10.5H4.81l4.72 4.72a.75.75 0 11-1.06 1.06l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 011.06 0z"
+        clip-rule="evenodd"></path>
+    </svg>
+    Back to index</a
+  >
+  <div class="mb-16 mt-8 flex justify-center">
+    <article class="min-w-0 max-w-prose">
+      <div class="flex flex-col gap-1">
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <div class="text-xs">
+              Last updated: <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
+      </div>
+      <div class="mb-10 mt-2 flex flex-col gap-1">
+        <h1 class="text-4xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
+          {title}
+        </h1>
+        {
+          heroImage && (
+            <Image width={720} height={360} src={heroImage} alt="" class="rounded-md shadow-md" />
+          )
+        }
+      </div>
+      <div class="prose prose-gruvbox min-w-0 dark:prose-invert">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
