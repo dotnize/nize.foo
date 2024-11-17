@@ -148,7 +148,7 @@ export default defineEventHandler({
 });
 ```
 
-This is supported in crossws 0.3+ or Nitro 2.10+, but is **currently not available** in Vinxi. I will be updating this post with a full working example repo once Vinxi has support for this feature.
+This is supported in crossws 0.3+ or Nitro 2.10+, but is **currently not available** in Vinxi. I will be updating this post with a full working example repo once Vinxi supports this feature.
 
 - [vinxi issue: update to nitro 2.10](https://github.com/nksaraf/vinxi/issues/409)
 - [crossws 0.3.0 release](https://github.com/unjs/crossws/releases/tag/v0.3.0)
