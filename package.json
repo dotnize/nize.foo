@@ -14,7 +14,7 @@
     "@astrojs/mdx": "beta",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/solid-js": "^4.4.3",
+    "@astrojs/solid-js": "^4.4.4",
     "@astrojs/tailwind": "^5.1.2",
     "@astrojs/vercel": "beta",
     "@fontsource/azeret-mono": "^5.1.0",
@@ -24,11 +24,11 @@
     "astro-expressive-code": "^0.38.3",
     "solid-js": "^1.9.3",
     "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.8"
+    "prettier-plugin-tailwindcss": "^0.6.9"
   }
 }
