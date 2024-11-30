@@ -14,7 +14,7 @@
     "@astrojs/mdx": "beta",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/solid-js": "^4.4.4",
+    "@astrojs/solid-js": "beta",
     "@astrojs/tailwind": "^5.1.2",
     "@astrojs/vercel": "beta",
     "@fontsource/azeret-mono": "^5.1.0",
