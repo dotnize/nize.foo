@@ -1,6 +1,7 @@
 ---
 title: "Websockets with TanStack Start"
 pubDate: "November 17 2024"
+updatedDate: "December 15 2024"
 description: "Setting up Nitro websockets in TanStack Start."
 ---
 
@@ -93,11 +94,9 @@ Here's a minimal example implementation of a websocket client connecting to our 
 
 ```tsx
 const [messages, setMessages] = useState<string[]>([]);
-const [socket, setSocket] = useState<WebSocket | null>(null);
 
 useEffect(() => {
   const ws = new WebSocket("ws://localhost:3000/_ws");
-  setSocket(ws);
   ws.onmessage = (event) => {
     console.log("Received message:", event.data);
     setMessages((prevMessages) => [...prevMessages, event.data]);
@@ -125,20 +124,19 @@ return (
 
 ## Handling authentication
 
-Ideally, you'd want to handle authentication on the websocket handler's upgrade hook.
+You can perform authentication checks in the `upgrade` hook. This is supported in Vinxi 0.5.0 and later.
 
-```ts {5-13}
+```ts {5-12}
 // app/ws.ts
 export default defineEventHandler({
   handler() {},
   websocket: defineWebSocket({
     async upgrade(req) {
-      const isAuthorized = await yourOwnAuthMethod(req);
+      const isAuthorized = await yourOwnAuthMethod(req); // e.g. check jwt
 
       // deny unauthorized connections
       if (!isAuthorized) {
-        // only works in crossws 0.3+
-        return new Response("Unauthorized", { status: 401 });
+        return new Response(null, { status: 401 });
       }
     },
     open(peer) {
@@ -148,12 +146,11 @@ export default defineEventHandler({
 });
 ```
 
-This is supported in crossws 0.3+ or Nitro 2.10+, but is **currently not available** in Vinxi. I will be updating this post with a full working example repo once Vinxi supports this feature.
+Read more about `crossws` hooks at [crossws.unjs.io/guide/hooks](https://crossws.unjs.io/guide/hooks).
+
+I'm currently working on a full example project with websockets, which I'll share in this post soon once these issues are resolved:
 
 - [fix crossws 0.3.0 compatibility](https://github.com/nksaraf/vinxi/pull/439)
-- [vinxi update to nitro 2.10](https://github.com/nksaraf/vinxi/pull/422)
-- [crossws 0.3.0 release](https://github.com/unjs/crossws/releases/tag/v0.3.0)
-- [nitro 2.10: upgrade to crossws 0.3](https://github.com/nitrojs/nitro/releases/tag/v2.10.0#:~:text=Experimental%20WebSocket%20support%20is%20better%20with%20crossws%400.3%20upgrade.)
 
 ---
 
