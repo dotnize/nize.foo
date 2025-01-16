@@ -17,7 +17,14 @@
 
 @layer utilities {
   .nb-shadow:hover {
-    box-shadow: 0.25rem 0.25rem 0 0px #3c3836;
+    box-shadow: 4px 4px 0 0px #3c3836;
+  }
+
+  .nb-shadow-on {
+    box-shadow: 2px 2px 0 0px #3c3836;
+  }
+  .nb-shadow-on:hover {
+    box-shadow: none;
   }
 
   @media (pointer: fine) {
