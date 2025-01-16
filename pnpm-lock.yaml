@@ -32,9 +32,6 @@ importers:
       '@fontsource/azeret-mono':
         specifier: ^5.1.1
         version: 5.1.1
-      '@fontsource/outfit':
-        specifier: ^5.1.1
-        version: 5.1.1
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
@@ -414,9 +411,6 @@ packages:
 
   '@fontsource/azeret-mono@5.1.1':
     resolution: {integrity: sha512-zLUg9hAl5jOUFHDHAYr5YB4SMXNpvWT37lSgUzaU/Mo0YLKPJ+DRco26Yhxj0Hbd+N8HKeHLf60jIb5AqcbySA==}
-
-  '@fontsource/outfit@5.1.1':
-    resolution: {integrity: sha512-fe4Ok4ycZFFYIfIbofQ4zortJmM3BHE0vAu6yK6ILJ5sW51mXnyQ+mOPSeCIceGj0rscQOXlA45BNDijOMLCLA==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -3182,8 +3176,6 @@ snapshots:
       '@expressive-code/core': 0.40.0
 
   '@fontsource/azeret-mono@5.1.1': {}
-
-  '@fontsource/outfit@5.1.1': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

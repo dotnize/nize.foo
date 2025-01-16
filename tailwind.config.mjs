@@ -28,7 +28,6 @@ export default {
         },
       },
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
         azeret: ["Azeret Mono", "monospace"],
       },
       colors: {
