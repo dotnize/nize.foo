@@ -7,7 +7,6 @@ import tailwind from "@astrojs/tailwind";
 import expressiveCode from "astro-expressive-code";
 
 import vercel from "@astrojs/vercel";
-import { sitemapFix } from "./temp-sitemap-fix";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +22,6 @@ export default defineConfig({
     mdx(),
     sitemap(),
     solidJs(),
-    sitemapFix(), // TODO: temporary fix: https://github.com/withastro/adapters/issues/445#issuecomment-2526327882
   ],
   output: "static",
   adapter: vercel(),
