@@ -1,25 +1,25 @@
 ---
 title: "Websockets with TanStack Start"
 pubDate: "November 17 2024"
-updatedDate: "December 15 2024"
+updatedDate: "February 10 2025"
 description: "Setting up Nitro websockets in TanStack Start."
 ---
 
-For the past few weeks I've been playing around with [TanStack Start](https://tanstack.com/start/latest), a new full-stack React framework by Tanner Linsley, the creator of React Query and other amazing TanStack libraries. The framework uses [Vinxi](https://vinxi.vercel.app/) under the hood, which uses Nitro — the same server technology that powers Nuxt and SolidStart. [^1]
+For the past few weeks I've been playing around with [TanStack Start](https://tanstack.com/start/latest), a new full-stack React framework by Tanner Linsley, the creator of React Query and other amazing TanStack libraries. The framework uses [Nitro](https://nitro.build/) under the hood - the same server technology that powers Nuxt and SolidStart.
 
-> Full-document SSR, Streaming, Server Functions, bundling and more, powered by TanStack Router, Vinxi, and Vite. Ready to deploy to your favorite hosting provider.
+> SSR, Streaming, Server Functions, API Routes, bundling and more powered by TanStack Router, Nitro, and Vite. Ready to deploy to your favorite hosting provider.
 >
 > -- [tanstack.com/start](https://tanstack.com/start/latest)
 
 ## Nitro WebSockets
 
-Nitro provides experimental support for WebSockets, powered by [h3](https://h3.unjs.io/guide/websocket) and [crossws](https://crossws.unjs.io/). This feature can be utilized in Vinxi to enable websockets in our TanStack Start projects.
+Traditionally, setting up WebSockets in a full-stack metaframework requires you to use a separate service or a custom server. Nitro changes this by providing experimental WebSocket support, powered by [h3](https://h3.unjs.io/guide/websocket) and [crossws](https://crossws.unjs.io/), allowing our full-stack apps to handle WebSocket connections directly with minimal setup.
 
 You can read more at [nitro.build/guide/websocket](https://nitro.build/guide/websocket).
 
 ## Setting up the server
 
-Assuming you already have a TanStack Start project [set up](https://tanstack.com/router/latest/docs/framework/react/start/getting-started) (or you can use my [tanstarter template](https://github.com/dotnize/tanstarter)), let's get started by setting up a new websocket handler.
+Assuming you already have a TanStack Start project [set up](https://tanstack.com/start/latest/docs/framework/react/getting-started) (or you can use my [tanstarter template](https://github.com/dotnize/tanstarter)), let's get started by setting up a new websocket handler.
 
 1. First, let's enable experimental Nitro websockets in our app config.
 
@@ -39,7 +39,7 @@ export default defineConfig({
 
 ```ts
 // app/ws.ts
-import { defineEventHandler, defineWebSocket } from "vinxi/http";
+import { defineEventHandler, defineWebSocket } from "@tanstack/start/server";
 
 export default defineEventHandler({
   handler() {},
@@ -66,7 +66,7 @@ export default defineEventHandler({
 });
 ```
 
-3. Finally, add a new Vinxi router to handle the websocket requests.
+3. Finally, add a new router to handle the websocket requests.
 
 ```ts {9-15}
 // app.config.ts
@@ -124,7 +124,7 @@ return (
 
 ## Handling authentication
 
-You can perform authentication checks in the `upgrade` hook. This is supported in Vinxi 0.5.0 and later.
+You can perform authentication checks in the `upgrade` hook. This is supported in crossws 0.3.0 and later.
 
 ```ts {5-12}
 // app/ws.ts
@@ -132,10 +132,10 @@ export default defineEventHandler({
   handler() {},
   websocket: defineWebSocket({
     async upgrade(req) {
-      const isAuthorized = await yourOwnAuthMethod(req); // e.g. check jwt
+      const user = await yourOwnAuthMethod(req); // e.g. check jwt
 
       // deny unauthorized connections
-      if (!isAuthorized) {
+      if (!user) {
         return new Response(null, { status: 401 });
       }
     },
@@ -146,12 +146,40 @@ export default defineEventHandler({
 });
 ```
 
+crossws 0.3.2 and later allows you to add context in the `upgrade` hook, which you can access in the `peer` object in other hooks to preserve session data.
+
+```ts {14-17}
+// app/ws.ts
+export default defineEventHandler({
+  handler() {},
+  websocket: defineWebSocket({
+    async upgrade(req) {
+      const user = await yourOwnAuthMethod(req); // e.g. check jwt
+
+      // deny unauthorized connections
+      if (!user) {
+        return new Response(null, { status: 401 });
+      }
+
+      // auth successful
+      req.context.user = {
+        id: user.id,
+        name: user.name,
+      }
+    },
+    open(peer) {
+      console.log(peer.context.user); // { id: 1, name: 'Nate' }
+      // ...
+    },
+  }),
+});
+```
+
 Read more about `crossws` hooks at [crossws.unjs.io/guide/hooks](https://crossws.unjs.io/guide/hooks).
 
-I'm currently working on a full example project with websockets, which I'll share in this post soon once these issues are resolved:
+----
 
-- [fix crossws 0.3.0 compatibility](https://github.com/nksaraf/vinxi/pull/439)
 
----
+This opens up a lot of possibilities for building real-time applications with modern full-stack frameworks. For example, SvelteKit has an [ongoing PR](https://github.com/sveltejs/kit/pull/12973) to add native WebSocket support, also powered by crossws.
 
-[^1]: [SolidStart](https://start.solidjs.com/) is a full-stack framework for Solid that also uses Vinxi. This guide should likely work for SolidStart as well, with some adjustments.
+In the meantime, I'm also building a new project that uses TanStack Start and Nitro websockets, which I'll share more about soon. Stay tuned!
