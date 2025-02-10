@@ -11,23 +11,29 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.0.7",
+    "@astrojs/mdx": "^4.0.8",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/solid-js": "^5.0.4",
     "@astrojs/tailwind": "^5.1.5",
-    "@astrojs/vercel": "^8.0.4",
+    "@astrojs/vercel": "^8.0.6",
     "@fontsource/azeret-mono": "^5.1.1",
     "@tailwindcss/typography": "^0.5.16",
-    "astro": "^5.1.8",
+    "astro": "^5.2.5",
     "astro-expressive-code": "^0.40.1",
     "solid-js": "^1.9.4",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.0",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.10"
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
