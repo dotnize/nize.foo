@@ -32,7 +32,7 @@ const latestPost = (await getCollection("blog")).sort(
   <div class="flex w-full flex-col gap-32 pt-16">
     <div class="flex w-full flex-col items-center gap-5">
       <div
-        class="flex w-full flex-col items-center justify-center gap-4 text-gruvbox-fg dark:text-gruvboxDark-fg sm:flex-row sm:gap-7"
+        class="text-gruvbox-fg dark:text-gruvboxDark-fg flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:gap-7"
       >
         <Image
           src="/images/nize.png"
@@ -40,7 +40,7 @@ const latestPost = (await getCollection("blog")).sort(
           width={80}
           height={80}
           loading="eager"
-          class="nb-shadow-on rounded-sm border border-gruvbox-fg bg-gruvbox-bg transition-shape duration-200 dark:rounded-[40px] dark:border-none dark:shadow-none dark:hover:-translate-y-1"
+          class="nb-shadow-on border-gruvbox-fg bg-gruvbox-bg transition-shape rounded-xs border duration-200 dark:rounded-[40px] dark:border-none dark:shadow-none dark:hover:-translate-y-1"
         />
         <span class="font-azeret text-3xl">// nize</span>
       </div>
@@ -51,7 +51,7 @@ const latestPost = (await getCollection("blog")).sort(
       <div class="mt-2 flex w-full max-w-[18rem] items-center justify-evenly gap-3">
         <a href="mailto:nize@mugnavo.com" title="nize@mugnavo.com">
           <IconEmail
-            class="size-6 text-gruvbox-yellow transition-transform duration-200 hover:scale-110"
+            class="text-gruvbox-yellow size-6 transition-transform duration-200 hover:scale-110"
           />
         </a>
         <a
@@ -61,7 +61,7 @@ const latestPost = (await getCollection("blog")).sort(
           rel="noopener noreferrer"
         >
           <IconGitHub
-            class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+            class="text-gruvbox-fg0 dark:text-gruvboxDark-fg0 size-6 transition-transform duration-200 hover:scale-110"
           />
         </a>
         <a
@@ -71,7 +71,7 @@ const latestPost = (await getCollection("blog")).sort(
           rel="noopener noreferrer"
         >
           <IconX
-            class="size-6 text-gruvbox-fg0 transition-transform duration-200 hover:scale-110 dark:text-gruvboxDark-fg0"
+            class="text-gruvbox-fg0 dark:text-gruvboxDark-fg0 size-6 transition-transform duration-200 hover:scale-110"
           />
         </a>
         <a
@@ -81,12 +81,12 @@ const latestPost = (await getCollection("blog")).sort(
           rel="noopener noreferrer"
         >
           <IconLinkedIn
-            class="size-6 text-gruvbox-blue transition-transform duration-200 hover:scale-110"
+            class="text-gruvbox-blue size-6 transition-transform duration-200 hover:scale-110"
           />
         </a>
       </div>
     </div>
-    <div class="mb-12 mt-4 flex flex-col gap-4">
+    <div class="mt-4 mb-12 flex flex-col gap-4">
       <Cmd>featured --stuff</Cmd>
       <div class="flex w-full flex-wrap justify-center gap-4 sm:px-4">
         <IntroCard {...featuredProject}>
@@ -133,7 +133,7 @@ const latestPost = (await getCollection("blog")).sort(
             slot="link"
             href={`/blog/${latestPost.id.split("/").pop()}/`}
             title="Read blog post"
-            class="flex items-center justify-end text-sm font-bold text-gruvbox-fg3 transition-all hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue"
+            class="text-gruvbox-fg3 hover:text-gruvbox-blue dark:text-gruvboxDark-fg4 dark:hover:text-gruvboxDark-blue flex items-center justify-end text-sm font-bold transition-all"
           >
             Read post
             <svg
@@ -156,7 +156,7 @@ const latestPost = (await getCollection("blog")).sort(
       <Cmd>contact --me</Cmd>
       <a
         href="/contact/"
-        class="nb-shadow ml-2 flex w-fit items-center gap-1 rounded border border-gruvbox-fg bg-gruvbox-aqua2 p-2 font-bold text-gruvbox-bgH transition-all dark:rounded-md dark:border-none dark:shadow-md dark:transition-none dark:hover:bg-gruvbox-aqua dark:hover:text-white sm:ml-4"
+        class="nb-shadow border-gruvbox-fg bg-gruvbox-aqua2 text-gruvbox-bgH dark:hover:bg-gruvbox-aqua ml-2 flex w-fit items-center gap-1 rounded-sm border p-2 font-bold transition-all sm:ml-4 dark:rounded-md dark:border-none dark:shadow-md dark:transition-none dark:hover:text-white"
       >
         <IconEmail class="size-5" />
         Contact me!</a
@@ -167,23 +167,23 @@ const latestPost = (await getCollection("blog")).sort(
       <Cmd
         >webring -n
         <a
-          class="font-medium text-gruvbox-fg0 hover:underline dark:text-gruvboxDark-fg0"
+          class="text-gruvbox-fg0 dark:text-gruvboxDark-fg0 font-medium hover:underline"
           href="https://webring.antaresph.dev">Pinoy Websites</a
         >
       </Cmd>
       <div
-        class="ml-2 flex w-fit items-center rounded-md border border-gruvbox-bg2 font-azeret text-sm font-medium dark:border-gruvboxDark-bg1 sm:ml-4 sm:text-base"
+        class="border-gruvbox-bg2 font-azeret dark:border-gruvboxDark-bg1 ml-2 flex w-fit items-center rounded-md border text-sm font-medium sm:ml-4 sm:text-base"
       >
         <a
-          class="p-1.5 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          class="hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0 p-1.5"
           href="https://webring.antaresph.dev/previous">&lt; Previous</a
         >
         <a
-          class="border-x border-gruvbox-bg2 p-1.5 px-2 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:border-gruvboxDark-bg1 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          class="border-gruvbox-bg2 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:border-gruvboxDark-bg1 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0 border-x p-1.5 px-2"
           href="https://webring.antaresph.dev/random">Random</a
         >
         <a
-          class="p-1.5 hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0"
+          class="hover:bg-gruvbox-bg2 hover:text-gruvbox-fg0 dark:hover:bg-gruvboxDark-bg1 dark:hover:text-gruvboxDark-fg0 p-1.5"
           href="https://webring.antaresph.dev/next">Next &gt;</a
         >
       </div>

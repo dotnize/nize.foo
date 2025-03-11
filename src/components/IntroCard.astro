@@ -8,19 +8,19 @@ const { title, description } = Astro.props;
 ---
 
 <div
-  class="nb-shadow flex w-full flex-col justify-between gap-2 rounded-sm border border-gruvbox-fg bg-gruvbox-bg p-4 transition-shape dark:rounded-lg dark:border-gruvboxDark-bgS dark:bg-gruvboxDark-bg dark:bg-opacity-70 dark:shadow-md dark:hover:-translate-y-1 lg:max-w-md"
+  class="nb-shadow border-gruvbox-fg bg-gruvbox-bg transition-shape dark:border-gruvboxDark-bgS dark:bg-gruvboxDark-bg/70 flex w-full flex-col justify-between gap-2 rounded-xs border p-4 lg:max-w-md dark:rounded-lg dark:shadow-md dark:hover:-translate-y-1"
 >
   <div class="flex flex-col gap-1.5">
-    <div class="text-xs text-gruvbox-fg3 dark:text-gruvboxDark-fg4">
+    <div class="text-gruvbox-fg3 dark:text-gruvboxDark-fg4 text-xs">
       <slot name="subtitle" />
     </div>
-    <h2 class="mb-1 text-xl font-bold text-gruvbox-fg dark:text-gruvboxDark-fg">
+    <h2 class="text-gruvbox-fg dark:text-gruvboxDark-fg mb-1 text-xl font-bold">
       {title}
     </h2>
     <p>{description}</p>
   </div>
 
-  <div class="flex justify-end gap-4 text-sm text-gruvbox-fg dark:text-gruvboxDark-fg">
+  <div class="text-gruvbox-fg dark:text-gruvboxDark-fg flex justify-end gap-4 text-sm">
     <slot name="link" />
   </div>
 </div>

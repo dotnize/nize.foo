@@ -17,10 +17,10 @@ const pageImage = image || (title !== "404" ? "/images/cover.jpg" : undefined);
 
 <Base title={title} description={description} image={pageImage}>
   {/* cursor trail */}
-  <div id="__trail" class="trail_hidden pointer-events-none fixed left-0 top-0 z-10 opacity-0">
+  <div id="__trail" class="trail_hidden pointer-events-none fixed top-0 left-0 z-10 opacity-0">
     <div
       id="__emoticon"
-      class="animate-emoticon text-sm text-gruvbox-fg3 dark:text-gruvboxDark-fg4"
+      class="animate-emoticon text-gruvbox-fg3 dark:text-gruvboxDark-fg4 text-sm"
     >
     </div>
   </div>
@@ -32,7 +32,7 @@ const pageImage = image || (title !== "404" ? "/images/cover.jpg" : undefined);
 
     {/* window content */}
     <div
-      class="relative z-20 overflow-y-auto border border-t-0 border-gruvbox-bg1 bg-gruvbox-bg p-4 shadow-xl dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH"
+      class="border-gruvbox-bg1 bg-gruvbox-bg dark:border-gruvboxDark-bg dark:bg-gruvboxDark-bgH relative z-20 overflow-y-auto border border-t-0 p-4 shadow-xl"
     >
       <main class="min-h-[calc(100vh-14.5rem)]">
         <slot />
