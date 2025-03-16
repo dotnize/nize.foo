@@ -1,6 +1,130 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source("../");
+
+@config '../../tailwind.config.mjs';
+
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-azeret: "Azeret Mono", monospace;
+
+  /* TODO: refactor colors using dark: selector */
+  --color-gruvboxDark-bg: #282828;
+  --color-gruvboxDark-bg0: #282828;
+  --color-gruvboxDark-bgH: #1d2021;
+  --color-gruvboxDark-bgXH: #161818;
+  --color-gruvboxDark-bgS: #32302f;
+  --color-gruvboxDark-bg1: #3c3836;
+  --color-gruvboxDark-bg2: #504945;
+  --color-gruvboxDark-bg3: #665c54;
+  --color-gruvboxDark-bg4: #7c6f64;
+
+  --color-gruvboxDark-fg: #ebdbb2;
+  --color-gruvboxDark-fg0: #fbf1c7;
+  --color-gruvboxDark-fg1: #ebdbb2;
+  --color-gruvboxDark-fg2: #d5c4a1;
+  --color-gruvboxDark-fg3: #bdae93;
+  --color-gruvboxDark-fg4: #a89984;
+
+  --color-gruvboxDark-red: #cc241d;
+  --color-gruvboxDark-red2: #fb4934;
+  --color-gruvboxDark-green: #98971a;
+  --color-gruvboxDark-green2: #b8bb26;
+  --color-gruvboxDark-yellow: #d79921;
+  --color-gruvboxDark-yellow2: #fabd2f;
+  --color-gruvboxDark-blue: #458588;
+  --color-gruvboxDark-blue2: #83a598;
+  --color-gruvboxDark-purple: #b16286;
+  --color-gruvboxDark-purple2: #d3869b;
+  --color-gruvboxDark-aqua: #689d6a;
+  --color-gruvboxDark-aqua2: #8ec07c;
+  --color-gruvboxDark-orange: #d65d0e;
+  --color-gruvboxDark-orange2: #fe8019;
+  --color-gruvboxDark-gray: #a89984;
+  --color-gruvboxDark-gray2: #928374;
+
+  --color-gruvbox-bg: #fbf1c7;
+  --color-gruvbox-bg0: #fbf1c7;
+  --color-gruvbox-bgH: #f9f5d7;
+  --color-gruvbox-bgS: #f2e5bc;
+  --color-gruvbox-bg1: #ebdbb2;
+  --color-gruvbox-bg2: #d5c4a1;
+  --color-gruvbox-bg3: #bdae93;
+  --color-gruvbox-bg4: #a89984;
+
+  --color-gruvbox-fg: #3c3836;
+  --color-gruvbox-fg0: #282828;
+  --color-gruvbox-fg1: #3c3836;
+  --color-gruvbox-fg2: #504945;
+  --color-gruvbox-fg3: #665c54;
+  --color-gruvbox-fg4: #7c6f64;
+
+  --color-gruvbox-red: #cc241d;
+  --color-gruvbox-red2: #9d0006;
+  --color-gruvbox-green: #98971a;
+  --color-gruvbox-green2: #79740e;
+  --color-gruvbox-yellow: #d79921;
+  --color-gruvbox-yellow2: #b57614;
+  --color-gruvbox-blue: #458588;
+  --color-gruvbox-blue2: #076678;
+  --color-gruvbox-purple: #b16286;
+  --color-gruvbox-purple2: #8f3f71;
+  --color-gruvbox-aqua: #689d6a;
+  --color-gruvbox-aqua2: #427b58;
+  --color-gruvbox-orange: #d65d0e;
+  --color-gruvbox-orange2: #af3a03;
+  --color-gruvbox-gray: #7c6f64;
+  --color-gruvbox-gray2: #928374;
+
+  --animate-blink: blink 1.5s steps(1) infinite;
+  --animate-rotate: rotate 6s ease-in-out infinite;
+  --animate-emoticon: emoticon 12s linear infinite;
+  --transition-property-shape: border-radius, box-shadow, transform, border-width, translate;
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @keyframes rotate {
+    0%,
+    75% {
+      transform: rotate(0deg);
+    }
+    25%,
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes emoticon {
+    0%,
+    100% {
+      transform: rotate(-20deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+  }
+}
+
+@utility nb-shadow {
+  &:hover {
+    box-shadow: 4px 4px 0 0px #3c3836;
+  }
+}
+
+@utility nb-shadow-on {
+  box-shadow: 2px 2px 0 0px #3c3836;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+@utility trail_hidden {
+  opacity: 0 !important;
+}
 
 @layer base {
   :root {
@@ -15,25 +139,9 @@
   }
 }
 
-@layer utilities {
-  .nb-shadow:hover {
-    box-shadow: 4px 4px 0 0px #3c3836;
-  }
-
-  .nb-shadow-on {
-    box-shadow: 2px 2px 0 0px #3c3836;
-  }
-  .nb-shadow-on:hover {
-    box-shadow: none;
-  }
-
-  @media (pointer: fine) {
-    body:hover > #__trail {
-      opacity: 1;
-      @apply transition-all duration-200;
-    }
-  }
-  .trail_hidden {
-    opacity: 0 !important;
+@media (pointer: fine) {
+  body:hover > #__trail {
+    opacity: 1;
+    @apply transition-all duration-200;
   }
 }

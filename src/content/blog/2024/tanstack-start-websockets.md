@@ -165,7 +165,7 @@ export default defineEventHandler({
       req.context.user = {
         id: user.id,
         name: user.name,
-      }
+      };
     },
     open(peer) {
       console.log(peer.context.user); // { id: 1, name: 'Nate' }
@@ -177,8 +177,7 @@ export default defineEventHandler({
 
 Read more about `crossws` hooks at [crossws.unjs.io/guide/hooks](https://crossws.unjs.io/guide/hooks).
 
-----
-
+---
 
 This opens up a lot of possibilities for building real-time applications with modern full-stack frameworks. For example, SvelteKit has an [ongoing PR](https://github.com/sveltejs/kit/pull/12973) to add native WebSocket support, also powered by crossws.
 

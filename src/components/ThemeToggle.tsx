@@ -66,7 +66,7 @@ export default function ThemeToggle() {
       title="Toggle theme"
       aria-label="Toggle theme"
       class={
-        "text-gruvbox-fg transition-opacity duration-200 hover:opacity-100 dark:text-gruvboxDark-fg" +
+        "text-gruvbox-fg dark:text-gruvboxDark-fg cursor-pointer transition-opacity duration-200 hover:opacity-100" +
         (typeof localStorage !== "undefined"
           ? (dark() || true) /* to force rerender */ && "theme" in localStorage
             ? " opacity-70"

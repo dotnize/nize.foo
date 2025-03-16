@@ -73,7 +73,7 @@ export default function ContactForm() {
           id="messageTitle"
           ref={messageTitleRef}
           placeholder="Title (optional)"
-          class="flex-1 rounded-lg border border-gruvbox-bg4 bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 outline-none outline-1 focus:outline-gruvbox-bg4 dark:border-none dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:shadow-md dark:focus:outline-gruvboxDark-bg2"
+          class="border-gruvbox-bg4 bg-gruvbox-bgH placeholder-gruvbox-fg4 focus:outline-gruvbox-bg4 dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2 flex-1 rounded-lg border p-2 outline-1 outline-transparent dark:border-none dark:shadow-md"
         />
         <input
           type="text"
@@ -82,11 +82,11 @@ export default function ContactForm() {
           ref={messageContactRef}
           onChange={checkAnonymous}
           placeholder="Contact info/email (optional)"
-          class="min-w-[27ch] flex-1 rounded-lg border border-gruvbox-bg4 bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 outline-none outline-1 focus:outline-gruvbox-bg4 dark:border-none dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:shadow-md dark:focus:outline-gruvboxDark-bg2"
+          class="border-gruvbox-bg4 bg-gruvbox-bgH placeholder-gruvbox-fg4 focus:outline-gruvbox-bg4 dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2 min-w-[27ch] flex-1 rounded-lg border p-2 outline-1 outline-offset-2 outline-transparent dark:border-none dark:shadow-md"
         />
       </div>
       <textarea
-        class="w-full rounded-lg border border-gruvbox-bg4 bg-gruvbox-bgH p-2 placeholder-gruvbox-fg4 outline-none outline-1 focus:outline-gruvbox-bg4 dark:border-none dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:shadow-md dark:focus:outline-gruvboxDark-bg2"
+        class="border-gruvbox-bg4 bg-gruvbox-bgH placeholder-gruvbox-fg4 focus:outline-gruvbox-bg4 dark:bg-gruvboxDark-bg dark:placeholder-gruvboxDark-fg4 dark:focus:outline-gruvboxDark-bg2 w-full rounded-lg border p-2 outline-1 outline-transparent dark:border-none dark:shadow-md"
         rows={6}
         name="messageText"
         required
@@ -97,15 +97,15 @@ export default function ContactForm() {
       <div class="flex w-full justify-end">
         <button
           class={
-            "flex max-w-full items-center justify-center gap-1 rounded-lg border p-3 px-5 text-lg font-bold shadow-md transition-all hover:brightness-90 active:border-gruvbox-fg disabled:pointer-events-none dark:active:border-gruvboxDark-fg" +
+            "active:border-gruvbox-fg dark:active:border-gruvboxDark-fg flex max-w-full cursor-pointer items-center justify-center gap-1 rounded-lg border p-3 px-5 text-lg font-bold shadow-md transition-all hover:brightness-90 disabled:pointer-events-none" +
             (status() === null
               ? " border-gruvbox-bg2 bg-gruvbox-bgH dark:border-gruvboxDark-bg2 dark:bg-gruvboxDark-bg"
               : "") +
             (status() === "sent"
-              ? " border-transparent bg-gruvboxDark-aqua2 dark:bg-gruvbox-aqua2"
+              ? " bg-gruvboxDark-aqua2 dark:bg-gruvbox-aqua2 border-transparent"
               : "") +
             (status() === "error"
-              ? " border-transparent bg-gruvboxDark-orange2 dark:bg-gruvbox-orange2"
+              ? " bg-gruvboxDark-orange2 dark:bg-gruvbox-orange2 border-transparent"
               : "")
           }
           onClick={sendMessage}
