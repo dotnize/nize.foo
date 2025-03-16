@@ -11,11 +11,14 @@ export default function ScrollTop() {
 
   return (
     <button
-      classList={{ "opacity-75": shown(), "opacity-0": !shown() }}
+      classList={{
+        "opacity-75 cursor-pointer z-50": shown(),
+        "opacity-0 pointer-events-none -z-20": !shown(),
+      }}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       title="Scroll to top"
       aria-label="Scroll to top"
-      class="__highlight bg-gruvboxDark-bg1 text-gruvboxDark-fg fixed right-2 bottom-8 z-50 flex size-12 items-center justify-center rounded-full shadow-md transition-opacity duration-300 md:right-10 lg:right-28 xl:right-36 2xl:right-48"
+      class="__highlight bg-gruvboxDark-bg1 text-gruvboxDark-fg fixed right-2 bottom-8 flex size-12 items-center justify-center rounded-full shadow-md transition-opacity duration-300 md:right-10 lg:right-28 xl:right-36 2xl:right-48"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
