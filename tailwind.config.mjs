@@ -2,6 +2,7 @@
 export default {
   theme: {
     extend: {
+      // TODO: remove/move to css format
       typography: ({ theme }) => ({
         gruvbox: {
           css: {

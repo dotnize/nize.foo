@@ -8,6 +8,7 @@
 @theme {
   --font-azeret: "Azeret Mono", monospace;
 
+  /* TODO: refactor colors using dark: selector */
   --color-gruvboxDark-bg: #282828;
   --color-gruvboxDark-bg0: #282828;
   --color-gruvboxDark-bgH: #1d2021;
