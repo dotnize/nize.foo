@@ -1,0 +1,9 @@
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+bun.lock
+
+.astro/
+dist/
+.vercel/
+node_modules/

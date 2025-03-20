@@ -7,27 +7,30 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier -w . \"!pnpm-lock.yaml\" --ignore-path .gitignore"
+    "format": "prettier -w .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.2.0",
+    "@astrojs/mdx": "^4.2.1",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/sitemap": "^3.3.0",
     "@astrojs/solid-js": "^5.0.5",
     "@astrojs/vercel": "^8.1.2",
     "@fontsource/azeret-mono": "^5.2.6",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.14",
-    "astro": "^5.5.2",
+    "astro": "^5.5.3",
     "astro-expressive-code": "^0.40.2",
     "solid-js": "^1.9.5",
     "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.11"
   },
   "pnpm": {

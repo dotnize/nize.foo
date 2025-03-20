@@ -1,7 +1,5 @@
 @import "tailwindcss" source("../");
 
-@config '../../tailwind.config.mjs';
-
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:is(.dark *));
 
@@ -107,6 +105,42 @@
       transform: rotate(20deg);
     }
   }
+}
+
+@utility prose {
+  --tw-prose-body: var(--color-gruvbox-fg2);
+  --tw-prose-headings: var(--color-gruvbox-fg1);
+  --tw-prose-lead: var(--color-gruvbox-fg3);
+  --tw-prose-links: var(--color-gruvbox-blue2);
+  --tw-prose-bold: var(--color-gruvbox-fg1);
+  --tw-prose-counters: var(--color-gruvbox-fg4);
+  --tw-prose-bullets: var(--color-gruvbox-bg4);
+  --tw-prose-hr: var(--color-gruvbox-bg1);
+  --tw-prose-quotes: var(--color-gruvbox-fg3);
+  --tw-prose-quote-borders: var(--color-gruvbox-bg1);
+  --tw-prose-captions: var(--color-gruvbox-fg4);
+  --tw-prose-code: var(--color-gruvbox-fg0);
+  --tw-prose-pre-code: var(--color-gruvboxDark-fg);
+  --tw-prose-pre-bg: var(--color-gruvboxDark-bgH);
+  --tw-prose-th-borders: var(--color-gruvbox-bg2);
+  --tw-prose-td-borders: var(--color-gruvbox-bg1);
+
+  --tw-prose-invert-body: var(--color-gruvboxDark-fg3);
+  --tw-prose-invert-headings: var(--color-gruvboxDark-fg1);
+  --tw-prose-invert-lead: var(--color-gruvboxDark-fg4);
+  --tw-prose-invert-links: var(--color-gruvboxDark-blue2);
+  --tw-prose-invert-bold: var(--color-gruvboxDark-fg1);
+  --tw-prose-invert-counters: var(--color-gruvboxDark-fg4);
+  --tw-prose-invert-bullets: var(--color-gruvboxDark-bg4);
+  --tw-prose-invert-hr: var(--color-gruvboxDark-bg1);
+  --tw-prose-invert-quotes: var(--color-gruvboxDark-fg4);
+  --tw-prose-invert-quote-borders: var(--color-gruvboxDark-bg1);
+  --tw-prose-invert-captions: var(--color-gruvboxDark-fg4);
+  --tw-prose-invert-code: var(--color-gruvboxDark-fg0);
+  --tw-prose-invert-pre-code: var(--color-gruvboxDark-fg);
+  --tw-prose-invert-pre-bg: var(--color-gruvboxDark-bgH);
+  --tw-prose-invert-th-borders: var(--color-gruvboxDark-bg2);
+  --tw-prose-invert-td-borders: var(--color-gruvboxDark-bg1);
 }
 
 @utility nb-shadow {
