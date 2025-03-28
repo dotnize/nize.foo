@@ -19,7 +19,7 @@ You can read more at [h3.unjs.io/guide/websocket](https://h3.unjs.io/guide/webso
 
 ## Setting up the server
 
-Assuming you already have a TanStack Start project [set up](https://tanstack.com/start/latest/docs/framework/react/getting-started) (or you can use my [tanstarter template](https://github.com/dotnize/tanstarter-react)), let's get started by setting up a new websocket handler.
+Assuming you already have a TanStack Start project [set up](https://tanstack.com/start/latest/docs/framework/react/getting-started) (or you can use my [tanstarter template](https://github.com/dotnize/react-tanstarter)), let's get started by setting up a new websocket handler.
 
 1. First, let's enable experimental h3 websockets in our app config.
 
