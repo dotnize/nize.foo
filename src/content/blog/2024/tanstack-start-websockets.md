@@ -68,7 +68,7 @@ export default defineEventHandler({
 
 3. Finally, add a new router to handle the websocket requests.
 
-```ts {9-18}
+```ts {9-17}
 // app.config.ts
 export default defineConfig({
   // ...
@@ -77,16 +77,15 @@ export default defineConfig({
       websocket: true,
     },
   },
-}).then((config) => {
+}).then((config) =>
   config.addRouter({
     name: "websocket",
     type: "http",
     handler: "./src/ws.ts", // the file we created above
     target: "server",
     base: "/_ws",
-  });
-  return config;
-});
+  })
+);
 ```
 
 Our server is now ready to handle websocket connections at `/_ws`. We can test it out by connecting from our client.
