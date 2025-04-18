@@ -1,4 +1,4 @@
-# [nize.foo](https://nize.foo)
+# [nize.ph](https://nize.ph)
 
 My personal site built with Astro and Solid.
 

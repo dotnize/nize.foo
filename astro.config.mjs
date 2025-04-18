@@ -10,7 +10,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nize.foo",
+  site: "https://nize.ph",
   integrations: [
     expressiveCode({
       themes: ["everforest-light", "everforest-dark"],
